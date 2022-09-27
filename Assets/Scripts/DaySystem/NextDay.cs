@@ -8,14 +8,20 @@ public class NextDay : MonoBehaviour
     bool inTrigger;
     private void OnTriggerStay2D(Collider2D collision)
     {
-        keyPressImage.SetActive(true);
-        inTrigger = true;
+        if (collision.CompareTag("Player"))
+        {
+            keyPressImage.SetActive(true);
+            inTrigger = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        keyPressImage.SetActive(false);
-        inTrigger = false;
+        if (collision.CompareTag("Player"))
+        {
+            keyPressImage.SetActive(false);
+            inTrigger = false;
+        }
     }
 
     private void Update()
