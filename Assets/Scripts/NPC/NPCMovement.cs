@@ -1,25 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class NPCInfo : MonoBehaviour
+public class NPCMovement : MonoBehaviour
 {
-    [SerializeField]
-    public string characterName;
-    [SerializeField]
-    public Image characterSprite;
-    [SerializeField]
-    public Image dialogueProfile;
-
-    [SerializeField]
-    public float timeWaiting;
-    [SerializeField]
-    public string request;
-    [SerializeField]
-    public int amountPay;
-
-
     public float walkSpeed = 3f;
 
     private Rigidbody2D myRigidbody;
@@ -87,7 +71,7 @@ public class NPCInfo : MonoBehaviour
 
             if (waitCounter < 0)
             {
-                
+
             }
         }
     }
@@ -99,5 +83,4 @@ public class NPCInfo : MonoBehaviour
             atShop = true;
         }
     }
-
 }

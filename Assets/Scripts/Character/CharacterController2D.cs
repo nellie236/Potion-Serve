@@ -20,7 +20,6 @@ public class CharacterController2D : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
-    public bool canTalkToNPC;
 
     // Use this for initialization
     void Start()
@@ -42,6 +41,10 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DialogueManager.isActive == true)
+        {
+            return;
+        }
         // Movement controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
         {
@@ -81,11 +84,6 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
         }
-
-        if ((canTalkToNPC == true) && (Input.GetKey(KeyCode.R)))
-        {
-            Debug.Log("Hey there NPC!");
-        }
     }
 
     void FixedUpdate()
@@ -115,18 +113,6 @@ public class CharacterController2D : MonoBehaviour
         // Simple debug
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("NPC"))
-        {
-            canTalkToNPC = true;
-        }
-        else
-        {
-            canTalkToNPC = false;
-        }
     }
 }
     
