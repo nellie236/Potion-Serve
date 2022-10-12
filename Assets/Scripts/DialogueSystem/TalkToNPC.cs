@@ -12,13 +12,7 @@ public class TalkToNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        //DialogueBox.gameObject.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -29,12 +23,14 @@ public class TalkToNPC : MonoBehaviour
             if ((Input.GetKey(KeyCode.R)))
             {
                 collision.gameObject.GetComponent<DialogueTrigger>().StartDialogue();
+                DialogueBox.gameObject.SetActive(true);
                 Debug.Log("Hey there NPC!");
             }
         }
         else
         {
             canTalkToNPC = false;
+            DialogueBox.gameObject.SetActive(false);
         }
     }
 }

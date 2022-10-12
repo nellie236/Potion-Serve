@@ -28,6 +28,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject hotbarSelector;
     [SerializeField] private int selectedSlotIndex = 0;
     public ItemClass selectedItem;
+    
 
     public Image InventoryPanel;
     bool inventoryOn;
@@ -106,10 +107,35 @@ public class InventoryManager : MonoBehaviour
 
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
         selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].GetItem();
+        
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchInventory();
+        }
+
+        //throw item
+        if ((Input.GetKeyDown(KeyCode.Q)) && (selectedItem != null))
+        {
+            
+            SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+
+            Instantiate(selectedItem.throwablePrefab); 
+
+            if (selectedSlot.GetQuantity() >= 1)
+            {
+                selectedSlot.SubQuantity(1);
+            }
+
+            if (selectedSlot.GetQuantity() < 1)
+            {
+                selectedSlot.Clear();
+            }
+
+            RefreshUI();
+
+            //experimenting here with throwing item
+            
         }
 
     }
@@ -151,6 +177,8 @@ public class InventoryManager : MonoBehaviour
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
             }
         }
+
+        
 
         RefreshHotbar();
     }
@@ -245,6 +273,17 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
+
+    public SlotClass ContainsInHotbar(ItemClass item)
+    {
+        for (int h = items.Length - 1; h >= 14; h--)
+        {
+            if (items[h].GetItem() == selectedItem)
+                return items[h];
+        }
+        return null;
+    }
+
     #endregion Inventory Utils
 
 

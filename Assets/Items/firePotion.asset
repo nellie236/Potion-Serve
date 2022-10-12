@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Fire Potion
   itemIcon: {fileID: 21300000, guid: b65f5f3de0f3a754aafd3bb047b1925a, type: 3}
   isStackable: 0
+  throwablePrefab: {fileID: 1129085746926212879, guid: 43f09dae04bc5a546afb387ec530d75b, type: 3}
   healthAdded: 0

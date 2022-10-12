@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
         currentActors = actors;
         activeMessage = 0;
         isActive = true;
-        Debug.Log("started conversation! loaded messages: " + messages.Length);
+        Debug.Log("Started Conversation! Loaded messages: " + messages.Length);
         DisplayMessage();
     }
 
@@ -45,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Debug.Log("Conversation Ended!");
+            dialogueBox.gameObject.SetActive(false);
             isActive = false;
         }
     }

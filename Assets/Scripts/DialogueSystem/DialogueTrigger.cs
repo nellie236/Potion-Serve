@@ -5,14 +5,24 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    public GameObject dialogueParent;
     public GameObject DialogueManager;
     public Message[] messages;
     public Actor[] actors;
 
+    public void Start()
+    {
+        dialogueParent = GameObject.Find("DialogueParent");
+        DialogueManager = dialogueParent.transform.Find("DialogueBox").gameObject;
+    }
+    
     public void StartDialogue()
     {
+        //DialogueManager = GameObject.Find("DialogueBox");
         DialogueManager.GetComponent<DialogueManager>().OpenDialogue(messages, actors);
     }
+
+
 }
 
 [System.Serializable]
