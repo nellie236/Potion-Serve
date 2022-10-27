@@ -9,6 +9,7 @@ public class NextDay : MonoBehaviour
     bool inTrigger;
 
     public GameObject openSign;
+    public GameObject openLight;
     public GameObject closedSign;
     bool hitLever;
 
@@ -16,6 +17,7 @@ public class NextDay : MonoBehaviour
     {
         hitLever = false;
         openSign.SetActive(true);
+        openLight.SetActive(true);
         onLever.SetActive(true);
         offLever.SetActive(false);
         closedSign.SetActive(false);
@@ -53,6 +55,7 @@ public class NextDay : MonoBehaviour
         if (hitLever)
         {
             onLever.SetActive(false);
+            openLight.SetActive(false);
             closedSign.SetActive(true);
             offLever.SetActive(true);
         }
@@ -60,6 +63,7 @@ public class NextDay : MonoBehaviour
         if (!hitLever)
         {
             onLever.SetActive(true);
+            openLight.SetActive(true);
             closedSign.SetActive(false);
             offLever.SetActive(false);
         }

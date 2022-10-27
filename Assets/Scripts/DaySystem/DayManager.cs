@@ -2,30 +2,96 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering; 
 
 public class DayManager : MonoBehaviour
 {
-    public static int dayCount;
+    public static int dayCount = 1;
     public Text dayDisplayCount;
-    int dailyNPCAmount;
-    public List<GameObject> Customers;
-    int whichNPC;
-    int customersPresent = 0;
+    public Text timeDisplay;
+    public Volume ppv; //this is the post processing volume
 
-    public List<GameObject> currentCustomers = new List<GameObject>();
+    public float tick; //increasing the tick, increases second rate
+    public float seconds;
+    public int mins;
+    public int hours;
 
-    private void Start()
+    //int dailyNPCAmount;
+    //public List<GameObject> Customers;
+    //int whichNPC;
+    //int customersPresent = 0;
+
+    //public List<GameObject> currentCustomers = new List<GameObject>();
+
+    void Start()
     {
+        ppv = GameObject.Find("Global Volume").GetComponent<Volume>();
         dayDisplayCount.text = "Day " + dayCount;
         DailyDecisions();
+    }
+
+    void FixedUpdate()
+    {
+        CalculateTime();
+        DisplayTime();
+    }
+
+    public void CalculateTime() //used to calc sec, min, hours
+    {
+        seconds += Time.fixedDeltaTime * tick; //multiply time between fixed update by tick
+        //Debug.Log(seconds);
+
+        if (seconds >= 60) //60 sec = 1 min 
+        {
+            seconds = 0;
+            mins += 1;
+        }
+
+        if (mins >= 60)
+        {
+            mins = 0;
+            hours += 1;
+        }
+
+        if (hours >= 12)
+        {
+            hours = 0;
+            NextDay();
+        }
+        ControlPPV();
+    }
+
+    public void ControlPPV()
+    {
+        if (hours >= 5 && hours < 6) //dusk at 21:00 / 9 pm - until 22:00 / 10pm
+        {
+            ppv.weight = (float)mins / 60; //since dusk is 1 hr, we divide the mins by 60 which will slowly increase 0-1
+        }
+
+        if (hours >= 11 && hours < 12)
+        {
+            ppv.weight = 1 - (float)mins / 60; //we minus 1 because we want it to go from 1 - 0
+        }
+    }
+
+    public void DisplayTime()
+    {
+        timeDisplay.text = string.Format("{0:00}:{1:00}", hours, mins);
+    }
+
+    public void NextDay()
+    {
+        dayCount++;
+        dayDisplayCount.text = "Day " + dayCount;
+        //DailyDecisions();
     }
 
     public void DailyDecisions()
     {
         //here will go daily decisions, like deciding how many npcs will show up to the shop, and which ones CAN show up according to index / chance
-        dailyNPCAmount = Random.Range(1, Customers.Count);
+        //dailyNPCAmount = Random.Range(1, Customers.Count);
         
-        for (customersPresent = 0; customersPresent < dailyNPCAmount; customersPresent++)
+        /*for (customersPresent = 0; customersPresent < dailyNPCAmount; customersPresent++)
         {
             whichNPC = Random.Range(0, Customers.Count);
             SpawnCertainCustomer();
@@ -38,11 +104,11 @@ public class DayManager : MonoBehaviour
         foreach (GameObject npc in GameObject.FindGameObjectsWithTag("NPC"))
         {
             currentCustomers.Add(npc);
-        }
+        }*/
 
     }
 
-    public void SpawnCertainCustomer()
+    /*public void SpawnCertainCustomer()
     {
         switch (whichNPC)
         {
@@ -62,13 +128,9 @@ public class DayManager : MonoBehaviour
                     GameObject NPC4 = Instantiate(Customers[4]) as GameObject;
                 break;
         }
-    }
+    }*/
 
-    public void NextDay()
-    {
-        dayCount++;
-        dayDisplayCount.text = "Day " + dayCount;
-    }
+    
 
     
 }
