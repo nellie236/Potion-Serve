@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
+        dialogueBox.gameObject.SetActive(true);
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;

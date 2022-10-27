@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class NextDay : MonoBehaviour
 {
-    public GameObject keyPressImage;
+    public GameObject onLever;
+    public GameObject offLever;
     bool inTrigger;
+
+    public GameObject openSign;
+    public GameObject closedSign;
+    bool hitLever;
+
+    private void Start()
+    {
+        hitLever = false;
+        openSign.SetActive(true);
+        onLever.SetActive(true);
+        offLever.SetActive(false);
+        closedSign.SetActive(false);
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            keyPressImage.SetActive(true);
             inTrigger = true;
         }
     }
@@ -19,7 +32,6 @@ public class NextDay : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            keyPressImage.SetActive(false);
             inTrigger = false;
         }
     }
@@ -28,8 +40,28 @@ public class NextDay : MonoBehaviour
     {
         if ((inTrigger == true) && (Input.GetKey(KeyCode.N)))
         {
-            GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
-            GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
+            hitLever = !hitLever;
+            //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
+            //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
+            SwitchOpenClose();
+        }
+
+    }
+
+    public void SwitchOpenClose()
+    {
+        if (hitLever)
+        {
+            onLever.SetActive(false);
+            closedSign.SetActive(true);
+            offLever.SetActive(true);
+        }
+
+        if (!hitLever)
+        {
+            onLever.SetActive(true);
+            closedSign.SetActive(false);
+            offLever.SetActive(false);
         }
     }
 }

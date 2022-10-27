@@ -23,14 +23,10 @@ public class TalkToNPC : MonoBehaviour
             if ((Input.GetKey(KeyCode.R)))
             {
                 collision.gameObject.GetComponent<DialogueTrigger>().StartDialogue();
-                DialogueBox.gameObject.SetActive(true);
+                //DialogueBox.gameObject.SetActive(true);
                 Debug.Log("Hey there NPC!");
             }
         }
-        else
-        {
-            canTalkToNPC = false;
-            DialogueBox.gameObject.SetActive(false);
-        }
+        
     }
 }
