@@ -16,6 +16,9 @@ public class DayManager : MonoBehaviour
     public int mins;
     public int hours;
 
+    public GameObject arrowRotate;
+    public float rotationSpeed;
+
     //int dailyNPCAmount;
     //public List<GameObject> Customers;
     //int whichNPC;
@@ -59,6 +62,7 @@ public class DayManager : MonoBehaviour
             NextDay();
         }
         ControlPPV();
+        RotateClockArrow();
     }
 
     public void ControlPPV()
@@ -66,11 +70,25 @@ public class DayManager : MonoBehaviour
         if (hours >= 5 && hours < 6) //dusk at 21:00 / 9 pm - until 22:00 / 10pm
         {
             ppv.weight = (float)mins / 60; //since dusk is 1 hr, we divide the mins by 60 which will slowly increase 0-1
+      
         }
 
         if (hours >= 11 && hours < 12)
         {
             ppv.weight = 1 - (float)mins / 60; //we minus 1 because we want it to go from 1 - 0
+            //arrowRotate.transform.Rotate(0, 0, Time.deltaTime * 10);
+        }   
+    }
+
+    public void RotateClockArrow()
+    {
+        if (hours >= 0 && hours < 6)
+        {
+            arrowRotate.transform.Rotate(0, 0, Time.deltaTime * -rotationSpeed);
+        }
+        if (hours >= 6 && hours < 12)
+        {
+            arrowRotate.transform.Rotate(0, 0, Time.deltaTime * rotationSpeed);
         }
     }
 

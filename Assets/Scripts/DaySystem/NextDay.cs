@@ -40,7 +40,7 @@ public class NextDay : MonoBehaviour
 
     private void Update()
     {
-        if ((inTrigger == true) && (Input.GetKey(KeyCode.N)))
+        if ((inTrigger == true) && (Input.GetKeyUp(KeyCode.N)))
         {
             hitLever = !hitLever;
             //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
