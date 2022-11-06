@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NextDay : MonoBehaviour
+public class ShopManager : MonoBehaviour
 {
     public GameObject onLever;
     public GameObject offLever;

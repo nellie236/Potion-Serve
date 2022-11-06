@@ -20,6 +20,7 @@ public class CharacterController2D : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+    public bool talkToCustomer;
 
     // Use this for initialization
     void Start()
@@ -45,6 +46,7 @@ public class CharacterController2D : MonoBehaviour
         {
             return;
         }
+
         // Movement controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
         {

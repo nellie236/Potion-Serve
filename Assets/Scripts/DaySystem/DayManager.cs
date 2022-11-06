@@ -19,18 +19,10 @@ public class DayManager : MonoBehaviour
     public GameObject arrowRotate;
     public float rotationSpeed;
 
-    //int dailyNPCAmount;
-    //public List<GameObject> Customers;
-    //int whichNPC;
-    //int customersPresent = 0;
-
-    //public List<GameObject> currentCustomers = new List<GameObject>();
-
     void Start()
     {
         ppv = GameObject.Find("Global Volume").GetComponent<Volume>();
         dayDisplayCount.text = "Day " + dayCount;
-        DailyDecisions();
     }
 
     void FixedUpdate()
@@ -76,7 +68,7 @@ public class DayManager : MonoBehaviour
         if (hours >= 11 && hours < 12)
         {
             ppv.weight = 1 - (float)mins / 60; //we minus 1 because we want it to go from 1 - 0
-            //arrowRotate.transform.Rotate(0, 0, Time.deltaTime * 10);
+            
         }   
     }
 
@@ -101,52 +93,8 @@ public class DayManager : MonoBehaviour
     {
         dayCount++;
         dayDisplayCount.text = "Day " + dayCount;
-        //DailyDecisions();
-    }
-
-    public void DailyDecisions()
-    {
-        //here will go daily decisions, like deciding how many npcs will show up to the shop, and which ones CAN show up according to index / chance
-        //dailyNPCAmount = Random.Range(1, Customers.Count);
         
-        /*for (customersPresent = 0; customersPresent < dailyNPCAmount; customersPresent++)
-        {
-            whichNPC = Random.Range(0, Customers.Count);
-            SpawnCertainCustomer();
-            Customers.RemoveAt(whichNPC);
-            //chose the NPC, instantiate the NPC, decide which NPC will come first, remove that NPC from spawnable list
-            //to decide which is first, have int that gets added too at the end of each loop. whichever one is "first" has the lowest value, the others are told to wait a certain amount of time
-        }
-        //for each dailyNPCAmount, choose random available NPC, remove NPC from the availablelist, and choose whether they'll go first /second etc for (i = 0; i < dailyNPCAmount; i++)
-        
-        foreach (GameObject npc in GameObject.FindGameObjectsWithTag("NPC"))
-        {
-            currentCustomers.Add(npc);
-        }*/
-
     }
-
-    /*public void SpawnCertainCustomer()
-    {
-        switch (whichNPC)
-        {
-            case 0:
-                    GameObject NPC0 = Instantiate(Customers[0]) as GameObject;
-                break;
-            case 1:
-                    GameObject NPC1 = Instantiate(Customers[1]) as GameObject;
-                break;
-            case 2:
-                    GameObject NPC2 = Instantiate(Customers[2]) as GameObject;
-                break;
-            case 3:
-                    GameObject NPC3 = Instantiate(Customers[3]) as GameObject;
-                break;
-            case 4:
-                    GameObject NPC4 = Instantiate(Customers[4]) as GameObject;
-                break;
-        }
-    }*/
 
     
 

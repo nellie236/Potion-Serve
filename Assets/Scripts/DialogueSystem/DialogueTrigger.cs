@@ -10,6 +10,8 @@ public class DialogueTrigger : MonoBehaviour
     public Message[] messages;
     public Actor[] actors;
 
+    public bool canTalkToPlayer;
+
     public void Start()
     {
         dialogueParent = GameObject.Find("DialogueParent");
@@ -20,6 +22,31 @@ public class DialogueTrigger : MonoBehaviour
     {
         //DialogueManager = GameObject.Find("DialogueBox");
         DialogueManager.GetComponent<DialogueManager>().OpenDialogue(messages, actors);
+    }
+
+    private void Update()
+    {
+        if ((Input.GetKey(KeyCode.R)) && (canTalkToPlayer == true))
+        {
+            StartDialogue();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canTalkToPlayer = true;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canTalkToPlayer = false;
+        }
     }
 
 
