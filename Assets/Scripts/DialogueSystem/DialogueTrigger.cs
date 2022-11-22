@@ -10,10 +10,21 @@ public class DialogueTrigger : MonoBehaviour
     public Message[] messages;
     public Actor[] actors;
 
+
+    public int whichMessages;
+    public Message[] firstMessages;
+    public Message[] acceptedMessages;
+    public Message[] deniedMessages;
+    public Message[] correctItemMessages;
+    public Message[] wrongItemMessages;
+
     public bool canTalkToPlayer;
+
+    
 
     public void Start()
     {
+        whichMessages = 0;
         dialogueParent = GameObject.Find("DialogueParent");
         DialogueManager = dialogueParent.transform.Find("DialogueBox").gameObject;
     }
@@ -22,12 +33,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         //DialogueManager = GameObject.Find("DialogueBox");
         DialogueManager.GetComponent<DialogueManager>().OpenDialogue(messages, actors);
+        DialogueManager.GetComponent<DialogueManager>().currentCustomer = this.gameObject;
+        GetComponentInParent<CustomerActions>().spokenTo = true;
     }
 
     private void Update()
     {
         if ((Input.GetKey(KeyCode.R)) && (canTalkToPlayer == true))
         {
+            dialoguePaths();
             StartDialogue();
         }
     }
@@ -46,6 +60,29 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canTalkToPlayer = false;
+        }
+    }
+
+    //startDialogue(1); 1 = intro dialogue 2 = accepted / waiting dialogue 3 = denied dialogue 4 = correct item dialogue 5 = incorrect item
+    private void dialoguePaths()
+    {
+        switch (whichMessages)
+        {
+            case 0:
+                messages = firstMessages;
+                break;
+            case 1:
+                messages = acceptedMessages;
+                break;
+            case 2:
+                messages = deniedMessages;
+                break;
+            case 3:
+                messages = correctItemMessages;
+                break;
+            case 4:
+                messages = wrongItemMessages;
+                break;
         }
     }
 

@@ -9,15 +9,18 @@ public class DialogueManager : MonoBehaviour
     public Text characterName;
     public Text messageText;
     public Image dialogueBox;
+    public GameObject acceptDenyChoice;
 
     Message[] currentMessages;
     Actor[] currentActors;
+    public GameObject currentCustomer;
     int activeMessage = 0;
     public static bool isActive = false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
         dialogueBox.gameObject.SetActive(true);
+        acceptDenyChoice.SetActive(false);
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
@@ -46,9 +49,34 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Debug.Log("Conversation Ended!");
-            dialogueBox.gameObject.SetActive(false);
-            isActive = false;
+
+            if (currentCustomer.GetComponent<DialogueTrigger>().whichMessages == 0)
+            {
+                Debug.Log("Will you accept?");
+                acceptDenyChoice.SetActive(true);
+            }
+            else 
+            {
+                dialogueBox.gameObject.SetActive(false);
+                isActive = false;
+            }
         }
+    }
+
+    public void AcceptCustomer()
+    {
+        acceptDenyChoice.SetActive(false);
+        currentCustomer.GetComponentInParent<CustomerActions>().accepted = true;
+        currentCustomer.GetComponentInParent<CustomerActions>().denied = false;
+        //currentCustomer.GetComponent<DialogueTrigger>().StartDialogue();
+    }
+
+    public void DenyCustomer()
+    {
+        acceptDenyChoice.SetActive(false);
+        currentCustomer.GetComponentInParent<CustomerActions>().accepted = false;
+        currentCustomer.GetComponentInParent<CustomerActions>().denied = true;
+        //currentCustomer.GetComponent<DialogueTrigger>().StartDialogue();
     }
 
     void Update()

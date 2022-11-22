@@ -21,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
     CapsuleCollider2D mainCollider;
     Transform t;
     public bool talkToCustomer;
+    public bool leverTrigger;
 
     // Use this for initialization
     void Start()
@@ -36,6 +37,22 @@ public class CharacterController2D : MonoBehaviour
         if (mainCamera)
         {
             cameraPos = mainCamera.transform.position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("LeverTrigger"))
+        {
+            leverTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("LeverTrigger"))
+        {
+            leverTrigger = false;
         }
     }
 
@@ -86,6 +103,14 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
         }
+
+        if ((leverTrigger == true) && (Input.GetKeyUp(KeyCode.N)))
+        {
+            //hitLever = !hitLever;
+            //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
+            //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
+            GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().SwitchOpenClose();
+        }
     }
 
     void FixedUpdate()
@@ -116,5 +141,7 @@ public class CharacterController2D : MonoBehaviour
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
     }
+
+    
 }
     

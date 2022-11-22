@@ -13,8 +13,11 @@ public class ShopManager : MonoBehaviour
     public GameObject closedSign;
     bool hitLever;
 
+    public bool shopOpen;
+
     private void Start()
     {
+        shopOpen = true;
         hitLever = false;
         openSign.SetActive(true);
         openLight.SetActive(true);
@@ -22,7 +25,8 @@ public class ShopManager : MonoBehaviour
         offLever.SetActive(false);
         closedSign.SetActive(false);
     }
-    private void OnTriggerStay2D(Collider2D collision)
+
+    /*private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -48,12 +52,14 @@ public class ShopManager : MonoBehaviour
             SwitchOpenClose();
         }
 
-    }
+    }*/
 
     public void SwitchOpenClose()
     {
+        hitLever = !hitLever;
         if (hitLever)
         {
+            shopOpen = false; 
             onLever.SetActive(false);
             openLight.SetActive(false);
             closedSign.SetActive(true);
@@ -62,6 +68,7 @@ public class ShopManager : MonoBehaviour
 
         if (!hitLever)
         {
+            shopOpen = true;
             onLever.SetActive(true);
             openLight.SetActive(true);
             closedSign.SetActive(false);

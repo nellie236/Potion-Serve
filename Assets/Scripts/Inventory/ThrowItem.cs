@@ -32,22 +32,16 @@ public class ThrowItem : MonoBehaviour
             return;
         }
 
-        if (!onGround)
+        if (!landed)
         {
-            if (Player.GetComponent<CharacterController2D>().facingRight == true) 
-            { 
-            Vector3 pos = new Vector3(
-                startPos.x + Mathf.Sin(Mathf.PI * 2 * counter / 360),
-                startPos.y + Mathf.Sin(Mathf.PI * 2 * counter / 360),
-                startPos.z);
-            transform.position = Vector3.Lerp(transform.position, pos, 1f);
-            }
-            else if (Player.GetComponent<CharacterController2D>().facingRight == false)
+            if (GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().facingLeft == false) 
             {
-                Vector3 pos = new Vector3(
-                startPos.x + Mathf.Sin(Mathf.PI * -2 * counter / 360),
-                startPos.y + Mathf.Sin(Mathf.PI * -2 * counter / 360),
-                startPos.z);
+                Vector3 pos = new Vector3(startPos.x + Mathf.Sin(Mathf.PI * 4 * counter / 360), startPos.y, startPos.z);
+                transform.position = Vector3.Lerp(transform.position, pos, 1f);
+            }
+            else if (GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().facingLeft == true)
+            {
+                Vector3 pos = new Vector3(startPos.x + Mathf.Sin(Mathf.PI * -4 * counter / 360), startPos.y, startPos.z);
                 transform.position = Vector3.Lerp(transform.position, pos, 1f);
             }
         }
@@ -62,6 +56,7 @@ public class ThrowItem : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             landed = true;
+            collision.gameObject.GetComponent<CustomerActions>().CheckItem();
         }
 
         

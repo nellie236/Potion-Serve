@@ -8,18 +8,25 @@ public class CustomerActions : MonoBehaviour
     public float walkSpeed = 3f;
     private Rigidbody2D myRB;
 
+    public GameObject desiredItem;
+
     public bool spokenTo;
     public bool waiting;
     public bool accepted;
+    public bool denied;
     public bool correctItem;
     public bool atShop;
-    int triggers;
+    public bool voidTrigger;
+    public int triggers;
     public static int relationship;
     public static int shopVisits;
+    public float patienceTime;
+    
 
     private void Start()
     {
         triggers = 0;
+        voidTrigger = false;
         myRB = GetComponent<Rigidbody2D>();
     }
 
@@ -32,55 +39,108 @@ public class CustomerActions : MonoBehaviour
             if (triggers >= 2) 
             { 
                 atShop = true;
-                shopVisits += 1;
             }
+        }
+
+        if (collision.CompareTag("VoidTrigger"))
+        {
+            atShop = false;
+            voidTrigger = true;
+            waiting = false;
         }
     }
 
     private void Update()
     {
-        if (atShop == false)
+        if (GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().shopOpen == false)
         {
-            myRB.velocity = new Vector2(walkSpeed, 0);
-            return;
-        }
-        
-        if (atShop == true)
-        {
-            if (spokenTo == false)
-            {
-                waiting = true;
-
-                if (waiting == true)
-                {
-                    //run waiting timer, when timer is done, leave. -relationship int
-                }
-            }
-
-            if (spokenTo == true)
+            if (voidTrigger == false)
             {
                 waiting = false;
+                triggers = 0;
+                Leave();
+            }
 
-                if (accepted == false)
+            return;
+        }
+        if (GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().shopOpen == true)
+        {
+            if (atShop == false && patienceTime >= 0f)
+            {
+                voidTrigger = false;
+                Enter();
+                return;
+            }
+
+            if (atShop == true)
+            {
+                if (spokenTo == false && voidTrigger == false && triggers >= 2)
                 {
-                    //leave, -relationship int
+                    waiting = true;
                 }
 
-                if (accepted == true)
+                if (spokenTo == true)
                 {
-                    if (correctItem == false)
+                    shopVisits += 1;
+                    waiting = false;
+
+                    GetComponentInChildren<DialogueTrigger>().whichMessages = 0;
+
+                    if (accepted == false && denied == true)
                     {
+                        GetComponentInChildren<DialogueTrigger>().whichMessages = 2;
                         //leave, -relationship int
                     }
 
-                    if (correctItem == true)
+                    if (accepted == true && denied == false)
                     {
-                        // +relationship int, leave
+                        GetComponentInChildren<DialogueTrigger>().whichMessages = 1;
+
+                        if (correctItem == false)
+                        {
+                            //GetComponentInChildren<DialogueTrigger>().whichMessages = 4;
+                            //leave, -relationship int
+                        }
+
+                        if (correctItem == true)
+                        {
+                            GetComponentInChildren<DialogueTrigger>().whichMessages = 3;
+                            // +relationship int, leave
+                        }
                     }
+                }
+            }
+
+            if (waiting == true)
+            {
+                //run waiting timer, when timer is done, leave. -relationship int
+                patienceTime -= Time.deltaTime;
+
+                if (patienceTime <= 0.0f && voidTrigger == false)
+                {
+                    atShop = false;
+                    //triggers = 0;
+                    Leave();
                 }
             }
         }
 
     }
 
+    public void CheckItem()
+    {
+
+    }
+
+    public void Enter()
+    {
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        myRB.velocity = new Vector2(walkSpeed, 0);
+    }
+
+    public void Leave()
+    {
+        transform.localRotation = Quaternion.Euler(0, 180, 0);
+        myRB.velocity = new Vector2(-walkSpeed, 0);
+    }
 }

@@ -7,6 +7,8 @@ TagManager:
   - NPC
   - ShopTrigger
   - DialogueTrigger
+  - VoidTrigger
+  - LeverTrigger
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,7 @@ public class InventoryManager : MonoBehaviour
 
     public Image InventoryPanel;
     bool inventoryOn;
+    public bool facingLeft;
 
     private void Start()
     {
@@ -117,23 +118,40 @@ public class InventoryManager : MonoBehaviour
         //throw item
         if ((Input.GetKeyDown(KeyCode.Q)) && (selectedItem != null))
         {
-            
-            SlotClass selectedSlot = ContainsInHotbar(selectedItem);
-
-            Instantiate(selectedItem.throwablePrefab); 
-
-            if (selectedSlot.GetQuantity() >= 1)
+            if (selectedItem.throwablePrefab == null)
             {
-                selectedSlot.SubQuantity(1);
+                return;
             }
+            else if (selectedItem.throwablePrefab != null) 
+            { 
+                SlotClass selectedSlot = ContainsInHotbar(selectedItem);
 
-            if (selectedSlot.GetQuantity() < 1)
-            {
-                selectedSlot.Clear();
+                Instantiate(selectedItem.throwablePrefab);
+
+                if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == true)
+                {
+                    //facing right
+                    facingLeft = false;
+
+                }
+                else if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == false)
+                {
+                    //facing left
+                    facingLeft = true;
+                }
+
+                if (selectedSlot.GetQuantity() >= 1)
+                {
+                    selectedSlot.SubQuantity(1);
+                }
+
+                if (selectedSlot.GetQuantity() < 1)
+                {
+                    selectedSlot.Clear();
+                }
+
+                RefreshUI();
             }
-
-            RefreshUI();
-
             //experimenting here with throwing item
             
         }
