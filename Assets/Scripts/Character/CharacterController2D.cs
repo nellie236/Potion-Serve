@@ -13,13 +13,15 @@ public class CharacterController2D : MonoBehaviour
     public float gravityScale = 1.5f;
     public Camera mainCamera;
 
-    public bool facingRight = true;
+    public bool facingRight = false;
     float moveDirection = 0;
     bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+    GameObject dialogueBox;
+    public DialogueManager dialogueManager;
     public bool talkToCustomer;
     public bool leverTrigger;
 
@@ -29,6 +31,10 @@ public class CharacterController2D : MonoBehaviour
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<CapsuleCollider2D>();
+        dialogueBox = GameObject.Find("DialogueBox");
+        dialogueManager = dialogueBox.GetComponent<DialogueManager>();
+        //Debug.Log(dialogueManager);
+        
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
@@ -59,7 +65,7 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogueManager.isActive == true)
+        if (dialogueManager.isActive == true)
         {
             return;
         }
@@ -71,6 +77,11 @@ public class CharacterController2D : MonoBehaviour
         }
         else
         {
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (!isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
+            {
+                moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            }
+
             if (isGrounded || r2d.velocity.magnitude < 0.01f)
             {
                 moveDirection = 0;

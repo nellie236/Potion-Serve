@@ -34,7 +34,7 @@ public class DialogueTrigger : MonoBehaviour
         //DialogueManager = GameObject.Find("DialogueBox");
         DialogueManager.GetComponent<DialogueManager>().OpenDialogue(messages, actors);
         DialogueManager.GetComponent<DialogueManager>().currentCustomer = this.gameObject;
-        GetComponentInParent<CustomerActions>().spokenTo = true;
+        //GetComponentInParent<CustomerActions>().spokenTo = true;
     }
 
     private void Update()
@@ -64,7 +64,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //startDialogue(1); 1 = intro dialogue 2 = accepted / waiting dialogue 3 = denied dialogue 4 = correct item dialogue 5 = incorrect item
-    private void dialoguePaths()
+    public void dialoguePaths()
     {
         switch (whichMessages)
         {

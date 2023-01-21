@@ -15,12 +15,15 @@ public class CustomerActions : MonoBehaviour
     public bool accepted;
     public bool denied;
     public bool correctItem;
+    public bool wrongItem;
     public bool atShop;
     public bool voidTrigger;
+    public bool finishedDialogue;
     public int triggers;
     public static int relationship;
     public static int shopVisits;
     public float patienceTime;
+    
     
 
     private void Start()
@@ -47,6 +50,14 @@ public class CustomerActions : MonoBehaviour
             atShop = false;
             voidTrigger = true;
             waiting = false;
+        }
+
+        if (collision.CompareTag("DoneAtShop"))
+        {
+            if (finishedDialogue == true)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -96,19 +107,27 @@ public class CustomerActions : MonoBehaviour
                     {
                         GetComponentInChildren<DialogueTrigger>().whichMessages = 1;
 
-                        if (correctItem == false)
+                        if (correctItem == false && wrongItem == true)
                         {
-                            //GetComponentInChildren<DialogueTrigger>().whichMessages = 4;
+                            GetComponentInChildren<DialogueTrigger>().whichMessages = 4;
                             //leave, -relationship int
+
                         }
 
-                        if (correctItem == true)
+                        if (correctItem == true && wrongItem == false)
                         {
                             GetComponentInChildren<DialogueTrigger>().whichMessages = 3;
+                            
                             // +relationship int, leave
                         }
                     }
                 }
+            }
+
+            if (finishedDialogue == true)
+            {
+                patienceTime = -1;
+                Leave();
             }
 
             if (waiting == true)
@@ -127,9 +146,17 @@ public class CustomerActions : MonoBehaviour
 
     }
 
-    public void CheckItem()
+    public void CorrectItem()
     {
+        correctItem = true;
+        wrongItem = false;
+    }
 
+
+    public void WrongItem()
+    {
+        wrongItem = true;
+        correctItem = false;
     }
 
     public void Enter()
@@ -140,6 +167,7 @@ public class CustomerActions : MonoBehaviour
 
     public void Leave()
     {
+        //atShop = false;
         transform.localRotation = Quaternion.Euler(0, 180, 0);
         myRB.velocity = new Vector2(-walkSpeed, 0);
     }

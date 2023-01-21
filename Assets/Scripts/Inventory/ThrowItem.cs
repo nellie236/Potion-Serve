@@ -55,8 +55,21 @@ public class ThrowItem : MonoBehaviour
 
         if (collision.gameObject.CompareTag("NPC"))
         {
-            landed = true;
-            collision.gameObject.GetComponent<CustomerActions>().CheckItem();
+            
+            GameObject desired = collision.gameObject.GetComponent<CustomerActions>().desiredItem;
+            if (gameObject.tag == desired.tag)
+            {
+                Debug.Log("This is right!");
+                landed = true;
+                collision.gameObject.GetComponent<CustomerActions>().CorrectItem();
+                //true
+            }
+            else if (gameObject.tag != desired.tag)
+            {
+                collision.gameObject.GetComponent<CustomerActions>().WrongItem();
+            }
+            
+            //
         }
 
         

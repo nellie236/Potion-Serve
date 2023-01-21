@@ -15,7 +15,13 @@ public class DialogueManager : MonoBehaviour
     Actor[] currentActors;
     public GameObject currentCustomer;
     int activeMessage = 0;
-    public static bool isActive = false;
+    public bool isActive = false;
+
+    private void Start()
+    {
+        isActive = false;
+        dialogueBox.gameObject.SetActive(false);
+    }
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -57,33 +63,54 @@ public class DialogueManager : MonoBehaviour
             }
             else 
             {
+                currentCustomer.GetComponent<DialogueTrigger>().dialoguePaths();
                 dialogueBox.gameObject.SetActive(false);
                 isActive = false;
             }
+
+            
+
+
         }
     }
 
     public void AcceptCustomer()
     {
         acceptDenyChoice.SetActive(false);
-        currentCustomer.GetComponentInParent<CustomerActions>().accepted = true;
-        currentCustomer.GetComponentInParent<CustomerActions>().denied = false;
+        currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 1;
+        //currentCustomer.GetComponentInParent<CustomerActions>().accepted = true;
+        //currentCustomer.GetComponentInParent<CustomerActions>().denied = false;
         //currentCustomer.GetComponent<DialogueTrigger>().StartDialogue();
+        dialogueBox.gameObject.SetActive(false);
+        isActive = false;
     }
 
     public void DenyCustomer()
     {
         acceptDenyChoice.SetActive(false);
-        currentCustomer.GetComponentInParent<CustomerActions>().accepted = false;
-        currentCustomer.GetComponentInParent<CustomerActions>().denied = true;
+        currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 2;
+        //currentCustomer.GetComponentInParent<CustomerActions>().accepted = false;
+        //currentCustomer.GetComponentInParent<CustomerActions>().denied = true;
         //currentCustomer.GetComponent<DialogueTrigger>().StartDialogue();
+        dialogueBox.gameObject.SetActive(false);
+        isActive = false;
     }
 
     void Update()
     {
+        if (isActive)
+        {
+            Time.timeScale = 0;
+        }
+        else if (!isActive)
+        {
+            Time.timeScale = 1;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
         {
             NextMessage();
         }
+
     }
 }

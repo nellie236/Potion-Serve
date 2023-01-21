@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3597879380395273930}
   - component: {fileID: 3597879380395273931}
   - component: {fileID: 8178238556732815833}
-  - component: {fileID: 7368432741992918865}
+  - component: {fileID: -7676765673974218585}
   m_Layer: 0
   m_Name: NPC 1
   m_TagString: NPC
@@ -123,7 +123,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &7368432741992918865
+--- !u!114 &-7676765673974218585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,15 +132,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3597879380395273933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 721d706c166e9de4cbd9dace1882d805, type: 3}
+  m_Script: {fileID: 11500000, guid: fa0e7470437ad66459d87817b948225d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
-  spokenTo: 0
-  waiting: 0
-  accepted: 0
-  correctItem: 0
-  atShop: 0
+  initialState: 0
+  config: {fileID: 11400000, guid: 9d75f1bc432c0b44bb15052a29b6c777, type: 2}
+  myRB: {fileID: 0}
 --- !u!1 &9177041247835583441
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,4 +222,10 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: a1d8f6c81bdd5844abc1557ff37cbcd5, type: 3}
   - name: Globlin
     sprite: {fileID: 21300000, guid: 7a82abd22b84316458ead82e3c37313f, type: 3}
+  whichMessages: 0
+  firstMessages: []
+  acceptedMessages: []
+  deniedMessages: []
+  correctItemMessages: []
+  wrongItemMessages: []
   canTalkToPlayer: 0

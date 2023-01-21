@@ -75,4 +75,6 @@ public class ShopManager : MonoBehaviour
             offLever.SetActive(false);
         }
     }
+
+    
 }

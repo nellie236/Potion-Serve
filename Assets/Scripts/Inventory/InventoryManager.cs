@@ -108,7 +108,7 @@ public class InventoryManager : MonoBehaviour
 
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
         selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].GetItem();
-        
+
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -213,6 +213,7 @@ public class InventoryManager : MonoBehaviour
                     hotbarSlots[i].transform.GetChild(1).GetComponent<Text>().text = items[i + (hotbarSlots.Length * 3)].GetQuantity() + "";
                 else
                     hotbarSlots[i].transform.GetChild(1).GetComponent<Text>().text = "";
+                
             }
             catch
             {
@@ -233,10 +234,19 @@ public class InventoryManager : MonoBehaviour
             slot.AddQuantity(quantity);
         else
         {
-            for (int i = 0; i < items.Length; i++)
+            /*for (int i = 0; i < items.Length; i++)
             {
                 if (items[i].GetItem() == null) // this is an empty slot
-                { 
+                {
+                    items[i].AddItem(item, quantity);
+                    break;
+                }
+            }*/
+
+            for (int i = items.Length - 1; i > 0; i--)
+            {
+                if (items[i].GetItem() == null)
+                {
                     items[i].AddItem(item, quantity);
                     break;
                 }

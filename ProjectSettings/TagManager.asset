@@ -9,6 +9,11 @@ TagManager:
   - DialogueTrigger
   - VoidTrigger
   - LeverTrigger
+  - firePotion
+  - DoneAtShop
+  - Throw
+  - Ground
+  - DialogueManager
   layers:
   - Default
   - TransparentFX
@@ -51,6 +56,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 4169076297
     locked: 0
   - name: Player
     uniqueID: 502090737
