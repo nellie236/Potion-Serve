@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Frozen Potion
   itemIcon: {fileID: 21300000, guid: f32fe916194ba5b4580cdf4fc634312b, type: 3}
   isStackable: 0
+  throwablePrefab: {fileID: 1129085746926212879, guid: a612c6d8ec84a9c438ab3c15f383ff61, type: 3}
   healthAdded: 0

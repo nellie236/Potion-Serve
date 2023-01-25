@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3352554231720842337}
   - component: {fileID: 1855741446990786871}
   m_Layer: 0
-  m_Name: throwableFirePotion
+  m_Name: throwableFrozenPotion
   m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 502090737
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b65f5f3de0f3a754aafd3bb047b1925a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f32fe916194ba5b4580cdf4fc634312b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   target: {fileID: 0}
-  myItem: {fileID: 11400000, guid: dd4cf72d7a6e05940868c82d70660e07, type: 2}
+  myItem: {fileID: 11400000, guid: 82e74744aee023841a77b8dbd9ead694, type: 2}
   speed: 10
 --- !u!50 &1855741446990786871
 Rigidbody2D:

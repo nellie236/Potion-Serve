@@ -21,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
     CapsuleCollider2D mainCollider;
     Transform t;
     GameObject dialogueBox;
+    Animator anim;
     public DialogueManager dialogueManager;
     public bool talkToCustomer;
     public bool leverTrigger;
@@ -33,12 +34,14 @@ public class CharacterController2D : MonoBehaviour
         mainCollider = GetComponent<CapsuleCollider2D>();
         dialogueBox = GameObject.Find("DialogueBox");
         dialogueManager = dialogueBox.GetComponent<DialogueManager>();
+        anim = GetComponent<Animator>();
         //Debug.Log(dialogueManager);
         
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
+        facingRight = false;
 
         if (mainCamera)
         {
@@ -74,23 +77,29 @@ public class CharacterController2D : MonoBehaviour
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            //anim.SetBool("moving", true);
         }
         else
         {
             if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (!isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
             {
                 moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+                //anim.SetBool("moving", true);
             }
 
             if (isGrounded || r2d.velocity.magnitude < 0.01f)
             {
                 moveDirection = 0;
+                anim.SetBool("moving", false);
             }
         }
+
+        anim.SetBool("grounded", isGrounded);
 
         // Change facing direction
         if (moveDirection != 0)
         {
+            anim.SetBool("moving", true);
             if (moveDirection > 0 && !facingRight)
             {
                 facingRight = true;
@@ -101,6 +110,10 @@ public class CharacterController2D : MonoBehaviour
                 facingRight = false;
                 t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
             }
+        }
+        else if (moveDirection == 0)
+        {
+            anim.SetBool("moving", false);
         }
 
         // Jumping

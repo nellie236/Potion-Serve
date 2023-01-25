@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Blue Petal
   itemIcon: {fileID: 21300000, guid: 26cc2b535eb0d7f4fb9c729fea42641c, type: 3}
   isStackable: 1
+  throwablePrefab: {fileID: 1129085746926212879, guid: bf24273db6e3f3848b72faea5342a34b, type: 3}
   inPot: 0

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d2da0d2662ad44e865ed2d1bc505f9, type: 3}
   m_Name: CustomerDefaultConfiguration
   m_EditorClassIdentifier: 
+  walkSpeed: 3
+  patienceTime: 10
