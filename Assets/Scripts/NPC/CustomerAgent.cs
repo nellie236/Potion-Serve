@@ -28,7 +28,7 @@ public class CustomerAgent : MonoBehaviour
         stateMachine.RegisterState(new CustomerOrderInProgressState());
         stateMachine.RegisterState(new CustomerExitState());
         stateMachine.RegisterState(new CustomerIdleState());
-        inProgState = stateMachine.currentState;
+        
 
         stateMachine.ChangeState(initialState);
         atShop = false;
@@ -37,6 +37,7 @@ public class CustomerAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inProgState = stateMachine.currentState;
         stateMachine.Update();
     }
 

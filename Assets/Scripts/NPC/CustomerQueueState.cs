@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CustomerQueueState : CustomerState
 {
+    float waitTime;
     public void Enter(CustomerAgent agent)
     {
        
@@ -36,9 +37,10 @@ public class CustomerQueueState : CustomerState
         }
         else if (!agent.dialogueManager.isActive)
         {
-            agent.config.patienceTime -= Time.deltaTime;
+            waitTime = agent.config.patienceTime;
+            waitTime -= Time.deltaTime;
 
-            if (agent.config.patienceTime <= 0.0f)
+            if (waitTime <= 0.0f)
             {
                 //switch state to Leave
                 agent.stateMachine.ChangeState(CustomerStateId.Exit);

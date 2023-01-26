@@ -10,4 +10,5 @@ public class CustomerAgentConfig : ScriptableObject
 
     public float walkSpeed = 3f;
     public float patienceTime = 10f;
+
 }

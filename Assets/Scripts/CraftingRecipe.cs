@@ -17,6 +17,13 @@ public class CraftingRecipe : ScriptableObject
     public List<ItemClass> Ingredients;
     //public List<ItemAmount> Materials; //ingredients needed for recipe
     public List<ItemClass> Results; //what you are crafting
+    CraftingRecipe thisRecipe;
+
+    public void Awake()
+    {
+        thisRecipe = this;
+    }
+
 
     public void Craft(BrewManager brewManager)
     {
@@ -24,10 +31,21 @@ public class CraftingRecipe : ScriptableObject
         Debug.Log("Crafting");
         if (CompareLists(brewManager.potItems, Ingredients))
         {
+            foreach (GameObject gameObject in brewManager.potGameObjects)
+            {
+                for (int i = 0; i < Ingredients.Count; i++)
+                {
+                    if (brewManager.potGameObjects[brewManager.potGameObjects.IndexOf(gameObject)].GetComponent<Projectile>().myItem == Ingredients[i])
+                    {
+                        brewManager.potGameObjects.Remove(gameObject);
+                        //Destroy(gameObject);
+                    }
+                }
+            }
+
             foreach (ItemClass item in Ingredients)
             {
                 brewManager.potItems.Remove(item);
-                //Destroy(item);
             }
 
             foreach (ItemClass item in Results)

@@ -9,42 +9,27 @@ public class BrewManager : MonoBehaviour
     public GameObject spawnPoint;
     public List<CraftingRecipe> recipes;
     public BrewManager brewManager;
-    public List<GameObject> potItemsGameObjects;
+
+    public List<GameObject> potGameObjects;
 
     private void Start()
     {
         brewManager = this.GetComponent<BrewManager>();
         spawnPoint = GameObject.Find("SpawnPoint");
         potItems = new List<ItemClass>();
+        potGameObjects = new List<GameObject>();
     }
 
     private void Update()
     {
-
-        // CheckIngredients();
+        numOfItems = potItems.Count;
+        
         if (potItems.Count != 0)
         {
             for (int i = 0; i < recipes.Count; i++)
             {
                 //recipes[i].CompareLists(potItems, recipes[i].Ingredients);
                 recipes[i].Craft(brewManager);
-            }
-        }
-    }
-
-    void CheckIngredients()
-    {
-        numOfItems = potItems.Count;
-
-        for (int i = potItems.Count - 1; i >= 0; i--)
-        {
-            if (potItems[i] != null)
-            {
-                //do things
-            }
-            else if (potItems[i] == null)
-            {
-                potItems.Remove(potItems[i]);
             }
         }
     }
@@ -56,7 +41,7 @@ public class BrewManager : MonoBehaviour
             if (collision.gameObject.tag == "Ingredient")
             {
                 potItems.Add(collision.GetComponent<Projectile>().myItem);
-                potItemsGameObjects.Add(collision.gameObject);
+                potGameObjects.Add(collision.gameObject);
             }
         }
     }
@@ -68,7 +53,7 @@ public class BrewManager : MonoBehaviour
             if (collision.gameObject.tag == "Ingredient")
             {
                 potItems.Remove(collision.GetComponent<Projectile>().myItem);
-                potItemsGameObjects.Remove(collision.gameObject);
+                potGameObjects.Remove(collision.gameObject);
             }
         }
     }

@@ -23,6 +23,25 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.gameObject.SetActive(false);
     }
 
+    public void Update()
+    {
+        if (isActive)
+        {
+            Time.timeScale = 0;
+        }
+
+        if (!isActive)
+        {
+            Time.timeScale = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
+        {
+            NextMessage();
+        }
+
+    }
+
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
         dialogueBox.gameObject.SetActive(true);
@@ -61,56 +80,51 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("Will you accept?");
                 acceptDenyChoice.SetActive(true);
             }
-            else 
+            else
             {
+                Debug.Log("Ending dialogue");
                 currentCustomer.GetComponent<DialogueTrigger>().dialoguePaths();
                 dialogueBox.gameObject.SetActive(false);
                 isActive = false;
+                Time.timeScale = 1;
             }
-
-            
-
 
         }
     }
 
     public void AcceptCustomer()
     {
+        StartCoroutine(AcceptOrder());
+    }
+
+    public IEnumerator AcceptOrder()
+    {
         acceptDenyChoice.SetActive(false);
         currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 1;
-        //currentCustomer.GetComponentInParent<CustomerActions>().accepted = true;
-        //currentCustomer.GetComponentInParent<CustomerActions>().denied = false;
-        //currentCustomer.GetComponent<DialogueTrigger>().StartDialogue();
-        dialogueBox.gameObject.SetActive(false);
-        isActive = false;
+        currentCustomer.GetComponent<DialogueTrigger>().dialoguePaths();
+        OpenDialogue(currentCustomer.GetComponent<DialogueTrigger>().messages, currentCustomer.GetComponent<DialogueTrigger>().actors);
+        //dialogueBox.gameObject.SetActive(false);
+        //isActive = false;
+        yield return new WaitForSeconds(2f);
+        
+    }
+
+    public IEnumerator DenyOrder()
+    {
+        acceptDenyChoice.SetActive(false);
+        currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 2;
+        currentCustomer.GetComponent<DialogueTrigger>().dialoguePaths();
+        OpenDialogue(currentCustomer.GetComponent<DialogueTrigger>().messages, currentCustomer.GetComponent<DialogueTrigger>().actors);
+        //dialogueBox.gameObject.SetActive(false);
+        //isActive = false;
+        yield return new WaitForSeconds(2f);
+        
     }
 
     public void DenyCustomer()
     {
-        acceptDenyChoice.SetActive(false);
-        currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 2;
-        //currentCustomer.GetComponentInParent<CustomerActions>().accepted = false;
-        //currentCustomer.GetComponentInParent<CustomerActions>().denied = true;
-        //currentCustomer.GetComponent<DialogueTrigger>().StartDialogue();
-        dialogueBox.gameObject.SetActive(false);
-        isActive = false;
+        StartCoroutine(DenyOrder());
     }
 
-    void Update()
-    {
-        if (isActive)
-        {
-            Time.timeScale = 0;
-        }
-        else if (!isActive)
-        {
-            Time.timeScale = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
-        {
-            NextMessage();
-        }
-
-    }
+    
 }
