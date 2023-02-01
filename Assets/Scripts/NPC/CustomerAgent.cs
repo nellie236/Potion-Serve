@@ -13,15 +13,19 @@ public class CustomerAgent : MonoBehaviour
     public DialogueTrigger dialogueTrigger;
     public DialogueManager dialogueManager;
     public GameObject desiredItem;
+    public SpriteRenderer myObject;
     public bool atShop;
+    public bool orderFulfilled;
     public PatienceTimer patienceTimer;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        //orderFulfilled = false;
         myRB = GetComponent<Rigidbody2D>();
         dialogueTrigger = transform.GetChild(0).gameObject.GetComponent<DialogueTrigger>();
+        myObject = transform.GetChild(1).GetComponent<SpriteRenderer>();
         dialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>();
         patienceTimer = GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>();
         patienceTimer.Duration = config.orderPatience;

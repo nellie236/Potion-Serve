@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class CustomerOrderInProgressState : CustomerState
 {
+
     public void Enter(CustomerAgent agent)
     {
+        agent.orderFulfilled = false;
         agent.patienceTimer.StartTimer();
     }
 
     public void Exit(CustomerAgent agent)
     {
-        agent.stateMachine.ChangeState(CustomerStateId.Exit);
+        
     }
 
     public CustomerStateId GetId()
@@ -21,9 +23,16 @@ public class CustomerOrderInProgressState : CustomerState
 
     public void Update(CustomerAgent agent)
     {
-        if (agent.patienceTimer.active == false)
+        if (agent.orderFulfilled)
         {
-            Exit(agent);
+            agent.dialogueManager.orderSuccess();
+            agent.stateMachine.ChangeState(CustomerStateId.Exit);
+        }
+
+        if (!agent.patienceTimer.active && !agent.orderFulfilled)
+        {
+            agent.dialogueManager.orderFail();
+            agent.stateMachine.ChangeState(CustomerStateId.Exit);
         }
     }
 }

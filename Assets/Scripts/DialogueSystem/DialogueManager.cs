@@ -126,5 +126,19 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(DenyOrder());
     }
 
+    public void orderSuccess()
+    {
+        currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 3;
+        currentCustomer.GetComponent<DialogueTrigger>().dialoguePaths();
+        OpenDialogue(currentCustomer.GetComponent<DialogueTrigger>().messages, currentCustomer.GetComponent<DialogueTrigger>().actors);
+    }
+
+    public void orderFail()
+    {
+        currentCustomer.GetComponent<DialogueTrigger>().whichMessages = 4;
+        currentCustomer.GetComponent<DialogueTrigger>().dialoguePaths();
+        OpenDialogue(currentCustomer.GetComponent<DialogueTrigger>().messages, currentCustomer.GetComponent<DialogueTrigger>().actors);
+    }
+
     
 }

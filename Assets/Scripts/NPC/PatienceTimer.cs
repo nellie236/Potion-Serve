@@ -12,16 +12,20 @@ public class PatienceTimer : MonoBehaviour
     private bool Pause;
     public bool active;
 
+    public GameObject currentCustomer;
+
     // Start is called before the first frame update
     void Start()
     {
         //Being(Duration);
         active = true;
+        uiFill.fillAmount = 0;
     }
 
     public void StartTimer()
     {
         Being(Duration);
+        uiFill.fillAmount = 1;
         active = true;
     }
     
@@ -35,6 +39,11 @@ public class PatienceTimer : MonoBehaviour
     {
         while (remainingDuration >= 0)
         {
+            if (currentCustomer.GetComponent<CustomerAgent>().orderFulfilled)
+            {
+                ResetTimer();
+                break;
+            }
             if (!Pause)
             {
                 uiFill.fillAmount = Mathf.InverseLerp(0, Duration, remainingDuration);
@@ -50,5 +59,20 @@ public class PatienceTimer : MonoBehaviour
         //call end code here
         print("End");
         active = false;
+        currentCustomer.GetComponent<CustomerAgent>().orderFulfilled = false;
+        GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ourCustomer(null);
+        ResetTimer();
     }
+
+    private void ResetTimer()
+    {
+        uiFill.fillAmount = 0;
+    }
+
+    public void ourCustomer(GameObject ourCustomer)
+    {
+        currentCustomer = ourCustomer;
+    }
+        
+        
 }

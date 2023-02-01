@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Gunpowder
   itemIcon: {fileID: 21300000, guid: 6bbaecb1708fc9347910ef96647dbed2, type: 3}
-  isStackable: 1
+  isStackable: 0
+  throwablePrefab: {fileID: 0}
   inPot: 0

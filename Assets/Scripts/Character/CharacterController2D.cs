@@ -23,8 +23,11 @@ public class CharacterController2D : MonoBehaviour
     GameObject dialogueBox;
     Animator anim;
     public DialogueManager dialogueManager;
+    public InventoryManager inventoryManager;
     public bool talkToCustomer;
     public bool leverTrigger;
+    public bool canGiveItem;
+    GameObject currentCustomer;
 
     // Use this for initialization
     void Start()
@@ -34,6 +37,7 @@ public class CharacterController2D : MonoBehaviour
         mainCollider = GetComponent<CapsuleCollider2D>();
         dialogueBox = GameObject.Find("DialogueBox");
         dialogueManager = dialogueBox.GetComponent<DialogueManager>();
+        inventoryManager = GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>();
         anim = GetComponent<Animator>();
         //Debug.Log(dialogueManager);
         
@@ -42,6 +46,7 @@ public class CharacterController2D : MonoBehaviour
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
         facingRight = false;
+        canGiveItem = false;
 
         if (mainCamera)
         {
@@ -55,6 +60,16 @@ public class CharacterController2D : MonoBehaviour
         {
             leverTrigger = true;
         }
+
+        if (collision.CompareTag("DialogueTrigger"))
+        {
+            //give item to customer, turn bool true, if bool true,
+            //can press button (perhaps hovers over the characters head)
+            canGiveItem = true;
+            currentCustomer = collision.transform.parent.gameObject;
+            GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ourCustomer(currentCustomer);
+            //Debug.Log(currentCustomer);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -62,6 +77,12 @@ public class CharacterController2D : MonoBehaviour
         if (collision.CompareTag("LeverTrigger"))
         {
             leverTrigger = false;
+        }
+
+        if (collision.CompareTag("DialogueTrigger"))
+        {
+            canGiveItem = false;
+            currentCustomer = null;
         }
     }
 
@@ -134,6 +155,14 @@ public class CharacterController2D : MonoBehaviour
             //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
             //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
             GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().SwitchOpenClose();
+        }
+
+        if ((canGiveItem && currentCustomer != null) && (Input.GetKey(KeyCode.G)))
+        {
+            inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
+           
+            //also play animation of customer "grabbing potion"
+            //turn on sprite for customer, look like customer is holding potion
         }
     }
 

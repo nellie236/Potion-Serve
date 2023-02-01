@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Ginger
   itemIcon: {fileID: 21300000, guid: 9bbdd35186b451c45b51cd0b825b8807, type: 3}
-  isStackable: 1
+  isStackable: 0
   throwablePrefab: {fileID: 1129085746926212879, guid: 691943a028a4e6b4fb96f99542a4ab00, type: 3}
   inPot: 0

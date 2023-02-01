@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Empty Bottle
   itemIcon: {fileID: 21300000, guid: 16ea77a4a01eca54f8bfa3a99ed5cb4f, type: 3}
-  isStackable: 1
+  isStackable: 0
+  throwablePrefab: {fileID: 0}
   isUsed: 0

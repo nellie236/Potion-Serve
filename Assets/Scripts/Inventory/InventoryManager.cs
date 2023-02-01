@@ -155,7 +155,21 @@ public class InventoryManager : MonoBehaviour
             //experimenting here with throwing item
             
         }
+    }
 
+    public void GiveCustomerDesired(ItemClass desired, GameObject currentCustomer)
+    {
+        if (selectedItem != null)
+        {
+            SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+            if (selectedItem == desired)
+            {
+                currentCustomer.GetComponent<CustomerAgent>().orderFulfilled = true;
+                //give to customer, change dialogue to success and give money
+                selectedSlot.Clear();
+            }
+        }
+        RefreshUI();
     }
 
     public void SwitchInventory()

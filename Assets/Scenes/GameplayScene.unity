@@ -781,6 +781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFill: {fileID: 1338532016}
   Duration: 0
+  active: 0
+  currentCustomer: {fileID: 0}
 --- !u!1 &130653523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2710,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1372371643}
     m_Modifications:
     - target: {fileID: -7676765673974218585, guid: 64e44de38c141f846b26dd69fa7bcb3d, type: 3}
+      propertyPath: desiredItem
+      value: 
+      objectReference: {fileID: 1129085746926212879, guid: 43f09dae04bc5a546afb387ec530d75b, type: 3}
+    - target: {fileID: -7676765673974218585, guid: 64e44de38c141f846b26dd69fa7bcb3d, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1460207333}
@@ -4052,11 +4058,11 @@ MonoBehaviour:
   itemToRemove: {fileID: 11400000, guid: 550e6a3df419979489bb1b05e4b7986e, type: 2}
   startingItems:
   - item: {fileID: 11400000, guid: 550e6a3df419979489bb1b05e4b7986e, type: 2}
-    quantity: 10
+    quantity: 2
   - item: {fileID: 11400000, guid: f7d4bce973a07674aa354f92fb9f125f, type: 2}
-    quantity: 10
+    quantity: 1
   - item: {fileID: 11400000, guid: 5634493bbcf7b524c95fc5bf8a94912f, type: 2}
-    quantity: 10
+    quantity: 1
   hotbarSelector: {fileID: 1759057441}
   selectedSlotIndex: 0
   selectedItem: {fileID: 0}
