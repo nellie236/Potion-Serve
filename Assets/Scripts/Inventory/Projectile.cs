@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     private float baseY;
     private float height;
 
-    private bool landed;
+    //private bool landed;
 
 
     // Start is called before the first frame update
@@ -61,7 +61,7 @@ public class Projectile : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            landed = true;
+            //landed = true;
         }
 
         if (collision.gameObject.CompareTag("NPC"))

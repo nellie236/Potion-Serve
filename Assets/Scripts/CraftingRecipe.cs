@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 [Serializable]
 public struct ItemAmount
@@ -28,17 +29,23 @@ public class CraftingRecipe : ScriptableObject
     public void Craft(BrewManager brewManager)
     {
 
-        Debug.Log("Crafting");
+        //Debug.Log("Crafting");
+        //Debug.Log(CompareLists(brewManager.potItems, Ingredients));
         if (CompareLists(brewManager.potItems, Ingredients))
         {
-            foreach (GameObject gameObject in brewManager.potGameObjects)
+            foreach (ItemClass item in Results)
+            {
+                Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform);
+            }
+
+            for (int p = 0; p < brewManager.potGameObjects.Count; p++)
             {
                 for (int i = 0; i < Ingredients.Count; i++)
                 {
-                    if (brewManager.potGameObjects[brewManager.potGameObjects.IndexOf(gameObject)].GetComponent<Projectile>().myItem == Ingredients[i])
+                    if (brewManager.potGameObjects[p].GetComponent<Projectile>().myItem == Ingredients[i])
                     {
-                        brewManager.potGameObjects.Remove(gameObject);
-                        //Destroy(gameObject);
+                        Destroy(brewManager.potGameObjects[p]);
+                        //brewManager.potGameObjects.Remove(brewManager.potGameObjects[p]);
                     }
                 }
             }
@@ -47,21 +54,69 @@ public class CraftingRecipe : ScriptableObject
             {
                 brewManager.potItems.Remove(item);
             }
-
-            foreach (ItemClass item in Results)
-            {
-                Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform);
-            }
         }
     }
 
-    public bool CompareLists<T>(List<T> cauldronItems, List<T> recipeItems)
+    public bool CompareLists(List<ItemClass> cauldronItems, List<ItemClass> recipeItems)
     {
-        Debug.Log("Comparing Lists");
-        if (cauldronItems == null || recipeItems == null || cauldronItems.Count != recipeItems.Count)
+        //bool sameList = false;
+        //Debug.Log("Comparing Lists");
+       
+        if (cauldronItems == null || recipeItems == null || !(cauldronItems.Count >= recipeItems.Count)) //|| cauldronItems.Count != recipeItems.Count 
             return false;
         if (cauldronItems.Count == 0)
             return true;
+
+        List<ItemClass> overLap = new List<ItemClass>();
+
+        for (int index = 0; index < recipeItems.Count; index++) //foreach (ItemClass item in recipeItems)
+        {
+            //int index = recipeItems.IndexOf(item);
+            
+
+            //Debug.Log("foreach");
+            for (int i = 0; i < cauldronItems.Count; i++)
+            {
+                //Debug.Log(overLap.Contains(cauldronItems[i]));
+                //Debug.Log("Current recipe item index: " + index + ". Current cauldron item index: " + i);
+                //Debug.Log("Overlap contains this item: " + cauldronItems[i] + " '" + i + "' " + overLap.Contains(cauldronItems[i]));
+                if (!overLap.Contains(cauldronItems[i])) //(!overLap.Contains(cauldronItems.ElementAt(i)))
+                {
+                    if (EqualityComparer<ItemClass>.Default.Equals(cauldronItems[i], recipeItems[index]))
+                    {
+                        overLap.Add(cauldronItems[i]); 
+                        //Debug.Log("Adding item, new count: " + overLap.Count);
+                        break;
+                    }
+                }
+                else 
+                    //Debug.Log("Contains item already! Current count: " + overLap.Count); //currently calling this every time after first item is added.
+                    continue;
+                    //Debug.Log("contains item already!");
+            }
+        }
+
+        if (overLap.Count == recipeItems.Count)
+        {
+            //sameList = true;
+            Debug.Log("returning true");
+            return true;
+        }
+        else
+            return false;
+  
+    }
+
+
+    /*public bool CompareLists<T>(List<T> cauldronItems, List<T> recipeItems)
+    {
+        Debug.Log("Comparing Lists");
+        if (cauldronItems == null || recipeItems == null) //|| cauldronItems.Count != recipeItems.Count 
+            return false;
+        if (cauldronItems.Count == 0)
+            return true;
+
+
 
         Dictionary<T, int> lookUp = new Dictionary<T, int>();
         //create index for the first list
@@ -91,5 +146,5 @@ public class CraftingRecipe : ScriptableObject
         }
 
         return lookUp.Count == 0;
-    }
+    }*/
 }

@@ -16,6 +16,7 @@ TagManager:
   - Potion
   - Ingredient
   - firePotion
+  - Craft
   layers:
   - Default
   - TransparentFX

@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Dragon Fruit
   itemIcon: {fileID: 21300000, guid: 9cdbbacdb7138754aacf041e95273692, type: 3}
   isStackable: 1
+  throwablePrefab: {fileID: 1129085746926212879, guid: e8eca0855b4c51a42a8cd8e38ccb5086, type: 3}
   inPot: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BrewManager : MonoBehaviour
 {
     public List<ItemClass> potItems;
+    //public List<ItemClass> craftItems;
     public int numOfItems;
     public GameObject spawnPoint;
     public List<CraftingRecipe> recipes;
@@ -18,12 +19,45 @@ public class BrewManager : MonoBehaviour
         spawnPoint = GameObject.Find("SpawnPoint");
         potItems = new List<ItemClass>();
         potGameObjects = new List<GameObject>();
+        //canCraft = false;
+        //craftItems = new List<ItemClass>();
     }
 
+    //bool canCraft;
     private void Update()
     {
         numOfItems = potItems.Count;
         
+        /*if (potItems.Count != 0)
+        {
+            if (canCraft)
+            {
+                for (int i = 0; i < recipes.Count; i++)
+                {
+                    //recipes[i].CompareLists(potItems, recipes[i].Ingredients);
+                    recipes[i].Craft(brewManager);
+                }
+            }
+        }*/
+    }
+
+    /*public int NumberOfItems
+    {
+        get => numOfItems;
+
+        set
+        {
+            if (numOfItems != value)
+            {
+                canCraft = true;
+                numOfItems = value;
+                canCraft = false;
+            }
+        }
+    }*/
+
+    IEnumerator goCraft()
+    {
         if (potItems.Count != 0)
         {
             for (int i = 0; i < recipes.Count; i++)
@@ -32,8 +66,10 @@ public class BrewManager : MonoBehaviour
                 recipes[i].Craft(brewManager);
             }
         }
+        yield return new WaitForFixedUpdate();
     }
 
+    //private int numOfItems;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != null)
@@ -41,7 +77,9 @@ public class BrewManager : MonoBehaviour
             if (collision.gameObject.tag == "Ingredient")
             {
                 potItems.Add(collision.GetComponent<Projectile>().myItem);
+                //craftItems.Add(collision.GetComponent<Projectile>().myItem);
                 potGameObjects.Add(collision.gameObject);
+                StartCoroutine(goCraft());
             }
         }
     }
@@ -53,6 +91,7 @@ public class BrewManager : MonoBehaviour
             if (collision.gameObject.tag == "Ingredient")
             {
                 potItems.Remove(collision.GetComponent<Projectile>().myItem);
+                //craftItems.Remove(collision.GetComponent<Projectile>().myItem);
                 potGameObjects.Remove(collision.gameObject);
             }
         }
