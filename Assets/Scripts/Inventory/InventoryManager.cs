@@ -61,7 +61,7 @@ public class InventoryManager : MonoBehaviour
        
         RefreshUI();
 
-        Remove(itemToRemove);
+        //Remove(itemToRemove);
         Add(itemToAdd, 1);
 
         InventoryPanel.gameObject.SetActive(false);

@@ -9,7 +9,7 @@ public class CustomerAgentConfig : ScriptableObject
     //example public int speed = 0;
 
     public float walkSpeed = 3f;
-    public float patienceTime = 10f;
+    public int waitTime = 10;
     public int orderPatience = 30;
     public int coinAmount = 15;
 

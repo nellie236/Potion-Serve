@@ -35,7 +35,7 @@ public class CraftingRecipe : ScriptableObject
         {
             foreach (ItemClass item in Results)
             {
-                Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform);
+                Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform.position, brewManager.spawnPoint.transform.rotation);
             }
 
             for (int p = 0; p < brewManager.potGameObjects.Count; p++)

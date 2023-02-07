@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: CustomerDefaultConfiguration
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  patienceTime: 10
+  waitTime: 40
+  orderPatience: 30
+  coinAmount: 15

@@ -27,7 +27,7 @@ public class CharacterController2D : MonoBehaviour
     public bool talkToCustomer;
     public bool leverTrigger;
     public bool canGiveItem;
-    GameObject currentCustomer;
+    public GameObject currentCustomer;
 
     // Use this for initialization
     void Start()
@@ -146,7 +146,7 @@ public class CharacterController2D : MonoBehaviour
         // Camera follow
         if (mainCamera)
         {
-            mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
+            mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 1, cameraPos.z);
         }
 
         if ((leverTrigger == true) && (Input.GetKeyUp(KeyCode.N)))
@@ -160,7 +160,7 @@ public class CharacterController2D : MonoBehaviour
         if ((canGiveItem && currentCustomer != null) && (Input.GetKey(KeyCode.G)))
         {
             inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
-           
+            currentCustomer.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<SpriteRenderer>().sprite;
             //also play animation of customer "grabbing potion"
             //turn on sprite for customer, look like customer is holding potion
         }

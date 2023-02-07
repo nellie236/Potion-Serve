@@ -6,60 +6,31 @@ public class ShopManager : MonoBehaviour
 {
     public GameObject onLever;
     public GameObject offLever;
-    bool inTrigger;
+    //bool inTrigger;
 
     public GameObject openSign;
     public GameObject openLight;
     public GameObject closedSign;
+    public CustomerManager customerManager;
     bool hitLever;
 
-    public bool shopOpen;
+    //public bool shopOpen;
 
     private void Start()
     {
-        shopOpen = true;
-        hitLever = false;
-        openSign.SetActive(true);
-        openLight.SetActive(true);
-        onLever.SetActive(true);
-        offLever.SetActive(false);
-        closedSign.SetActive(false);
+        customerManager = GameObject.Find("CustomerManager").GetComponent<CustomerManager>();
+        SwitchOpenClose();
     }
-
-    /*private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inTrigger = false;
-        }
-    }
-
-    private void Update()
-    {
-        if ((inTrigger == true) && (Input.GetKeyUp(KeyCode.N)))
-        {
-            hitLever = !hitLever;
-            //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
-            //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
-            SwitchOpenClose();
-        }
-
-    }*/
 
     public void SwitchOpenClose()
     {
         hitLever = !hitLever;
+
         if (hitLever)
         {
-            shopOpen = false; 
+            customerManager.shopOpen = false;
+
+            //shopOpen = false; 
             onLever.SetActive(false);
             openLight.SetActive(false);
             closedSign.SetActive(true);
@@ -68,7 +39,9 @@ public class ShopManager : MonoBehaviour
 
         if (!hitLever)
         {
-            shopOpen = true;
+            customerManager.shopOpen = true;
+
+            //shopOpen = true;
             onLever.SetActive(true);
             openLight.SetActive(true);
             closedSign.SetActive(false);

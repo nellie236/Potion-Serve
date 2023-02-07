@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class CustomerEnterState : CustomerState
 {
     public void Enter(CustomerAgent agent)
     {
-        agent.dialogueTrigger.whichMessages = 0;
+        //agent.dialogueTrigger.whichMessages = 0;
     }
 
     public void Exit(CustomerAgent agent)

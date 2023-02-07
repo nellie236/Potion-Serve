@@ -8,6 +8,7 @@ public class CustomerOrderInProgressState : CustomerState
     public void Enter(CustomerAgent agent)
     {
         agent.orderFulfilled = false;
+        agent.patienceTimer.ourCustomer(agent.gameObject);
         agent.patienceTimer.StartTimer();
     }
 

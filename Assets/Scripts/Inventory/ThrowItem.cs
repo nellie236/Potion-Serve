@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrowItem : MonoBehaviour
 {
 
-    public float speed = 1f;
+    /*public float speed = 1f;
     float counter;
     bool landed;
     bool onGround;
@@ -82,7 +82,7 @@ public class ThrowItem : MonoBehaviour
             GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().Add(myItem, 1);
             landed = true;
         }
-    }
+    }*/
 
 
 }

@@ -16,7 +16,10 @@ public class CustomerAgent : MonoBehaviour
     public SpriteRenderer myObject;
     public bool atShop;
     public bool orderFulfilled;
+    public bool voided;
     public PatienceTimer patienceTimer;
+    public InitialWaitTimer waitTimer;
+    public GameObject myNextCustomer;
     
 
     // Start is called before the first frame update
@@ -26,9 +29,12 @@ public class CustomerAgent : MonoBehaviour
         myRB = GetComponent<Rigidbody2D>();
         dialogueTrigger = transform.GetChild(0).gameObject.GetComponent<DialogueTrigger>();
         myObject = transform.GetChild(1).GetComponent<SpriteRenderer>();
-        dialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>();
+        dialogueManager = GameObject.Find("DialogueParent").transform.GetChild(0).GetComponent<DialogueManager>();
         patienceTimer = GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>();
         patienceTimer.Duration = config.orderPatience;
+        waitTimer = GetComponent<InitialWaitTimer>();
+        waitTimer.Duration = config.waitTime;
+
 
         stateMachine = new CustomerStateMachine(this);
         stateMachine.RegisterState(new CustomerEnterState());
@@ -40,6 +46,7 @@ public class CustomerAgent : MonoBehaviour
 
         stateMachine.ChangeState(initialState);
         atShop = false;
+        voided = false;
     }
 
     // Update is called once per frame
@@ -53,12 +60,16 @@ public class CustomerAgent : MonoBehaviour
     {
         if (collision.CompareTag("ShopTrigger"))
         {
-            atShop = true;
+            if (!orderFulfilled)
+            {
+                atShop = true;
+            }
         }
 
         if (collision.CompareTag("VoidTrigger"))
         {
             stateMachine.ChangeState(CustomerStateId.Idle);
+            voided = true;
         }
     }
 }

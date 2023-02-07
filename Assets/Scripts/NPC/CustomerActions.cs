@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CustomerActions : MonoBehaviour
 {
-    public float walkSpeed = 3f;
+    /*public float walkSpeed = 3f;
     private Rigidbody2D myRB;
 
     public GameObject desiredItem;
@@ -22,20 +22,20 @@ public class CustomerActions : MonoBehaviour
     public int triggers;
     public static int relationship;
     public static int shopVisits;
-    public float patienceTime;
+    public float patienceTime;*/
     
     
 
     private void Start()
     {
-        triggers = 0;
+        /*triggers = 0;
         voidTrigger = false;
-        myRB = GetComponent<Rigidbody2D>();
+        myRB = GetComponent<Rigidbody2D>();*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.CompareTag("ShopTrigger")))
+        /*if ((collision.CompareTag("ShopTrigger")))
         {
             triggers += 1;
 
@@ -58,12 +58,12 @@ public class CustomerActions : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
-        }
+        }*/
     }
 
     private void Update()
     {
-        if (GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().shopOpen == false)
+        /*if (GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().shopOpen == false)
         {
             if (voidTrigger == false)
             {
@@ -142,11 +142,11 @@ public class CustomerActions : MonoBehaviour
                     Leave();
                 }
             }
-        }
+        }*/
 
     }
 
-    public void CorrectItem()
+    /*public void CorrectItem()
     {
         correctItem = true;
         wrongItem = false;
@@ -170,5 +170,5 @@ public class CustomerActions : MonoBehaviour
         //atShop = false;
         transform.localRotation = Quaternion.Euler(0, 180, 0);
         myRB.velocity = new Vector2(-walkSpeed, 0);
-    }
+    }*/
 }

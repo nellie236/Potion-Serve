@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3597879380395273931}
   - component: {fileID: 8178238556732815833}
   - component: {fileID: -7676765673974218585}
+  - component: {fileID: 8543616313368955695}
   m_Layer: 0
   m_Name: NPC 1
   m_TagString: NPC
@@ -142,9 +143,27 @@ MonoBehaviour:
   myRB: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueManager: {fileID: 0}
-  desiredItem: {fileID: 0}
+  desiredItem: {fileID: 1129085746926212879, guid: 43f09dae04bc5a546afb387ec530d75b, type: 3}
+  myObject: {fileID: 0}
   atShop: 0
+  orderFulfilled: 0
+  voided: 0
   patienceTimer: {fileID: 0}
+  myNextCustomer: {fileID: 0}
+--- !u!114 &8543616313368955695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597879380395273933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b731a7ce44b22146b6058d51f5f187b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  currentCustomer: {fileID: 0}
 --- !u!1 &4254159773764903493
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +259,7 @@ GameObject:
   - component: {fileID: 6046330398652999315}
   m_Layer: 0
   m_Name: DialogueTrigger
-  m_TagString: Untagged
+  m_TagString: DialogueTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,22 +318,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueParent: {fileID: 0}
   DialogueManager: {fileID: 0}
-  messages:
-  - actorId: 0
-    message: Hello! Welcome to my shop. What could I get you?
-  - actorId: 1
-    message: I need a fire potion.
-  - actorId: 0
-    message: Can do!
+  messages: []
   actors:
   - name: Player
     sprite: {fileID: 21300000, guid: a1d8f6c81bdd5844abc1557ff37cbcd5, type: 3}
   - name: Globlin
     sprite: {fileID: 21300000, guid: 7a82abd22b84316458ead82e3c37313f, type: 3}
   whichMessages: 0
-  firstMessages: []
-  acceptedMessages: []
-  deniedMessages: []
-  correctItemMessages: []
-  wrongItemMessages: []
+  firstMessages:
+  - actorId: 0
+    message: Hello! Welcome.
+  - actorId: 1
+    message: Hi. I require a fire potion.
+  - actorId: 0
+    message: ...
+  acceptedMessages:
+  - actorId: 0
+    message: Sure thing.
+  - actorId: 1
+    message: Thank you!!
+  deniedMessages:
+  - actorId: 0
+    message: No can do.
+  - actorId: 1
+    message: I won't forget this.
+  correctItemMessages:
+  - actorId: 0
+    message: Here you go
+  - actorId: 1
+    message: Perfect! Here's ya go
+  wrongItemMessages:
+  - actorId: 1
+    message: This is ridiculous. I didn't ask for this.
   canTalkToPlayer: 0
