@@ -57,7 +57,7 @@ public class PatienceTimer : MonoBehaviour
     private void OnEnd()
     {
         //call end code here
-        print("End");
+        //print("End");
         active = false;
         currentCustomer.GetComponent<CustomerAgent>().orderFulfilled = false;
         GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ourCustomer(null);

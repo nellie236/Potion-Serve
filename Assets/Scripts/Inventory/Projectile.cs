@@ -18,42 +18,53 @@ public class Projectile : MonoBehaviour
     private float baseY;
     private float height;
 
-    //private bool landed;
+    public float pickupDelay;
+    private float remainingDelay;
+    private bool canPickUp;
+    public bool thrown;
 
+    //private bool landed;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("Throw");
-        this.transform.position = target.transform.position;
+        target = player.transform.GetChild(0).gameObject;
+        ///this.transform.position = target.transform.position;
+        remainingDelay = pickupDelay;
+        canPickUp = false;
+        StartCoroutine(PickupDelay());
+        //start timer
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (!landed)
+        target = GameObject.FindGameObjectWithTag("Throw");
+        
+    }
+
+    private IEnumerator PickupDelay()
+    {
+        while (remainingDelay >= 0)
         {
-            playerX = player.transform.position.x;
-            targetX = target.transform.position.x;
-
-            dist = targetX - playerX;
-            nextX = Mathf.MoveTowards(transform.position.x, targetX, speed * Time.deltaTime);
-            baseY = Mathf.Lerp(player.transform.position.y, target.transform.position.y, (nextX - playerX) / dist);
-            //height = 2 * (nextX - playerX) * (nextX - targetX) / (-0.12f * dist * dist);
-            height = (nextX - playerX) * (nextX - targetX) / (0.25f * dist * dist);
-
-            Vector3 movePosition = new Vector3(nextX, baseY + height, transform.position.z);
-            transform.rotation = LookAtTarget(movePosition - transform.position);
-            transform.position = movePosition;
-        }*/
-
+            //Debug.Log(remainingDelay);
+            remainingDelay--;
+            yield return new WaitForSeconds(1f);
+        }
+        OnEnd();
     }
 
     /*public static Quaternion LookAtTarget(Vector2 rotation)
     {
         return Quaternion.Euler(0, 0, Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg);
     }*/
+
+    private void OnEnd()
+    {
+        canPickUp = true;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -68,11 +79,14 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Player")))
+        if (canPickUp)
         {
-            GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().Add(myItem, 1);
-            //landed = true;
-            Destroy(gameObject);
+            if ((collision.gameObject.CompareTag("Player")))
+            {
+                GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().Add(myItem, 1);
+                //landed = true;
+                Destroy(gameObject);
+            }
         }
     }
 }

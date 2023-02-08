@@ -28,6 +28,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject hotbarSelector;
     [SerializeField] private int selectedSlotIndex = 0;
     public ItemClass selectedItem;
+    public SpriteRenderer displaySelectedItem;
     
 
     public Image InventoryPanel;
@@ -36,7 +37,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-
+        displaySelectedItem = GameObject.Find("selectedItem").GetComponent<SpriteRenderer>();
         slots = new GameObject[slotHolder.transform.childCount];
         items = new SlotClass[slots.Length];
 
@@ -62,7 +63,7 @@ public class InventoryManager : MonoBehaviour
         RefreshUI();
 
         //Remove(itemToRemove);
-        Add(itemToAdd, 1);
+        //Add(itemToAdd, 1);
 
         InventoryPanel.gameObject.SetActive(false);
         inventoryOn = false; 
@@ -123,10 +124,14 @@ public class InventoryManager : MonoBehaviour
                 return;
             }
             else if (selectedItem.throwablePrefab != null) 
-            { 
-                SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+            {
+                // SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+                SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length * 3)];
 
-                Instantiate(selectedItem.throwablePrefab);
+                GameObject thrownItem = Instantiate(selectedItem.throwablePrefab, GameObject.Find("Player").transform.GetChild(0).transform) as GameObject;
+                thrownItem.transform.parent = null;
+                
+                //thrownItem.GetComponent<Projectile>().thrown = true;
 
                 if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == true)
                 {
@@ -140,6 +145,8 @@ public class InventoryManager : MonoBehaviour
                     facingLeft = true;
                 }
 
+                //thrownItem.GetComponent<Projectile>().target.transform.position = thrownItem.transform.position;
+
                 if (selectedSlot.GetQuantity() >= 1)
                 {
                     selectedSlot.SubQuantity(1);
@@ -151,10 +158,22 @@ public class InventoryManager : MonoBehaviour
                 }
 
                 RefreshUI();
+                //thrownItem.GetComponent<Projectile>().thrown = false;
             }
             //experimenting here with throwing item
             
         }
+
+        
+        if (selectedItem != null)
+        {
+            displaySelectedItem.sprite = selectedItem.GetItem().itemIcon;
+        }
+        else if (selectedItem == null)
+        {
+            displaySelectedItem.sprite = null;
+        }
+
     }
 
     public void GiveCustomerDesired(ItemClass desired, GameObject currentCustomer)

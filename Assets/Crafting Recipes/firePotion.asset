@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a2b492252c1bb4e8145f7627f4713a, type: 3}
+  m_Name: firePotion
+  m_EditorClassIdentifier: 
+  Ingredients:
+  - {fileID: 11400000, guid: 9932de7bf47b4864a9a55e58d967b8b1, type: 2}
+  - {fileID: 11400000, guid: d2081ebc28de9734ba35e8f14ca37a92, type: 2}
+  Results:
+  - {fileID: 11400000, guid: dd4cf72d7a6e05940868c82d70660e07, type: 2}

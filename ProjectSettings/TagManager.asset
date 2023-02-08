@@ -66,6 +66,9 @@ TagManager:
   - name: Player
     uniqueID: 502090737
     locked: 0
+  - name: HeldItems
+    uniqueID: 660855193
+    locked: 0
   - name: Above
     uniqueID: 1473153373
     locked: 0

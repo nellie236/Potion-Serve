@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6bb99094e0c07a54bbae1d880a4e3e4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   target: {fileID: 0}
   myItem: {fileID: 11400000, guid: f7d4bce973a07674aa354f92fb9f125f, type: 2}
   speed: 10
+  pickupDelay: 1
 --- !u!50 &1855741446990786871
 Rigidbody2D:
   serializedVersion: 4
