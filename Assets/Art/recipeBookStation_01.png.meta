@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 7eae564995fe1274dbf2576392b29c82
+guid: 05fdf5bd893709948b1a2bf6516c637e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4422628372843590163
-    second: tilemap_platform_test_0
+      213: 6684208367245604348
+    second: recipeBookStation_01_0
   - first:
-      213: 4661405826641139866
-    second: tilemap_platform_test_1
+      213: -5610506150085383434
+    second: recipeBookStation_01_1
   - first:
-      213: -5405641481799521600
-    second: tilemap_platform_test_2
+      213: 5524883122481595467
+    second: recipeBookStation_01_2
   - first:
-      213: 630186583311880938
-    second: tilemap_platform_test_3
+      213: 2329715273343408218
+    second: recipeBookStation_01_3
   - first:
-      213: 2016734210922828477
-    second: tilemap_platform_test_4
+      213: -704688152100500416
+    second: recipeBookStation_01_4
   - first:
-      213: -4381480444005982024
-    second: tilemap_platform_test_5
-  - first:
-      213: 8972355859470830581
-    second: tilemap_platform_test_6
-  - first:
-      213: -8808809501938863073
-    second: tilemap_platform_test_7
-  - first:
-      213: -2915064722821395709
-    second: tilemap_platform_test_8
+      213: -6848104174625708080
+    second: recipeBookStation_01_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,190 +145,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tilemap_platform_test_0
+      name: recipeBookStation_01_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 112
-        width: 8
-        height: 8
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 312f7e0b215506d30800000000000000
-      internalID: 4422628372843590163
+      spriteID: cf53e56781413cc50800000000000000
+      internalID: 6684208367245604348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_platform_test_1
+      name: recipeBookStation_01_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 112
-        width: 8
-        height: 8
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9891e2f6e3a0b040800000000000000
-      internalID: 4661405826641139866
+      spriteID: 6fa240ad16a7322b0800000000000000
+      internalID: -5610506150085383434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_platform_test_2
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 112
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ca293e66bd4bf4b0800000000000000
-      internalID: -5405641481799521600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilemap_platform_test_3
+      name: recipeBookStation_01_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 112
-        width: 8
-        height: 8
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae29580db5fdeb800800000000000000
-      internalID: 630186583311880938
+      spriteID: b4401158de35cac40800000000000000
+      internalID: 5524883122481595467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_platform_test_4
+      name: recipeBookStation_01_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 96
-        width: 8
-        height: 8
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db2de686411ecfb10800000000000000
-      internalID: 2016734210922828477
+      spriteID: a589f6f92bfc45020800000000000000
+      internalID: 2329715273343408218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_platform_test_5
+      name: recipeBookStation_01_4
       rect:
         serializedVersion: 2
-        x: 24
-        y: 96
-        width: 8
-        height: 8
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b0e3b010cad133c0800000000000000
-      internalID: -4381480444005982024
+      spriteID: 04c8f98fbd17836f0800000000000000
+      internalID: -704688152100500416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_platform_test_6
+      name: recipeBookStation_01_5
       rect:
         serializedVersion: 2
-        x: 8
-        y: 88
-        width: 8
-        height: 8
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fb472add16348c70800000000000000
-      internalID: 8972355859470830581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilemap_platform_test_7
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 88
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1439d6dd62d0c580800000000000000
-      internalID: -8808809501938863073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tilemap_platform_test_8
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 80
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30b45fa441c9b87d0800000000000000
-      internalID: -2915064722821395709
+      spriteID: 0d7a0963985a6f0a0800000000000000
+      internalID: -6848104174625708080
       vertices: []
       indices: 
       edges: []

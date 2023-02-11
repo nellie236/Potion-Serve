@@ -27,6 +27,7 @@ public class CustomerOrderInProgressState : CustomerState
         if (agent.orderFulfilled)
         {
             agent.dialogueManager.orderSuccess();
+            agent.coinManager.AddCoins(agent.config.coinAmount);
             agent.stateMachine.ChangeState(CustomerStateId.Exit);
         }
 

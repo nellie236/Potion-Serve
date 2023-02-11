@@ -12,6 +12,7 @@ public class CustomerAgent : MonoBehaviour
     public Rigidbody2D myRB;
     public DialogueTrigger dialogueTrigger;
     public DialogueManager dialogueManager;
+    public CoinManager coinManager;
     public GameObject desiredItem;
     public SpriteRenderer myObject;
     public bool atShop;
@@ -30,6 +31,7 @@ public class CustomerAgent : MonoBehaviour
         dialogueTrigger = transform.GetChild(0).gameObject.GetComponent<DialogueTrigger>();
         myObject = transform.GetChild(1).GetComponent<SpriteRenderer>();
         dialogueManager = GameObject.Find("DialogueParent").transform.GetChild(0).GetComponent<DialogueManager>();
+        coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
         patienceTimer = GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>();
         patienceTimer.Duration = config.orderPatience;
         waitTimer = GetComponent<InitialWaitTimer>();
