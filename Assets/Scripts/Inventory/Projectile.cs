@@ -32,8 +32,16 @@ public class Projectile : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Throw");
         target = player.transform.GetChild(0).gameObject;
         ///this.transform.position = target.transform.position;
+        
+        if (gameObject.tag == "Potion")
+        {
+            remainingDelay = remainingDelay / 2;
+        }
+        else
+        {
+            canPickUp = false;
+        }
         remainingDelay = pickupDelay;
-        canPickUp = false;
         StartCoroutine(PickupDelay());
         //start timer
     }

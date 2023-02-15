@@ -62,7 +62,7 @@ public class CustomerManager : MonoBehaviour
             {
                 //spawn new customer
                 int randomCustomer = Random.Range(0, allCustomers.Count);
-                Vector3 whereToSpawn = new Vector3(-10, -2, 0);
+                Vector3 whereToSpawn = new Vector3(-10, -1, 0);
                 Instantiate(allCustomers[randomCustomer], whereToSpawn, allCustomers[randomCustomer].transform.rotation);
             }
         }

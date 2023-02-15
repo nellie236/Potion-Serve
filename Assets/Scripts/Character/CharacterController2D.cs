@@ -94,6 +94,11 @@ public class CharacterController2D : MonoBehaviour
             return;
         }
 
+        if (GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>().bookOpen)
+        {
+            return;
+        }
+
         // Movement controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
         {

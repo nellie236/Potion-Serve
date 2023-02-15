@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: Empty Bottle
   itemIcon: {fileID: 21300000, guid: 5635a3f1201330547a871a629c9be1a4, type: 3}
   isStackable: 0
-  throwablePrefab: {fileID: 0}
+  throwablePrefab: {fileID: 1129085746926212879, guid: 4f47cbf2cae2eb448bc750d0ecc38fe9, type: 3}
   isUsed: 0
