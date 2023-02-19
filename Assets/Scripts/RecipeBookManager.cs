@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class RecipeBookManager : MonoBehaviour
 {
-    public List<Image> RecipePages;
+    //public List<Image> RecipePages;
+    public List<GameObject> recipePages;
+    public int currentPage;
     public GameObject recipeBookParent;
     public bool canAccessBook;
     public bool bookOpen;
@@ -14,7 +16,9 @@ public class RecipeBookManager : MonoBehaviour
     {
         canAccessBook = false;
         bookOpen = false;
+        TurnOffAll();
         recipeBookParent.SetActive(false);
+        currentPage = 0;
     }
 
     // Update is called once per frame
@@ -26,6 +30,14 @@ public class RecipeBookManager : MonoBehaviour
             {
                 OpenCloseBook();
             }
+        }
+    }
+
+    public void TurnOffAll()
+    {
+        foreach (GameObject obj in recipePages)
+        {
+            obj.SetActive(false);
         }
     }
 
@@ -52,6 +64,7 @@ public class RecipeBookManager : MonoBehaviour
         {
             Time.timeScale = 0;
             recipeBookParent.SetActive(true);
+            recipePages[currentPage].SetActive(true);
             bookOpen = true;
         }
         else if (recipeBookParent.activeInHierarchy)
@@ -59,6 +72,26 @@ public class RecipeBookManager : MonoBehaviour
             Time.timeScale = 1;
             recipeBookParent.SetActive(false);
             bookOpen = false;
+        }
+    }
+
+    public void NextPage()
+    {
+        if (currentPage + 1 != recipePages.Count)
+        {
+            recipePages[currentPage].SetActive(false);
+            currentPage++;
+            recipePages[currentPage].SetActive(true);
+        }
+    }
+
+    public void PreviousPage()
+    {
+        if (currentPage != 0)
+        {
+            recipePages[currentPage].SetActive(false);
+            currentPage--;
+            recipePages[currentPage].SetActive(true);
         }
     }
 }

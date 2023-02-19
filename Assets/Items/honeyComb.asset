@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e33333b92804bbe48be7c811fd14b831, type: 3}
-  m_Name: earthEmber
+  m_Name: honeyComb
   m_EditorClassIdentifier: 
-  itemName: Earth Ember
-  itemIcon: {fileID: 21300000, guid: f8aec8cbd135807488086e3d3819c3cc, type: 3}
+  itemName: Honeycomb
+  itemIcon: {fileID: 21300000, guid: 3f7d113740ef4d440a885a789810247a, type: 3}
   isStackable: 0
-  throwablePrefab: {fileID: 1129085746926212879, guid: 61d98714f4826d54b801f9824f535d40, type: 3}
+  throwablePrefab: {fileID: 1129085746926212879, guid: e9c3b1cf6330a944bafc5a1824e3218e, type: 3}
   inPot: 0
