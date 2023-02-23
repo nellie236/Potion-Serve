@@ -68,4 +68,9 @@ public class CustomerManager : MonoBehaviour
         }
         
     }
+
+    public void AddCustomer(GameObject customer)
+    {
+        allCustomers.Add(customer);
+    }
 }
