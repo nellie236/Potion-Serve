@@ -28,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
     public bool leverTrigger;
     public bool canGiveItem;
     public GameObject currentCustomer;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -89,6 +89,7 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (dialogueManager.isActive == true)
         {
             return;

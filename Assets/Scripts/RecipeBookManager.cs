@@ -11,6 +11,9 @@ public class RecipeBookManager : MonoBehaviour
     public GameObject recipeBookParent;
     public bool canAccessBook;
     public bool bookOpen;
+
+    public Button nextPage;
+    public Button previousPage;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,27 @@ public class RecipeBookManager : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.R))
             {
                 OpenCloseBook();
+            }
+        }
+
+        if (bookOpen)
+        {
+            if (currentPage == 0)
+            {
+                previousPage.gameObject.SetActive(false);
+            }
+            else
+            {
+                previousPage.gameObject.SetActive(true);
+            }
+
+            if (currentPage + 1 == recipePages.Count)
+            {
+                nextPage.gameObject.SetActive(false);
+            }
+            else
+            {
+                nextPage.gameObject.SetActive(true);
             }
         }
     }
