@@ -9,6 +9,8 @@ public class CustomerEnterState : CustomerState
     public void Enter(CustomerAgent agent)
     {
         //agent.dialogueTrigger.whichMessages = 0;
+        string payment = agent.config.coinAmount.ToString();
+        agent.dialogueManager.coinPaymentAmount.text = payment;
     }
 
     public void Exit(CustomerAgent agent)

@@ -9,12 +9,12 @@ public class CoinManager : MonoBehaviour
     public Text coinDisplay;
     void Start()
     {
-        coinDisplay.text = "Coins: " + coinCount;
+        coinDisplay.text = "" + coinCount;
     }
 
     private void Update()
     {
-        coinDisplay.text = "Coins: " + coinCount;
+        coinDisplay.text = "" + coinCount;
     }
 
     public void AddCoins(int coinAmount)

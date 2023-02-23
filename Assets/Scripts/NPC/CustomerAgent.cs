@@ -36,6 +36,7 @@ public class CustomerAgent : MonoBehaviour
         patienceTimer.Duration = config.orderPatience;
         waitTimer = GetComponent<InitialWaitTimer>();
         waitTimer.Duration = config.waitTime;
+        //dialogueManager.coinPaymentAmount.text = config.coinAmount.ToString();
 
 
         stateMachine = new CustomerStateMachine(this);

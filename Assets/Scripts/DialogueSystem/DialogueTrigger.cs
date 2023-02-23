@@ -34,6 +34,8 @@ public class DialogueTrigger : MonoBehaviour
         //DialogueManager = GameObject.Find("DialogueBox");
         DialogueManager.GetComponent<DialogueManager>().OpenDialogue(messages, actors);
         DialogueManager.GetComponent<DialogueManager>().currentCustomer = this.gameObject;
+        //DialogueManager.GetComponent<DialogueManager>().coinAmount = this.transform.parent.GetComponent<CustomerAgent>().config.coinAmount;
+        //DialogueManager.GetComponent<DialogueManager>().coinPaymentAmount.text = this.transform.parent.GetComponent<CustomerAgent>().config.coinAmount.ToString();
         //GetComponentInParent<CustomerActions>().spokenTo = true;
     }
 

@@ -28,7 +28,10 @@ public class CharacterController2D : MonoBehaviour
     public bool leverTrigger;
     public bool canGiveItem;
     public GameObject currentCustomer;
-    
+
+
+    public KeyCode ToggleShop;
+    public KeyCode GiveItem;
     // Use this for initialization
     void Start()
     {
@@ -155,7 +158,7 @@ public class CharacterController2D : MonoBehaviour
             mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 1, cameraPos.z);
         }
 
-        if ((leverTrigger == true) && (Input.GetKeyUp(KeyCode.N)))
+        if ((leverTrigger == true) && (Input.GetKeyUp(ToggleShop)))
         {
             //hitLever = !hitLever;
             //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
@@ -163,7 +166,7 @@ public class CharacterController2D : MonoBehaviour
             GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().SwitchOpenClose();
         }
 
-        if ((canGiveItem && currentCustomer != null) && (Input.GetKey(KeyCode.G)))
+        if ((canGiveItem && currentCustomer != null) && (Input.GetKey(GiveItem)))
         {
             inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
             currentCustomer.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<SpriteRenderer>().sprite;

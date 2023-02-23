@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     public Text messageText;
     public Image dialogueBox;
     public GameObject acceptDenyChoice;
+    //public int coinAmount;
+    public Text coinPaymentAmount;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -51,6 +53,7 @@ public class DialogueManager : MonoBehaviour
         activeMessage = 0;
         isActive = true;
         Debug.Log("Started Conversation! Loaded messages: " + messages.Length);
+        //coinPaymentAmount.text = currentCustomer.transform.parent.GetComponent<CustomerAgent>().config.coinAmount.ToString();
         DisplayMessage();
     }
 

@@ -14,6 +14,8 @@ public class RecipeBookManager : MonoBehaviour
 
     public Button nextPage;
     public Button previousPage;
+
+    public KeyCode ToggleRecipeBook;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class RecipeBookManager : MonoBehaviour
     {
         if (canAccessBook)
         {
-            if (Input.GetKeyUp(KeyCode.R))
+            if (Input.GetKeyUp(ToggleRecipeBook))
             {
                 OpenCloseBook();
             }

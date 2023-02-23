@@ -333,6 +333,8 @@ MonoBehaviour:
   leverTrigger: 0
   canGiveItem: 0
   currentCustomer: {fileID: 0}
+  ToggleShop: 323
+  GiveItem: 103
 --- !u!95 &1174610942
 Animator:
   serializedVersion: 3
