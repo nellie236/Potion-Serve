@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7676765673974218585}
   - component: {fileID: 8543616313368955695}
   m_Layer: 0
-  m_Name: NPC 3
+  m_Name: NPC 5
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 010eb9625819be446af8c1019645a711, type: 3}
-  m_Color: {r: 1, g: 0.93944067, b: 0.93773586, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 570e72acf214d7549bf2e71dac5fb873, type: 3}
+  m_Color: {r: 0.15471691, g: 0.26706892, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.061934143, y: -0.08224547}
-  m_Size: {x: 0.54714984, y: 1.7878249}
+  m_Offset: {x: -0.012986094, y: -0.08224547}
+  m_Size: {x: 0.64504594, y: 1.7878249}
   m_Direction: 0
 --- !u!114 &-7676765673974218585
 MonoBehaviour:
@@ -139,12 +139,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialState: 0
   inProgState: 0
-  config: {fileID: 11400000, guid: 3e1677b5d69c17f4b8018befdee26413, type: 2}
+  config: {fileID: 11400000, guid: 5a33d4388161e83418a0d3f692a6e906, type: 2}
   myRB: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueManager: {fileID: 0}
   coinManager: {fileID: 0}
-  desiredItem: {fileID: 1129085746926212879, guid: 4f47cbf2cae2eb448bc750d0ecc38fe9, type: 3}
+  desiredItem: {fileID: 1129085746926212879, guid: a612c6d8ec84a9c438ab3c15f383ff61, type: 3}
   myObject: {fileID: 0}
   atShop: 0
   orderFulfilled: 0
@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4254159773764903493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.272, z: 0}
+  m_LocalPosition: {x: 0.45, y: -0.272, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 3597879380395273932}
@@ -329,30 +329,30 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 7a82abd22b84316458ead82e3c37313f, type: 3}
   - name: Wizard
     sprite: {fileID: 21300000, guid: 570e72acf214d7549bf2e71dac5fb873, type: 3}
-  - name: Carrot Top
-    sprite: {fileID: 21300000, guid: 010eb9625819be446af8c1019645a711, type: 3}
   whichMessages: 0
   firstMessages:
-  - actorId: 3
-    message: I would like a health potion!
+  - actorId: 2
+    message: Hello!
+  - actorId: 2
+    message: Frost potion please
   - actorId: 0
     message: ...
   acceptedMessages:
   - actorId: 0
     message: Sure thing.
-  - actorId: 3
-    message: Cool.
+  - actorId: 2
+    message: Ok thanks
   deniedMessages:
   - actorId: 0
     message: No can do.
-  - actorId: 3
+  - actorId: 2
     message: I'll be back later!
   correctItemMessages:
   - actorId: 0
     message: Here you go
-  - actorId: 3
-    message: Thanks.
+  - actorId: 2
+    message: Perfect
   wrongItemMessages:
-  - actorId: 3
+  - actorId: 2
     message: What?
   canTalkToPlayer: 0

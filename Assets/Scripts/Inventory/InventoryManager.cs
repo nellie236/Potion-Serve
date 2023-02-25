@@ -180,7 +180,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+            //SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+            SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length * 3)];
             if (selectedItem == desired)
             {
                 currentCustomer.GetComponent<CustomerAgent>().orderFulfilled = true;

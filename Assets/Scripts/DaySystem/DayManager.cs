@@ -21,6 +21,7 @@ public class DayManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         ppv = GameObject.Find("Global Volume").GetComponent<Volume>();
         dayDisplayCount.text = "Day " + dayCount;
     }

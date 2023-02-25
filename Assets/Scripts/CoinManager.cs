@@ -13,6 +13,7 @@ public class CoinManager : MonoBehaviour
     public GameObject frostButton;
     public GameObject frostDispenser;
     public GameObject frostCustomer;
+    public GameObject difficultFrostCustomer;
     public GameObject unlockHealth;
     public GameObject healthButton;
     public GameObject healthDispenser1;
@@ -55,6 +56,7 @@ public class CoinManager : MonoBehaviour
             unlockFrost.SetActive(true);
             frostDispenser.SetActive(true);
             GameObject.Find("CustomerManager").GetComponent<CustomerManager>().AddCustomer(frostCustomer);
+            GameObject.Find("CustomerManager").GetComponent<CustomerManager>().AddCustomer(difficultFrostCustomer);
             RemoveCoins(frostRecipeCost);
             Destroy(frostButton);
         }

@@ -16,6 +16,15 @@ public class CharacterController2D : MonoBehaviour
     public bool facingRight = false;
     float moveDirection = 0;
     bool isGrounded = false;
+
+    public float coyoteTime = 0.2f;
+    float coyoteTimeCounter;
+
+    public float jumpBufferTime = 0.2f;
+    float jumpBufferCounter;
+
+
+
     Vector3 cameraPos;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
@@ -122,6 +131,8 @@ public class CharacterController2D : MonoBehaviour
                 moveDirection = 0;
                 anim.SetBool("moving", false);
             }
+
+            
         }
 
         anim.SetBool("grounded", isGrounded);
@@ -147,9 +158,36 @@ public class CharacterController2D : MonoBehaviour
         }
 
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (coyoteTimeCounter > 0 && jumpBufferCounter > 0f)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+
+            jumpBufferCounter = 0f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) && r2d.velocity.y > 0f)
+        {
+            r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y * 0.5f);
+
+            coyoteTimeCounter = 0f;
         }
 
         // Camera follow
@@ -166,10 +204,13 @@ public class CharacterController2D : MonoBehaviour
             GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().SwitchOpenClose();
         }
 
-        if ((canGiveItem && currentCustomer != null) && (Input.GetKey(GiveItem)))
+        if ((canGiveItem && currentCustomer != null && currentCustomer.GetComponent<CustomerAgent>().inProgState == CustomerStateId.OrderInProgress) && (Input.GetKey(GiveItem)))
         {
-            inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
-            currentCustomer.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<SpriteRenderer>().sprite;
+            if (inventoryManager.selectedItem.throwablePrefab == currentCustomer.GetComponent<CustomerAgent>().desiredItem)
+            {
+                inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
+                currentCustomer.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<SpriteRenderer>().sprite;
+            }
             //also play animation of customer "grabbing potion"
             //turn on sprite for customer, look like customer is holding potion
         }
