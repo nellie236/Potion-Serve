@@ -23,11 +23,15 @@ public class Projectile : MonoBehaviour
     private bool canPickUp;
     public bool thrown;
 
+    public float expireTimer;
+    private float remainingExpire;
+
     //private bool landed;
 
     // Start is called before the first frame update
     void Start()
     {
+        expireTimer = 30f;
         player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("Throw");
         target = player.transform.GetChild(0).gameObject;
@@ -41,8 +45,15 @@ public class Projectile : MonoBehaviour
         {
             canPickUp = false;
         }
+
+        remainingExpire = expireTimer;
         remainingDelay = pickupDelay;
         StartCoroutine(PickupDelay());
+
+        if (gameObject.tag == "Ingredient")
+        {
+            StartCoroutine(ExpireTimer());
+        }
         //start timer
     }
 
@@ -62,6 +73,17 @@ public class Projectile : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         OnEnd();
+    }
+
+    private IEnumerator ExpireTimer()
+    {
+        while (remainingExpire >= 0)
+        {
+            //Debug.Log(remainingDelay);
+            remainingExpire--;
+            yield return new WaitForSeconds(1f);
+        }
+        Destroy(this.gameObject);
     }
 
     /*public static Quaternion LookAtTarget(Vector2 rotation)

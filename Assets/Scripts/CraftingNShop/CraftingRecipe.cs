@@ -35,17 +35,36 @@ public class CraftingRecipe : ScriptableObject
         {
             foreach (ItemClass item in Results)
             {
-                Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform.position, brewManager.spawnPoint.transform.rotation);
+                GameObject result = Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform.position, brewManager.spawnPoint.transform.rotation);
+                result.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10;
+                
+                
+                
             }
 
-            for (int p = 0; p < brewManager.potGameObjects.Count; p++)
-            {
-                for (int i = 0; i < Ingredients.Count; i++)
+            
+            /*{
+                for (int p = 0; p < brewManager.potGameObjects.Count; p++)
                 {
-                    if (brewManager.potGameObjects[p].GetComponent<Projectile>().myItem == Ingredients[i])
+                    for (int i = 0; i < Ingredients.Count; i++)
                     {
-                        Destroy(brewManager.potGameObjects[p]);
-                        //brewManager.potGameObjects.Remove(brewManager.potGameObjects[p]);
+                        if (brewManager.potGameObjects[p].GetComponent<Projectile>().myItem == Ingredients[i])
+                        {
+                            Debug.Log("Deleting + " + Ingredients[i] + "which is equal to = " + brewManager.potGameObjects[p]);
+                            Destroy(brewManager.potGameObjects[p]);
+                        }
+                    }
+                }
+            }*/
+
+            for (int i = 0; i < Ingredients.Count; i++)
+            {
+                foreach (GameObject gameObject in brewManager.potGameObjects)
+                {
+                    if (gameObject.GetComponent<Projectile>().myItem == Ingredients[i])
+                    {
+                        Destroy(gameObject);
+                        break;
                     }
                 }
             }
@@ -54,6 +73,14 @@ public class CraftingRecipe : ScriptableObject
             {
                 brewManager.potItems.Remove(item);
             }
+
+            /*if (brewManager.potGameObjects.Count != 0)
+            {
+                foreach (GameObject gameObject in brewManager.potGameObjects)
+                {
+                    Destroy(gameObject);
+                }
+            }*/
         }
     }
 
@@ -96,7 +123,7 @@ public class CraftingRecipe : ScriptableObject
             }
         }
 
-        if (overLap.Count == recipeItems.Count)
+        if (overLap.Count == recipeItems.Count && overLap.Count == cauldronItems.Count)
         {
             //sameList = true;
             Debug.Log("returning true");
