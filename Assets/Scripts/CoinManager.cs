@@ -12,13 +12,10 @@ public class CoinManager : MonoBehaviour
     public GameObject unlockFrost;
     public GameObject frostButton;
     public GameObject frostDispenser;
-    public GameObject frostCustomer;
-    public GameObject difficultFrostCustomer;
     public GameObject unlockHealth;
     public GameObject healthButton;
     public GameObject healthDispenser1;
     public GameObject healthDispenser2;
-    public GameObject healthCustomer;
     private void Awake()
     {
         frostDispenser.SetActive(false);
@@ -55,8 +52,6 @@ public class CoinManager : MonoBehaviour
         {
             unlockFrost.SetActive(true);
             frostDispenser.SetActive(true);
-            GameObject.Find("CustomerManager").GetComponent<CustomerManager>().AddCustomer(frostCustomer);
-            GameObject.Find("CustomerManager").GetComponent<CustomerManager>().AddCustomer(difficultFrostCustomer);
             RemoveCoins(frostRecipeCost);
             Destroy(frostButton);
         }
@@ -69,7 +64,6 @@ public class CoinManager : MonoBehaviour
             unlockHealth.SetActive(true);
             healthDispenser1.SetActive(true);
             healthDispenser2.SetActive(true);
-            GameObject.Find("CustomerManager").GetComponent<CustomerManager>().AddCustomer(healthCustomer);
             RemoveCoins(healthRecipeCost);
             Destroy(healthButton);
         }

@@ -25,12 +25,17 @@ public class Projectile : MonoBehaviour
 
     public float expireTimer;
     private float remainingExpire;
+    public bool canExpire;
 
+    public float outBoundsTimer;
+    private float remainingOutBounds;
     //private bool landed;
 
     // Start is called before the first frame update
     void Start()
     {
+        outBoundsTimer = 3f;
+        remainingOutBounds = outBoundsTimer;
         expireTimer = 30f;
         player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("Throw");
@@ -40,6 +45,7 @@ public class Projectile : MonoBehaviour
         if (gameObject.tag == "Potion")
         {
             remainingDelay = remainingDelay / 2;
+            canExpire = false;
         }
         else
         {
@@ -52,6 +58,7 @@ public class Projectile : MonoBehaviour
 
         if (gameObject.tag == "Ingredient")
         {
+            canExpire = true;
             StartCoroutine(ExpireTimer());
         }
         //start timer
@@ -71,6 +78,7 @@ public class Projectile : MonoBehaviour
             //Debug.Log(remainingDelay);
             remainingDelay--;
             yield return new WaitForSeconds(1f);
+            
         }
         OnEnd();
     }
@@ -79,32 +87,56 @@ public class Projectile : MonoBehaviour
     {
         while (remainingExpire >= 0)
         {
+            if (!canExpire)
+            {
+                break;
+            }
             //Debug.Log(remainingDelay);
             remainingExpire--;
             yield return new WaitForSeconds(1f);
         }
-        Destroy(this.gameObject);
+        if (canExpire)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    /*public static Quaternion LookAtTarget(Vector2 rotation)
+    private IEnumerator OutOfBounds()
     {
-        return Quaternion.Euler(0, 0, Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg);
-    }*/
+        while (remainingOutBounds >= 0)
+        {
+            remainingOutBounds--;
+            yield return new WaitForSeconds(1f);
+        }
+        GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().Add(myItem, 1);
+        Destroy(gameObject);
+    }
 
     private void OnEnd()
     {
         canPickUp = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //onGround = true;
-
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.tag == "ItemDispenser")
         {
-            //landed = true;
+            canExpire = false;
         }
 
+        if (collision.tag == "OutBounds")
+        {
+            StartCoroutine(OutOfBounds());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "ItemDispenser")
+        {
+            canExpire = true;
+            StartCoroutine(ExpireTimer());
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

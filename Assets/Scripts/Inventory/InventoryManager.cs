@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
     
 
     public Image InventoryPanel;
-    bool inventoryOn;
+    public bool inventoryOn;
     public bool facingLeft;
 
     private void Start()
@@ -108,13 +108,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
-        selectedItem = items[selectedSlotIndex + (hotbarSlots.Length * 3)].GetItem();
-
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SwitchInventory();
-        }
+        selectedItem = items[selectedSlotIndex + (hotbarSlots.Length)].GetItem();
 
         //throw item
         if ((Input.GetKeyDown(KeyCode.Q)) && (selectedItem != null))
@@ -126,7 +120,7 @@ public class InventoryManager : MonoBehaviour
             else if (selectedItem.throwablePrefab != null) 
             {
                 // SlotClass selectedSlot = ContainsInHotbar(selectedItem);
-                SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length * 3)];
+                SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length )];
 
                 GameObject thrownItem = Instantiate(selectedItem.throwablePrefab, GameObject.Find("Player").transform.GetChild(0).transform) as GameObject;
                 thrownItem.transform.parent = null;
@@ -181,7 +175,7 @@ public class InventoryManager : MonoBehaviour
         if (selectedItem != null)
         {
             //SlotClass selectedSlot = ContainsInHotbar(selectedItem);
-            SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length * 3)];
+            SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length )];
             if (selectedItem == desired)
             {
                 currentCustomer.GetComponent<CustomerAgent>().orderFulfilled = true;
@@ -242,9 +236,9 @@ public class InventoryManager : MonoBehaviour
             try
             {
                 hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i + (hotbarSlots.Length * 3)].GetItem().itemIcon;
-                if (items[i + (hotbarSlots.Length * 3)].GetItem().isStackable)
-                    hotbarSlots[i].transform.GetChild(1).GetComponent<Text>().text = items[i + (hotbarSlots.Length * 3)].GetQuantity() + "";
+                hotbarSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i + (hotbarSlots.Length )].GetItem().itemIcon;
+                if (items[i + (hotbarSlots.Length )].GetItem().isStackable)
+                    hotbarSlots[i].transform.GetChild(1).GetComponent<Text>().text = items[i + (hotbarSlots.Length )].GetQuantity() + "";
                 else
                     hotbarSlots[i].transform.GetChild(1).GetComponent<Text>().text = "";
                 

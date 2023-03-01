@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1817147160536365901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817147160536365903}
+  - component: {fileID: 1817147160536365902}
+  m_Layer: 0
+  m_Name: InventoryManagerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817147160536365903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817147160536365901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817147160536365902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817147160536365901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed4a37a2d696494ba0d40f83cdec349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCursor: {fileID: 0}
+  slotHolder: {fileID: 0}
+  hotbarSlotHolder: {fileID: 0}
+  itemToAdd: {fileID: 0}
+  itemToRemove: {fileID: 0}
+  startingItems:
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 24d8daf1c65523445be1e9fbf849988a, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: d2081ebc28de9734ba35e8f14ca37a92, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 09224ffe43efc054f9f80a7f16e0940b, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 24d8daf1c65523445be1e9fbf849988a, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 9932de7bf47b4864a9a55e58d967b8b1, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: f85815b8c575a7e47a64ee46a3d78d83, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: d2081ebc28de9734ba35e8f14ca37a92, type: 2}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 09224ffe43efc054f9f80a7f16e0940b, type: 2}
+    quantity: 0
+  hotbarSelector: {fileID: 0}
+  selectedSlotIndex: 0
+  selectedItem: {fileID: 0}
+  displaySelectedItem: {fileID: 0}
+  InventoryPanel: {fileID: 0}
+  facingLeft: 0

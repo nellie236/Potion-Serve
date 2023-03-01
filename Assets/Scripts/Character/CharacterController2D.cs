@@ -102,13 +102,12 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
 
-        if (dialogueManager.isActive == true)
+        if (dialogueManager.isActive == true || GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>().bookOpen)
         {
-            return;
-        }
-
-        if (GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>().bookOpen)
-        {
+            if (inventoryManager.inventoryOn == true)
+            {
+                inventoryManager.SwitchInventory();
+            }
             return;
         }
 
@@ -202,6 +201,11 @@ public class CharacterController2D : MonoBehaviour
             //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
             //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
             GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().SwitchOpenClose();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryManager.SwitchInventory();
         }
 
         if ((canGiveItem && currentCustomer != null && currentCustomer.GetComponent<CustomerAgent>().inProgState == CustomerStateId.OrderInProgress) && (Input.GetKey(GiveItem)))

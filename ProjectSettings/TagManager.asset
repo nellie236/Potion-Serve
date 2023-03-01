@@ -15,8 +15,9 @@ TagManager:
   - DialogueManager
   - Potion
   - Ingredient
-  - firePotion
   - Craft
+  - ItemDispenser
+  - OutBounds
   layers:
   - Default
   - TransparentFX
