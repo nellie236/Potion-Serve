@@ -52,6 +52,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: EBackground
+    uniqueID: 839445207
+    locked: 0
+  - name: EMidground
+    uniqueID: 395565349
+    locked: 0
+  - name: EForeground
+    uniqueID: 571481819
+    locked: 0
   - name: Background
     uniqueID: 3030843913
     locked: 0

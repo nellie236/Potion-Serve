@@ -35,6 +35,8 @@ public class InventoryManager : MonoBehaviour
     public bool inventoryOn;
     public bool facingLeft;
 
+    public bool inventoryFull;
+
     private void Start()
     {
         displaySelectedItem = GameObject.Find("selectedItem").GetComponent<SpriteRenderer>();
@@ -193,6 +195,10 @@ public class InventoryManager : MonoBehaviour
             case true:
                 InventoryPanel.gameObject.SetActive(false);
                 inventoryOn = false;
+                if (isMovingItem)
+                {
+                    EndItemMove();
+                }
                 break;
             case false:
                 InventoryPanel.gameObject.SetActive(true);
@@ -204,7 +210,7 @@ public class InventoryManager : MonoBehaviour
     #region Inventory Utils
     public void RefreshUI()
     {
-
+        int filledSlots = 0;
         for (int i = 0; i < slots.Length; i++)
         {
             try
@@ -222,9 +228,26 @@ public class InventoryManager : MonoBehaviour
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
             }
+
+            int slotTotal = slots.Length;
+            
+            if (slots[i].transform.GetChild(0).GetComponent<Image>().sprite != null)
+            {
+                filledSlots++; 
+            }
+
+            if (filledSlots == slotTotal)
+            {
+                inventoryFull = true;
+            }
+            else if (filledSlots != slotTotal)
+            {
+                inventoryFull = false;
+            }
         }
 
-        
+        //Debug.Log(filledSlots);
+
 
         RefreshHotbar();
     }
@@ -271,8 +294,9 @@ public class InventoryManager : MonoBehaviour
                 }
             }*/
 
-            for (int i = items.Length - 1; i > 0; i--)
+            for (int i = items.Length - 1; i > -1; i--)
             {
+                //Debug.Log("Item is +" + i);
                 if (items[i].GetItem() == null)
                 {
                     items[i].AddItem(item, quantity);

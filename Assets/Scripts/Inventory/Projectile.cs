@@ -145,9 +145,11 @@ public class Projectile : MonoBehaviour
         {
             if ((collision.gameObject.CompareTag("Player")))
             {
-                GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>().Add(myItem, 1);
-                //landed = true;
-                Destroy(gameObject);
+                if (!collision.gameObject.GetComponent<CharacterController2D>().inventoryManager.inventoryFull)
+                {
+                    collision.gameObject.GetComponent<CharacterController2D>().inventoryManager.Add(myItem, 1);
+                    Destroy(gameObject);
+                }
             }
         }
     }
