@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    public GameObject onLever;
-    public GameObject offLever;
-    //bool inTrigger;
+    public GameObject shopActive;
+    public GameObject shopInactive;
 
-    public GameObject openSign;
-    public GameObject openLight;
-    public GameObject closedSign;
+
     public CustomerManager customerManager;
     bool hitLever;
 
@@ -18,6 +15,8 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
+        shopActive = GameObject.Find("ShopOn");
+        shopInactive = GameObject.Find("LeverOff");
         customerManager = GameObject.Find("CustomerManager").GetComponent<CustomerManager>();
         SwitchOpenClose();
     }
@@ -30,22 +29,17 @@ public class ShopManager : MonoBehaviour
         {
             customerManager.shopOpen = false;
 
-            //shopOpen = false; 
-            onLever.SetActive(false);
-            openLight.SetActive(false);
-            closedSign.SetActive(true);
-            offLever.SetActive(true);
+            shopActive.SetActive(false);
+            shopInactive.SetActive(true);
+            
         }
 
         if (!hitLever)
         {
             customerManager.shopOpen = true;
 
-            //shopOpen = true;
-            onLever.SetActive(true);
-            openLight.SetActive(true);
-            closedSign.SetActive(false);
-            offLever.SetActive(false);
+            shopInactive.SetActive(false);
+            shopActive.SetActive(true);
         }
     }
 

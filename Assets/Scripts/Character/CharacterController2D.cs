@@ -200,7 +200,7 @@ public class CharacterController2D : MonoBehaviour
             //hitLever = !hitLever;
             //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
             //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
-            GameObject.Find("ShopManagerObject").GetComponent<ShopManager>().SwitchOpenClose();
+            GameObject.Find("ShopLeverGrid").GetComponent<ShopManager>().SwitchOpenClose();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
