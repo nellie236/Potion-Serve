@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToDispense: {fileID: 1129085746926212879, guid: 060caafaf0f32db4d96d39f1e4c4c68c, type: 3}
-  dispenseDelay: 0
+  dispenseDelay: 5
   remainingDelay: 0
   itemPresent: 0
   spawner: {fileID: 3542766601214221456}

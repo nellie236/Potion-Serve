@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.28
 --- !u!114 &3352554231720842337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +118,10 @@ MonoBehaviour:
   myItem: {fileID: 11400000, guid: d2081ebc28de9734ba35e8f14ca37a92, type: 2}
   speed: 10
   pickupDelay: 1
+  thrown: 0
+  expireTimer: 0
+  canExpire: 0
+  outBoundsTimer: 0
 --- !u!50 &1855741446990786871
 Rigidbody2D:
   serializedVersion: 4

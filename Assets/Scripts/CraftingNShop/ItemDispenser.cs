@@ -10,6 +10,7 @@ public class ItemDispenser : MonoBehaviour
     public bool itemPresent;
     //public Transform spawnPosition;
     public GameObject spawner;
+    public List<GameObject> currentObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class ItemDispenser : MonoBehaviour
         //spawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         itemPresent = false;
         remainingDelay = dispenseDelay;
+        currentObjects = new List<GameObject>();
         StartCoroutine(DispenseItemTimer());
     }
 
@@ -35,11 +37,12 @@ public class ItemDispenser : MonoBehaviour
         }
     }*/
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ingredient")
         {
             itemPresent = true;
+            currentObjects.Add(collision.gameObject);
         }
     }
 
@@ -48,8 +51,12 @@ public class ItemDispenser : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ingredient")
         {
-            itemPresent = false;
-            StartCoroutine(DispenseItemTimer());
+            currentObjects.Remove(collision.gameObject);
+            if (currentObjects.Count <= 0)
+            {
+                itemPresent = false;
+                StartCoroutine(DispenseItemTimer());
+            }
             //start timer
         }
     }

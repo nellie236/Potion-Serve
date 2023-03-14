@@ -7,28 +7,15 @@ public class CoinManager : MonoBehaviour
 {
     public int coinCount;
     public Text coinDisplay;
-    int frostRecipeCost;
-    int healthRecipeCost;
-    public GameObject unlockFrost;
-    public GameObject frostButton;
-    public GameObject frostDispenser;
-    public GameObject unlockHealth;
-    public GameObject healthButton;
-    public GameObject healthDispenser1;
-    public GameObject healthDispenser2;
+    
     private void Awake()
     {
-        frostDispenser.SetActive(false);
-        healthDispenser1.SetActive(false);
-        healthDispenser2.SetActive(false);
+        
     }
     void Start()
     {
         coinDisplay.text = "" + coinCount;
-        frostRecipeCost = 15;
-        healthRecipeCost = 45;
-        unlockFrost.SetActive(false);
-        unlockHealth.SetActive(false);
+        
     }
 
     private void Update()
@@ -46,27 +33,6 @@ public class CoinManager : MonoBehaviour
         coinCount = coinCount - coinAmount;
     }
 
-    public void UnlockFrostRecipe()
-    {
-        if (coinCount >= frostRecipeCost)
-        {
-            unlockFrost.SetActive(true);
-            frostDispenser.SetActive(true);
-            RemoveCoins(frostRecipeCost);
-            Destroy(frostButton);
-        }
-    }
-
-    public void UnlockHealthRecipe()
-    {
-        if (coinCount >= healthRecipeCost)
-        {
-            unlockHealth.SetActive(true);
-            healthDispenser1.SetActive(true);
-            healthDispenser2.SetActive(true);
-            RemoveCoins(healthRecipeCost);
-            Destroy(healthButton);
-        }
-    }
+    
     
 }

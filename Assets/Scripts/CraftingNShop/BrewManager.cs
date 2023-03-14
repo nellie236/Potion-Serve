@@ -19,8 +19,7 @@ public class BrewManager : MonoBehaviour
         spawnPoint = GameObject.Find("SpawnPoint");
         potItems = new List<ItemClass>();
         potGameObjects = new List<GameObject>();
-        //canCraft = false;
-        //craftItems = new List<ItemClass>();
+        
     }
 
     //bool canCraft;
@@ -28,33 +27,8 @@ public class BrewManager : MonoBehaviour
     {
         numOfItems = potItems.Count;
         
-        /*if (potItems.Count != 0)
-        {
-            if (canCraft)
-            {
-                for (int i = 0; i < recipes.Count; i++)
-                {
-                    //recipes[i].CompareLists(potItems, recipes[i].Ingredients);
-                    recipes[i].Craft(brewManager);
-                }
-            }
-        }*/
+        
     }
-
-    /*public int NumberOfItems
-    {
-        get => numOfItems;
-
-        set
-        {
-            if (numOfItems != value)
-            {
-                canCraft = true;
-                numOfItems = value;
-                canCraft = false;
-            }
-        }
-    }*/
 
     IEnumerator goCraft()
     {
