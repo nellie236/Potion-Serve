@@ -83,7 +83,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 6bb99094e0c07a54bbae1d880a4e3e4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,3 +158,4 @@ MonoBehaviour:
   remainingDelay: 0
   itemPresent: 0
   spawner: {fileID: 3542766601214221456}
+  currentObjects: []

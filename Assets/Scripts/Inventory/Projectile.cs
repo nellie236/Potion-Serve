@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        outBoundsTimer = 3f;
+        outBoundsTimer = 1f;
         remainingOutBounds = outBoundsTimer;
         expireTimer = 30f;
         player = GameObject.FindGameObjectWithTag("Player");

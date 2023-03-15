@@ -18,6 +18,7 @@ public class DayManager : MonoBehaviour
 
     public GameObject arrowRotate;
     public float rotationSpeed;
+    public bool nightTime;
 
     void Start()
     {
@@ -78,10 +79,12 @@ public class DayManager : MonoBehaviour
         if (hours >= 0 && hours < 6)
         {
             arrowRotate.transform.Rotate(0, 0, Time.deltaTime * -rotationSpeed);
+            nightTime = false;
         }
         if (hours >= 6 && hours < 12)
         {
             arrowRotate.transform.Rotate(0, 0, Time.deltaTime * rotationSpeed);
+            nightTime = true;
         }
     }
 

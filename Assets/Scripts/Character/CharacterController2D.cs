@@ -114,7 +114,7 @@ public class CharacterController2D : MonoBehaviour
         {
             if (inventoryManager.inventoryOn == true)
             {
-                inventoryManager.SwitchInventory();
+                inventoryManager.SwitchInventory(); //if i don't want them to be able to move items in hotbar during dialogue, could add invisible raycast blocker on top
             }
             return;
         }

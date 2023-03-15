@@ -70,8 +70,13 @@ public class ItemDispenser : MonoBehaviour
                 remainingDelay--;
                 yield return new WaitForSeconds(1f);
             }
+            OnEnd();
         }
-        OnEnd();
+        else if (itemPresent)
+        {
+            remainingDelay = dispenseDelay;
+        }
+        
     }
 
     private void OnEnd()

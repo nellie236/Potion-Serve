@@ -19,6 +19,7 @@ public class CraftingRecipe : ScriptableObject
     //public List<ItemAmount> Materials; //ingredients needed for recipe
     public List<ItemClass> Results; //what you are crafting
     CraftingRecipe thisRecipe;
+    
 
     public void Awake()
     {
@@ -28,11 +29,15 @@ public class CraftingRecipe : ScriptableObject
 
     public void Craft(BrewManager brewManager)
     {
+        
 
         //Debug.Log("Crafting");
         //Debug.Log(CompareLists(brewManager.potItems, Ingredients));
         if (CompareLists(brewManager.potItems, Ingredients))
         {
+            //progress bar... 
+            brewManager.PlayProgressBarAnim();
+
             foreach (ItemClass item in Results)
             {
                 GameObject result = Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform.position, brewManager.spawnPoint.transform.rotation);
@@ -41,21 +46,6 @@ public class CraftingRecipe : ScriptableObject
                 
                 
             }
-
-            
-            /*{
-                for (int p = 0; p < brewManager.potGameObjects.Count; p++)
-                {
-                    for (int i = 0; i < Ingredients.Count; i++)
-                    {
-                        if (brewManager.potGameObjects[p].GetComponent<Projectile>().myItem == Ingredients[i])
-                        {
-                            Debug.Log("Deleting + " + Ingredients[i] + "which is equal to = " + brewManager.potGameObjects[p]);
-                            Destroy(brewManager.potGameObjects[p]);
-                        }
-                    }
-                }
-            }*/
 
             for (int i = 0; i < Ingredients.Count; i++)
             {
@@ -74,13 +64,6 @@ public class CraftingRecipe : ScriptableObject
                 brewManager.potItems.Remove(item);
             }
 
-            /*if (brewManager.potGameObjects.Count != 0)
-            {
-                foreach (GameObject gameObject in brewManager.potGameObjects)
-                {
-                    Destroy(gameObject);
-                }
-            }*/
         }
     }
 
@@ -133,7 +116,6 @@ public class CraftingRecipe : ScriptableObject
             return false;
   
     }
-
 
     /*public bool CompareLists<T>(List<T> cauldronItems, List<T> recipeItems)
     {

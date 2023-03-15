@@ -12,6 +12,9 @@ public class BrewManager : MonoBehaviour
     public BrewManager brewManager;
 
     public List<GameObject> potGameObjects;
+    public GameObject progressBar;
+    Animator progBarAnim;
+    
 
     private void Start()
     {
@@ -19,6 +22,9 @@ public class BrewManager : MonoBehaviour
         spawnPoint = GameObject.Find("SpawnPoint");
         potItems = new List<ItemClass>();
         potGameObjects = new List<GameObject>();
+        progressBar = GameObject.Find("progressBar");
+        progBarAnim = progressBar.GetComponent<Animator>();
+        progBarAnim.gameObject.SetActive(false);
         
     }
 
@@ -30,7 +36,7 @@ public class BrewManager : MonoBehaviour
         
     }
 
-    IEnumerator goCraft()
+    IEnumerator GoCraft()
     {
         if (potItems.Count != 0)
         {
@@ -43,6 +49,19 @@ public class BrewManager : MonoBehaviour
         yield return new WaitForFixedUpdate();
     }
 
+    public void PlayProgressBarAnim()
+    {
+        StartCoroutine(ProgressBar());
+    }
+
+    public IEnumerator ProgressBar()
+    {
+        progBarAnim.gameObject.SetActive(true);
+        progBarAnim.Play("progBar");
+        yield return new WaitForSeconds(3f);
+        progBarAnim.gameObject.SetActive(false);
+    }
+
     //private int numOfItems;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -53,7 +72,7 @@ public class BrewManager : MonoBehaviour
                 potItems.Add(collision.GetComponent<Projectile>().myItem);
                 //craftItems.Add(collision.GetComponent<Projectile>().myItem);
                 potGameObjects.Add(collision.gameObject);
-                StartCoroutine(goCraft());
+                StartCoroutine(GoCraft());
             }
         }
     }

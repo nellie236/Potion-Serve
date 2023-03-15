@@ -120,4 +120,9 @@ public class RecipeBookManager : MonoBehaviour
             recipePages[currentPage].SetActive(true);
         }
     }
+
+    public void AddPage(GameObject page)
+    {
+        recipePages.Add(page);
+    }
 }
