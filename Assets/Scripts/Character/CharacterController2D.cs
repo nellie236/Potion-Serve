@@ -41,9 +41,23 @@ public class CharacterController2D : MonoBehaviour
 
     public KeyCode ToggleShop;
     public KeyCode GiveItem;
+
+    bool shaking;
+    //desired duration of shake effect
+    private float shakeDuration = 0f;
+
+    //measure of magnitude for the shake
+    private float shakeMagnitude = 0.2f;
+
+    //how quickly the shake effect should evaporate
+    private float dampingSpeed = 5.0f;
+
+
+
     // Use this for initialization
     void Start()
     {
+        shaking = false;
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<CapsuleCollider2D>();
@@ -200,7 +214,24 @@ public class CharacterController2D : MonoBehaviour
         // Camera follow
         if (mainCamera)
         {
-            mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 1, cameraPos.z);
+            if (!shaking)
+            {
+                mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 1, cameraPos.z);
+            }
+            else if (shaking)
+            {
+                if (shakeDuration > 0)
+                {
+                    mainCamera.transform.position = new Vector3(t.position.x, t.position.y + 1, cameraPos.z) + Random.insideUnitSphere * shakeMagnitude;
+
+                    shakeDuration -= Time.deltaTime * dampingSpeed;
+                }
+                else
+                {
+                    shaking = false;
+                    shakeDuration = 0f;
+                }
+            }
         }
 
         if ((leverTrigger == true) && (Input.GetKeyUp(ToggleShop)))
@@ -208,7 +239,7 @@ public class CharacterController2D : MonoBehaviour
             //hitLever = !hitLever;
             //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
             //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
-            GameObject.Find("ShopLeverGrid").GetComponent<ShopManager>().SwitchOpenClose();
+            GameObject.Find("LeverAnimator").GetComponent<ShopManager>().SwitchOpenClose();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -257,6 +288,12 @@ public class CharacterController2D : MonoBehaviour
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
     }
 
+
+    public void TriggerShake()
+    {
+        shakeDuration = 2.0f;
+        shaking = true;
+    }
     
 }
     

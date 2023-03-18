@@ -18,12 +18,14 @@ public class CraftingRecipe : ScriptableObject
     public List<ItemClass> Ingredients;
     //public List<ItemAmount> Materials; //ingredients needed for recipe
     public List<ItemClass> Results; //what you are crafting
-    CraftingRecipe thisRecipe;
+    public CraftingRecipe thisRecipe;
+    public bool progressBarDone;
     
 
     public void Awake()
     {
         thisRecipe = this;
+        progressBarDone = false;
     }
 
 
@@ -36,32 +38,40 @@ public class CraftingRecipe : ScriptableObject
         if (CompareLists(brewManager.potItems, Ingredients))
         {
             //progress bar... 
-            brewManager.PlayProgressBarAnim();
+            //if (!progressBarDone)
 
-            foreach (ItemClass item in Results)
+            if (!progressBarDone)
             {
-                GameObject result = Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform.position, brewManager.spawnPoint.transform.rotation);
-                result.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10;
-                
-                
-                
+                brewManager.PlayProgressBarAnim(thisRecipe);
             }
-
-            for (int i = 0; i < Ingredients.Count; i++)
+            else if (progressBarDone)
             {
-                foreach (GameObject gameObject in brewManager.potGameObjects)
+                foreach (ItemClass item in Results)
                 {
-                    if (gameObject.GetComponent<Projectile>().myItem == Ingredients[i])
+                    GameObject result = Instantiate(item.throwablePrefab, brewManager.spawnPoint.transform.position, brewManager.spawnPoint.transform.rotation);
+                    result.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10;
+                    GameObject.Find("Player").GetComponent<CharacterController2D>().TriggerShake();
+                }
+
+                for (int i = 0; i < Ingredients.Count; i++)
+                {
+                    foreach (GameObject gameObject in brewManager.potGameObjects)
                     {
-                        Destroy(gameObject);
-                        break;
+                        if (gameObject.GetComponent<Projectile>().myItem == Ingredients[i])
+                        {
+                            Destroy(gameObject);
+                            break;
+                        }
                     }
                 }
-            }
 
-            foreach (ItemClass item in Ingredients)
-            {
-                brewManager.potItems.Remove(item);
+                foreach (ItemClass item in Ingredients)
+                {
+                    brewManager.potItems.Remove(item);
+                }
+
+                progressBarDone = false;
+                brewManager.progressBar.SetActive(false);
             }
 
         }
@@ -113,6 +123,7 @@ public class CraftingRecipe : ScriptableObject
             return true;
         }
         else
+            progressBarDone = false;
             return false;
   
     }

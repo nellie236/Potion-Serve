@@ -9,12 +9,14 @@ public class ShopManager : MonoBehaviour
 
 
     public CustomerManager customerManager;
+    Animator animator;
     bool hitLever;
 
     //public bool shopOpen;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         shopActive = GameObject.Find("ShopOn");
         shopInactive = GameObject.Find("LeverOff");
         customerManager = GameObject.Find("CustomerManager").GetComponent<CustomerManager>();
@@ -31,6 +33,8 @@ public class ShopManager : MonoBehaviour
 
             shopActive.SetActive(false);
             shopInactive.SetActive(true);
+            animator.SetBool("hitLever", false);
+            animator.SetBool("switchedOn", false);
             
         }
 
@@ -40,8 +44,12 @@ public class ShopManager : MonoBehaviour
 
             shopInactive.SetActive(false);
             shopActive.SetActive(true);
+            animator.SetBool("hitLever", true);
+            animator.SetBool("switchedOn", true);
         }
     }
+
+    
 
     
 }

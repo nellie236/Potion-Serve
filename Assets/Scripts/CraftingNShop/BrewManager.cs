@@ -49,17 +49,20 @@ public class BrewManager : MonoBehaviour
         yield return new WaitForFixedUpdate();
     }
 
-    public void PlayProgressBarAnim()
+    public void PlayProgressBarAnim(CraftingRecipe recipe)
     {
-        StartCoroutine(ProgressBar());
+        StartCoroutine(ProgressBar(recipe));
     }
 
-    public IEnumerator ProgressBar()
+    public IEnumerator ProgressBar(CraftingRecipe recipe)
     {
         progBarAnim.gameObject.SetActive(true);
         progBarAnim.Play("progBar");
         yield return new WaitForSeconds(3f);
         progBarAnim.gameObject.SetActive(false);
+        recipe.progressBarDone = true;
+        recipe.Craft(brewManager);
+        
     }
 
     //private int numOfItems;
