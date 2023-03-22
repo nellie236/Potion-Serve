@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -29,7 +30,7 @@ public class CharacterController2D : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
-    GameObject dialogueBox;
+    public GameObject dialogueBox;
     Animator anim;
     public DialogueManager dialogueManager;
     public InventoryManager inventoryManager;
@@ -37,6 +38,8 @@ public class CharacterController2D : MonoBehaviour
     public bool leverTrigger;
     public bool canGiveItem;
     public GameObject currentCustomer;
+    public MerchantManager merchant;
+    public bool atMerchant;
 
 
     public KeyCode ToggleShop;
@@ -61,7 +64,7 @@ public class CharacterController2D : MonoBehaviour
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<CapsuleCollider2D>();
-        dialogueBox = GameObject.Find("DialogueBox");
+        dialogueBox = GameObject.Find("DialogueParent").transform.GetChild(0).gameObject;
         dialogueManager = dialogueBox.GetComponent<DialogueManager>();
         inventoryManager = GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>();
         anim = GetComponent<Animator>();
@@ -77,6 +80,11 @@ public class CharacterController2D : MonoBehaviour
         if (mainCamera)
         {
             cameraPos = mainCamera.transform.position;
+        }
+
+        if (SceneManager.GetActiveScene().name == "GameplayScene")
+        {
+            merchant = GameObject.Find("Merchant").GetComponent<MerchantManager>();
         }
     }
 
@@ -96,6 +104,13 @@ public class CharacterController2D : MonoBehaviour
             GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ourCustomer(currentCustomer);
             //Debug.Log(currentCustomer);
         }
+
+        if (collision.CompareTag("Merchant"))
+        {
+            atMerchant = true;
+        }
+
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -103,6 +118,11 @@ public class CharacterController2D : MonoBehaviour
         if (collision.CompareTag("LeverTrigger"))
         {
             leverTrigger = true;
+        }
+
+        if (collision.CompareTag("Merchant"))
+        {
+            atMerchant = true;
         }
     }
 
@@ -118,20 +138,57 @@ public class CharacterController2D : MonoBehaviour
             canGiveItem = false;
             currentCustomer = null;
         }
+
+        if (collision.CompareTag("Merchant"))
+        {
+            atMerchant = false;
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (dialogueManager.isActive == true || GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>().bookOpen)
+        if (dialogueManager.isActive == true || GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>().bookOpen || merchant.marketActive)
         {
             if (inventoryManager.inventoryOn == true)
             {
                 inventoryManager.SwitchInventory(); //if i don't want them to be able to move items in hotbar during dialogue, could add invisible raycast blocker on top
             }
+
             return;
         }
+
+        if (merchant.canAccessMerchant && atMerchant && Input.GetKeyUp(ToggleShop))
+        {
+            merchant.ToggleMarket();
+        }
+
+        if ((leverTrigger == true) && (Input.GetKeyUp(ToggleShop)))
+        {
+            GameObject.Find("LeverAnimator").GetComponent<ShopManager>().SwitchOpenClose();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryManager.SwitchInventory();
+        }
+
+        if ((canGiveItem && currentCustomer != null && currentCustomer.GetComponent<CustomerAgent>().inProgState == CustomerStateId.OrderInProgress) && (Input.GetKey(GiveItem)))
+        {
+            if (inventoryManager.selectedItem.throwablePrefab == currentCustomer.GetComponent<CustomerAgent>().desiredItem)
+            {
+                inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
+                currentCustomer.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<SpriteRenderer>().sprite;
+            }
+            //also play animation of customer "grabbing potion"
+            //turn on sprite for customer, look like customer is holding potion
+        }
+
+
+
 
         // Movement controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
@@ -234,29 +291,7 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        if ((leverTrigger == true) && (Input.GetKeyUp(ToggleShop)))
-        {
-            //hitLever = !hitLever;
-            //GameObject.Find("Main Camera").GetComponent<DayManager>().NextDay();
-            //GameObject.Find("Main Camera").GetComponent<LoadSceneTrigger>().LoadScene();
-            GameObject.Find("LeverAnimator").GetComponent<ShopManager>().SwitchOpenClose();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            inventoryManager.SwitchInventory();
-        }
-
-        if ((canGiveItem && currentCustomer != null && currentCustomer.GetComponent<CustomerAgent>().inProgState == CustomerStateId.OrderInProgress) && (Input.GetKey(GiveItem)))
-        {
-            if (inventoryManager.selectedItem.throwablePrefab == currentCustomer.GetComponent<CustomerAgent>().desiredItem)
-            {
-                inventoryManager.GiveCustomerDesired(currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<Projectile>().myItem, currentCustomer);
-                currentCustomer.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = currentCustomer.GetComponent<CustomerAgent>().desiredItem.GetComponent<SpriteRenderer>().sprite;
-            }
-            //also play animation of customer "grabbing potion"
-            //turn on sprite for customer, look like customer is holding potion
-        }
+        
     }
 
     void FixedUpdate()
