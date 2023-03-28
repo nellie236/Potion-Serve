@@ -161,7 +161,7 @@ public class CharacterController2D : MonoBehaviour
             return;
         }
 
-        if (merchant.canAccessMerchant && atMerchant && Input.GetKeyUp(ToggleShop))
+        if (merchant.canAccessMerchant && atMerchant && Input.GetKeyDown(ToggleShop))
         {
             merchant.ToggleMarket();
         }

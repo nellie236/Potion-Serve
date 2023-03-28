@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MerchantManager : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class MerchantManager : MonoBehaviour
     public Camera marketCamera;
     public Canvas marketCanvas;
     public CharacterController2D Player;
+    public CoinManager coinManager;
+
+    public List<GameObject> sellables;
+    public List<Button> forSale;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +33,7 @@ public class MerchantManager : MonoBehaviour
         merchantAnim = GetComponent<Animator>();
         merchantAnim.SetBool("shopActive", false);
         Player = GameObject.Find("Player").GetComponent<CharacterController2D>();
+        coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
     }
 
     // Update is called once per frame
@@ -91,21 +97,80 @@ public class MerchantManager : MonoBehaviour
     public void ToggleMarket()
     {
         marketActive = !marketActive;
-
-        if (marketActive)
-        {
-            //switch camera to building camera, pause time so that it does not keep counting down to close
-            Time.timeScale = 0;
-            marketCamera.enabled = true;
-            mainCamera.enabled = false;
-        }
+        Debug.Log(marketActive);
 
         if (!marketActive)
         {
             //switch camera back to regular, unpause time. 
             Time.timeScale = 1;
-            marketCamera.enabled = false;
-            mainCamera.enabled = true;
+            mainCamera.gameObject.SetActive(true);
+            mainCanvas.gameObject.SetActive(true);
+            marketCamera.gameObject.SetActive(false);
+            marketCanvas.gameObject.SetActive(false);
+        }
+
+        if (marketActive)
+        {
+            //switch camera to building camera, pause time so that it does not keep counting down to close
+            Time.timeScale = 0;
+            marketCamera.gameObject.SetActive(true);
+            marketCanvas.gameObject.SetActive(true);
+            mainCamera.gameObject.SetActive(false);
+            mainCanvas.gameObject.SetActive(false);
+        }
+        
+    }
+
+    public void ItemsToSell()
+    {
+        int amountOfItemsSold = 4;
+        for (int i = 0; i < amountOfItemsSold; i++)
+        {
+            int randomSell = Random.Range(0, sellables.Count);
+            //Button[i].set equal to sellable. 
+            //forSale[i].GetComponent<Sprite>() = sellables[randomSell].GetComponent<Sprite>();
+        }
+    }
+
+    public void CheckItem()
+    {
+        //check the item in the buy slot.
+        //then run BuyItem();
+    }
+
+    public void BuyItem(MerchantItem item)
+    {
+        if (coinManager.coinCount < item.price)
+        {
+            Debug.Log("not enough money!");
+            return;
+        }
+        else if (coinManager.coinCount >= item.price)
+        {
+            if (item.inventoryItem)
+            {
+                InventoryManager invManager = GameObject.Find("Player").GetComponent<InventoryManager>();
+                if (invManager.inventoryFull)
+                {
+                    Debug.Log("inventory is full");
+                    return;
+                }
+                else if (!invManager.inventoryFull)
+                {
+                    invManager.Add(item.item, 1);
+                }
+                
+            }
+            else if (item.recipePage)
+            {
+                RecipeBookManager recipeBookManager = GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>();
+                recipeBookManager.AddPage(item.page);
+                return;
+            }
+            else if (item.itemDispenser)
+            {
+                //open build map pass down (item.dispenser)
+            }
         }
     }
 
