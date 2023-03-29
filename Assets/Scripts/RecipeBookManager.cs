@@ -15,6 +15,8 @@ public class RecipeBookManager : MonoBehaviour
     public Button nextPage;
     public Button previousPage;
 
+    public GameObject pageHolder;
+
     public KeyCode ToggleRecipeBook;
     // Start is called before the first frame update
     void Start()
@@ -124,5 +126,8 @@ public class RecipeBookManager : MonoBehaviour
     public void AddPage(GameObject page)
     {
         recipePages.Add(page);
+        //should also instantiate image under the page holder at the number it is in in the array. 
+        Instantiate(page);
+        page.transform.SetParent(pageHolder.transform);
     }
 }

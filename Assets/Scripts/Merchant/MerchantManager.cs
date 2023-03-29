@@ -22,18 +22,29 @@ public class MerchantManager : MonoBehaviour
     public CharacterController2D Player;
     public CoinManager coinManager;
 
-    public List<GameObject> sellables;
+    public List<MerchantItem> sellables;
     public List<Button> forSale;
+    public Text itemDescript;
+    public Image displayIcon;
+    public Text itemPrice;
+    public MerchantItem selectedItem;
+
+    public GameObject buildMapParent;
+    public bool building;
+    public int placed; 
 
     // Start is called before the first frame update
     void Start()
     {
+        placed = 0;
         remainingOpen = openTime;
         marketActive = false;
         merchantAnim = GetComponent<Animator>();
         merchantAnim.SetBool("shopActive", false);
         Player = GameObject.Find("Player").GetComponent<CharacterController2D>();
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
+        building = false;
+        ToggleBuildMap();
     }
 
     // Update is called once per frame
@@ -75,6 +86,7 @@ public class MerchantManager : MonoBehaviour
         
         canAccessMerchant = true;
         StartCoroutine(ShopTimeOpen());
+        ItemsToSell();
     }
 
     public void closeStore()
@@ -97,7 +109,7 @@ public class MerchantManager : MonoBehaviour
     public void ToggleMarket()
     {
         marketActive = !marketActive;
-        Debug.Log(marketActive);
+        //Debug.Log(marketActive);
 
         if (!marketActive)
         {
@@ -129,11 +141,28 @@ public class MerchantManager : MonoBehaviour
             int randomSell = Random.Range(0, sellables.Count);
             //Button[i].set equal to sellable. 
             //forSale[i].GetComponent<Sprite>() = sellables[randomSell].GetComponent<Sprite>();
+            forSale[i].GetComponent<MerchantItemHolder>().myItem = sellables[randomSell];
+            forSale[i].image.sprite = sellables[randomSell].icon;
+            //sellables[randomSell].transform.parent 
         }
+    }
+
+    public void PassItem(MerchantItem item)
+    {
+        //pass item to the display one. display the item description and price. 
+        itemDescript.text = item.itemDescription;
+        displayIcon.sprite = item.icon;
+        itemPrice.text = item.price + " Coins";
+        selectedItem = item;
+
     }
 
     public void CheckItem()
     {
+        if (selectedItem != null)
+        {
+            BuyItem(selectedItem);
+        }
         //check the item in the buy slot.
         //then run BuyItem();
     }
@@ -147,9 +176,11 @@ public class MerchantManager : MonoBehaviour
         }
         else if (coinManager.coinCount >= item.price)
         {
+            coinManager.coinCount -= item.price; 
+
             if (item.inventoryItem)
             {
-                InventoryManager invManager = GameObject.Find("Player").GetComponent<InventoryManager>();
+                InventoryManager invManager = GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>();
                 if (invManager.inventoryFull)
                 {
                     Debug.Log("inventory is full");
@@ -165,14 +196,29 @@ public class MerchantManager : MonoBehaviour
             {
                 RecipeBookManager recipeBookManager = GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>();
                 recipeBookManager.AddPage(item.page);
-                return;
+                
             }
             else if (item.itemDispenser)
             {
                 //open build map pass down (item.dispenser)
+                placed = 0; 
+                ToggleBuildMap();
             }
         }
     }
 
+    public void ToggleBuildMap()
+    {
+        building = !building;
 
+        if (!building)
+        {
+            buildMapParent.SetActive(true);
+        }
+        
+        if (building)
+        {
+            buildMapParent.SetActive(false);
+        }
+    }
 }
