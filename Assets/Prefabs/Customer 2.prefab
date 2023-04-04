@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2500348521224842399, guid: ffaf2f7816317c941b3274cc2ff5ae2b, type: 3}
+  m_Sprite: {fileID: -9052098170191810959, guid: 84fa76f80fab8074da4b2ec7137f1878, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: -7676765673974218585}
   - component: {fileID: 8543616313368955695}
   m_Layer: 0
-  m_Name: NPC 1
+  m_Name: Customer 2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2, y: 3}
+  m_Size: {x: 1, y: 2}
   m_Direction: 0
 --- !u!114 &-7676765673974218585
 MonoBehaviour:
@@ -480,32 +480,30 @@ MonoBehaviour:
   actors:
   - name: Player
     sprite: {fileID: 21300000, guid: a1d8f6c81bdd5844abc1557ff37cbcd5, type: 3}
-  - name: Reginald
-    sprite: {fileID: 21300000, guid: d5107c915650427429cb4545c47bb770, type: 3}
+  - name: Pick
+    sprite: {fileID: 4315968439862903554, guid: 4cc53a5ff73ca6142a437eb4b7f398fc, type: 3}
+  - name: Pick
+    sprite: {fileID: 6037493179773788598, guid: 4cc53a5ff73ca6142a437eb4b7f398fc, type: 3}
+  - name: Pick
+    sprite: {fileID: 4838658156560501962, guid: 4cc53a5ff73ca6142a437eb4b7f398fc, type: 3}
   whichMessages: 0
   firstMessages:
-  - actorId: 0
-    message: Hello! Welcome.
+  - actorId: 2
+    message: 'Hi! '
   - actorId: 1
-    message: Hi. I require a fire potion.
-  - actorId: 0
+    message: I am in need of a fire potion... some things to deal with...
+  - actorId: 1
     message: ...
   acceptedMessages:
-  - actorId: 0
-    message: Sure thing.
-  - actorId: 1
-    message: Thank you!!
+  - actorId: 2
+    message: I don't have much time, thank you!
   deniedMessages:
-  - actorId: 0
-    message: No can do.
   - actorId: 1
-    message: I won't forget this.
+    message: ...
   correctItemMessages:
-  - actorId: 0
-    message: Here you go
-  - actorId: 1
-    message: Perfect! Here's ya go
+  - actorId: 2
+    message: This'll do greatly.
   wrongItemMessages:
-  - actorId: 1
-    message: This is ridiculous. I didn't ask for this.
+  - actorId: 3
+    message: I MUST GO
   canTalkToPlayer: 0

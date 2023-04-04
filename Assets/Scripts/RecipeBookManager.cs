@@ -31,13 +31,13 @@ public class RecipeBookManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canAccessBook)
+        /*if (canAccessBook)
         {
             if (Input.GetKeyUp(ToggleRecipeBook))
             {
                 OpenCloseBook();
             }
-        }
+        }*/
 
         if (bookOpen)
         {

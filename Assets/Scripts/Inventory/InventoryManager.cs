@@ -113,20 +113,20 @@ public class InventoryManager : MonoBehaviour
         selectedItem = items[selectedSlotIndex + (hotbarSlots.Length)].GetItem();
 
         //throw item
-        if ((Input.GetKeyDown(KeyCode.Q)) && (selectedItem != null))
+        /*if ((Input.GetKeyDown(KeyCode.Q)) && (selectedItem != null))
         {
             if (selectedItem.throwablePrefab == null)
             {
                 return;
             }
-            else if (selectedItem.throwablePrefab != null) 
+            else if (selectedItem.throwablePrefab != null)
             {
                 //thrownItem.GetComponent<Projectile>().thrown = false;
                 ThrowItem();
             }
             //experimenting here with throwing item
-            
-        }
+
+        }*/
 
         
         if (selectedItem != null)

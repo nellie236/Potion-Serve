@@ -41,11 +41,11 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKey(KeyCode.R)) && (canTalkToPlayer == true))
+        /*if ((Input.GetKey(KeyCode.R)) && (canTalkToPlayer == true))
         {
             dialoguePaths();
             StartDialogue();
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
