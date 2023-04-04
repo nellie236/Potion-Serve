@@ -24,8 +24,14 @@ public class CustomerOrderInProgressState : CustomerState
 
     public void Update(CustomerAgent agent)
     {
+        if (agent.patienceTimer.active)
+        {
+            agent.displayOrder.GetComponent<SpriteRenderer>().sprite = agent.desiredItem.GetComponent<SpriteRenderer>().sprite;
+        }
+
         if (agent.orderFulfilled)
         {
+            agent.displayOrder.GetComponent<SpriteRenderer>().sprite = null;
             agent.dialogueManager.orderSuccess();
             agent.coinManager.AddCoins(agent.config.coinAmount);
             agent.stateMachine.ChangeState(CustomerStateId.Exit);
@@ -33,6 +39,7 @@ public class CustomerOrderInProgressState : CustomerState
 
         if (!agent.patienceTimer.active && !agent.orderFulfilled)
         {
+            
             agent.dialogueManager.orderFail();
             agent.stateMachine.ChangeState(CustomerStateId.Exit);
         }

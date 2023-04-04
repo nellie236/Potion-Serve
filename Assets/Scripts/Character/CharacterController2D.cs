@@ -161,9 +161,12 @@ public class CharacterController2D : MonoBehaviour
             return;
         }
 
-        if (merchant.canAccessMerchant && atMerchant && Input.GetKeyDown(ToggleShop))
+        if (atMerchant && Input.GetKeyDown(ToggleShop))
         {
-            merchant.ToggleMarket();
+            if (merchant.canAccessMerchant)
+            {
+                merchant.ToggleMarket();
+            }
         }
 
         if ((leverTrigger == true) && (Input.GetKeyUp(ToggleShop)))

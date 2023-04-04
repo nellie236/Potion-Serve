@@ -44,7 +44,7 @@ public class MerchantManager : MonoBehaviour
         Player = GameObject.Find("Player").GetComponent<CharacterController2D>();
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
         building = false;
-        ToggleBuildMap();
+        buildMapParent.SetActive(false);
     }
 
     // Update is called once per frame

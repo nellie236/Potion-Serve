@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildSpot : MonoBehaviour
 {
     public Transform mySpot;
     public GameObject spawnedDispenser;
-    public bool occupied; //if occupied and clicked then switch out
     public MerchantItem currentItem;
     public MerchantItem heldItem;
     MerchantManager merchantManager;
+    public Image currentImage;
+    public Sprite originalImage;
 
     // Start is called before the first frame update
     void Start()
     {
         merchantManager = GameObject.Find("Merchant").GetComponent<MerchantManager>();
-        occupied = false; 
+        currentImage = GetComponent<Image>();
+
     }
 
     // Update is called once per frame
@@ -43,6 +46,8 @@ public class BuildSpot : MonoBehaviour
                 merchantManager.placed = 1;
                 spawnedDispenser = newDispenser;
                 heldItem = currentItem;
+                currentImage.sprite = currentItem.dispenserBuildIcon;
+                
             }
         }
         else if (merchantManager.placed == 1)
@@ -52,6 +57,7 @@ public class BuildSpot : MonoBehaviour
                 Destroy(spawnedDispenser);
                 heldItem = null;
                 merchantManager.placed = 0;
+                currentImage.sprite = originalImage;
                 //pick up and move
             }
         }

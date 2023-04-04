@@ -8,6 +8,7 @@ public class CustomerManager : MonoBehaviour
     public GameObject currentCustomer;
     PatienceTimer patienceTimer;
     public bool shopOpen;
+    public Transform spawnPoint;
     
     // Start is called before the first frame update
     void Start()
@@ -62,8 +63,8 @@ public class CustomerManager : MonoBehaviour
             {
                 //spawn new customer
                 int randomCustomer = Random.Range(0, allCustomers.Count);
-                Vector3 whereToSpawn = new Vector3(-10, -1, 0);
-                Instantiate(allCustomers[randomCustomer], whereToSpawn, allCustomers[randomCustomer].transform.rotation);
+                //Vector3 whereToSpawn = new Vector3(-12, -1, 0);
+                Instantiate(allCustomers[randomCustomer], spawnPoint.localPosition, allCustomers[randomCustomer].transform.rotation);
             }
         }
         

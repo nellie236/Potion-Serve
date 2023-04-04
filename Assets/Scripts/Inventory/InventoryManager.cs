@@ -121,40 +121,8 @@ public class InventoryManager : MonoBehaviour
             }
             else if (selectedItem.throwablePrefab != null) 
             {
-                // SlotClass selectedSlot = ContainsInHotbar(selectedItem);
-                SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length )];
-
-                GameObject thrownItem = Instantiate(selectedItem.throwablePrefab, GameObject.Find("Player").transform.GetChild(0).transform) as GameObject;
-                thrownItem.transform.parent = null;
-                
-                //thrownItem.GetComponent<Projectile>().thrown = true;
-
-                if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == true)
-                {
-                    //facing right
-                    facingLeft = false;
-
-                }
-                else if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == false)
-                {
-                    //facing left
-                    facingLeft = true;
-                }
-
-                //thrownItem.GetComponent<Projectile>().target.transform.position = thrownItem.transform.position;
-
-                if (selectedSlot.GetQuantity() >= 1)
-                {
-                    selectedSlot.SubQuantity(1);
-                }
-
-                if (selectedSlot.GetQuantity() < 1)
-                {
-                    selectedSlot.Clear();
-                }
-
-                RefreshUI();
                 //thrownItem.GetComponent<Projectile>().thrown = false;
+                ThrowItem();
             }
             //experimenting here with throwing item
             
@@ -170,6 +138,43 @@ public class InventoryManager : MonoBehaviour
             displaySelectedItem.sprite = null;
         }
 
+    }
+
+    public void ThrowItem()
+    {
+        // SlotClass selectedSlot = ContainsInHotbar(selectedItem);
+        SlotClass selectedSlot = items[selectedSlotIndex + (hotbarSlots.Length)];
+
+        GameObject thrownItem = Instantiate(selectedItem.throwablePrefab, GameObject.Find("Player").transform.GetChild(0).transform) as GameObject;
+        thrownItem.transform.parent = null;
+
+        //thrownItem.GetComponent<Projectile>().thrown = true;
+
+        if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == true)
+        {
+            //facing right
+            facingLeft = false;
+
+        }
+        else if (GameObject.Find("Player").GetComponent<CharacterController2D>().facingRight == false)
+        {
+            //facing left
+            facingLeft = true;
+        }
+
+        //thrownItem.GetComponent<Projectile>().target.transform.position = thrownItem.transform.position;
+
+        if (selectedSlot.GetQuantity() >= 1)
+        {
+            selectedSlot.SubQuantity(1);
+        }
+
+        if (selectedSlot.GetQuantity() < 1)
+        {
+            selectedSlot.Clear();
+        }
+
+        RefreshUI();
     }
 
     public void GiveCustomerDesired(ItemClass desired, GameObject currentCustomer)

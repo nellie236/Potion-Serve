@@ -14,6 +14,7 @@ public class CustomerAgent : MonoBehaviour
     public DialogueManager dialogueManager;
     public CoinManager coinManager;
     public GameObject desiredItem;
+    public GameObject displayOrder;
     public SpriteRenderer myObject;
     public bool atShop;
     public bool orderFulfilled;
@@ -36,6 +37,7 @@ public class CustomerAgent : MonoBehaviour
         patienceTimer.Duration = config.orderPatience;
         waitTimer = GetComponent<InitialWaitTimer>();
         waitTimer.Duration = config.waitTime;
+        displayOrder = transform.GetChild(2).gameObject;
         //dialogueManager.coinPaymentAmount.text = config.coinAmount.ToString();
 
 

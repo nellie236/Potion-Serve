@@ -16,5 +16,6 @@ public class MerchantItem : ScriptableObject
     public GameObject page;
     public bool itemDispenser;
     public GameObject dispenser;
+    public Sprite dispenserBuildIcon;
 
 }

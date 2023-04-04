@@ -21,3 +21,4 @@ MonoBehaviour:
   page: {fileID: 0}
   itemDispenser: 1
   dispenser: {fileID: 3542766601355710869, guid: 0f95e9aeb3a6b1a43a664f014cd2f202, type: 3}
+  dispenserBuildIcon: {fileID: 21300000, guid: badb49d7039e8724a8c14f1236cd8c5d, type: 3}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   waitTime: 40
-  orderPatience: 30
+  orderPatience: 60
   coinAmount: 15
