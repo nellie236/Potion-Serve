@@ -27,6 +27,7 @@ public class MerchantManager : MonoBehaviour
     public Text itemDescript;
     public Image displayIcon;
     public Text itemPrice;
+    public Text playerCoins;
     public MerchantItem selectedItem;
 
     public GameObject buildMapParent;
@@ -43,14 +44,15 @@ public class MerchantManager : MonoBehaviour
         merchantAnim.SetBool("shopActive", false);
         Player = GameObject.Find("Player").GetComponent<CharacterController2D>();
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
-        building = false;
+        //building = false;
         buildMapParent.SetActive(false);
+        displayIcon.sprite = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        playerCoins.text = "" + coinManager.coinCount;   
     }
 
     private IEnumerator ShopTimeOpen()
@@ -213,12 +215,12 @@ public class MerchantManager : MonoBehaviour
 
         if (!building)
         {
-            buildMapParent.SetActive(true);
+            buildMapParent.SetActive(false);
         }
         
         if (building)
         {
-            buildMapParent.SetActive(false);
+            buildMapParent.SetActive(true);
         }
     }
 }

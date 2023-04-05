@@ -59,6 +59,17 @@ public class CustomerAgent : MonoBehaviour
     {
         inProgState = stateMachine.currentState;
         stateMachine.Update();
+
+        if (myRB.velocity.magnitude > 0.01f)
+        {
+            Animator anim = transform.GetChild(3).GetComponent<Animator>();
+            anim.SetBool("moving", true);
+        }
+        if (myRB.velocity.magnitude < 0.01f)
+        {
+            Animator anim = transform.GetChild(3).GetComponent<Animator>();
+            anim.SetBool("moving", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
