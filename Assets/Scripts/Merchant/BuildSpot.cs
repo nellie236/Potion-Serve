@@ -33,7 +33,10 @@ public class BuildSpot : MonoBehaviour
 
         if (merchantManager.placed == 0)
         {
-            currentItem = merchantManager.selectedItem;
+            if (merchantManager.selectedItem.dispenser)
+            {
+                currentItem = merchantManager.selectedItem;
+            }
 
             if (heldItem != null)
             {

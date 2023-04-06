@@ -52,7 +52,16 @@ public class MerchantManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerCoins.text = "" + coinManager.coinCount;   
+        playerCoins.text = "" + coinManager.coinCount;  
+        
+        if (displayIcon.sprite == null)
+        {
+            displayIcon.gameObject.SetActive(false);
+        }
+        else if (displayIcon.sprite != null)
+        {
+            displayIcon.gameObject.SetActive(true);
+        }
     }
 
     private IEnumerator ShopTimeOpen()

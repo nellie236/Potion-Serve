@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: unlockRecipe_01
   m_EditorClassIdentifier: 
   price: 10
-  icon: {fileID: 21300000, guid: 674213981eac36d4a9b902b5bc58b6fe, type: 3}
+  icon: {fileID: 21300000, guid: 81edfb0ccb7f9e64281a63ce35052b1d, type: 3}
   itemDescription: this is a blank recipe
   inventoryItem: 0
   item: {fileID: 0}
@@ -21,3 +21,4 @@ MonoBehaviour:
   page: {fileID: 4019324246429444200, guid: 364d9411825c59349bf19b493abedc1d, type: 3}
   itemDispenser: 0
   dispenser: {fileID: 0}
+  dispenserBuildIcon: {fileID: 0}
