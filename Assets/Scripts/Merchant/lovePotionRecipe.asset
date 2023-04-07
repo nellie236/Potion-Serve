@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78d1205504c28ce41a674e63e5eb153a, type: 3}
-  m_Name: fireEmber
+  m_Name: lovePotionRecipe
   m_EditorClassIdentifier: 
-  price: 5
-  icon: {fileID: 21300000, guid: bb1ddc7a75d92f54da4c49ec08e087cc, type: 3}
-  itemDescription: Fire ember
-  inventoryItem: 1
-  item: {fileID: 11400000, guid: 9932de7bf47b4864a9a55e58d967b8b1, type: 2}
-  recipePage: 0
-  page: {fileID: 0}
+  price: 40
+  icon: {fileID: -3587288076651818168, guid: 8db1bd10b0a37374e9d6e97c66301f0e, type: 3}
+  itemDescription: 'Unlock recipe page: Love potion'
+  inventoryItem: 0
+  item: {fileID: 0}
+  recipePage: 1
+  page: {fileID: 6591972234654290391, guid: a626ffedd9592924e95faf66e98643ad, type: 3}
   itemDispenser: 0
   dispenser: {fileID: 0}
   dispenserBuildIcon: {fileID: 0}

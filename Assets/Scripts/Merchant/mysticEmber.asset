@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78d1205504c28ce41a674e63e5eb153a, type: 3}
-  m_Name: fireEmber
+  m_Name: mysticEmber
   m_EditorClassIdentifier: 
-  price: 5
-  icon: {fileID: 21300000, guid: bb1ddc7a75d92f54da4c49ec08e087cc, type: 3}
-  itemDescription: Fire ember
+  price: 25
+  icon: {fileID: -2696506250795634678, guid: 8db1bd10b0a37374e9d6e97c66301f0e, type: 3}
+  itemDescription: Mystic Ember
   inventoryItem: 1
-  item: {fileID: 11400000, guid: 9932de7bf47b4864a9a55e58d967b8b1, type: 2}
+  item: {fileID: 11400000, guid: 6e818b74d396f0e45b06966611c77c20, type: 2}
   recipePage: 0
   page: {fileID: 0}
   itemDispenser: 0

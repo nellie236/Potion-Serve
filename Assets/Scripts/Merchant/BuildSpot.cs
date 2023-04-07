@@ -18,6 +18,10 @@ public class BuildSpot : MonoBehaviour
     {
         merchantManager = GameObject.Find("Merchant").GetComponent<MerchantManager>();
         currentImage = GetComponent<Image>();
+        if (currentItem != null)
+        {
+            onClick();
+        }
 
     }
 
@@ -33,9 +37,12 @@ public class BuildSpot : MonoBehaviour
 
         if (merchantManager.placed == 0)
         {
-            if (merchantManager.selectedItem.dispenser)
+            if (merchantManager.selectedItem != null)
             {
-                currentItem = merchantManager.selectedItem;
+                if (merchantManager.selectedItem.dispenser)
+                {
+                    currentItem = merchantManager.selectedItem;
+                }
             }
 
             if (heldItem != null)

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d1205504c28ce41a674e63e5eb153a, type: 3}
+  m_Name: mysticEmberDispenser
+  m_EditorClassIdentifier: 
+  price: 50
+  icon: {fileID: 8890533060992490834, guid: 8db1bd10b0a37374e9d6e97c66301f0e, type: 3}
+  itemDescription: Mystic Ember ingredient dispenser
+  inventoryItem: 0
+  item: {fileID: 0}
+  recipePage: 0
+  page: {fileID: 0}
+  itemDispenser: 1
+  dispenser: {fileID: 3542766601355710869, guid: 5789f382decd9004599a85e758f25aea, type: 3}
+  dispenserBuildIcon: {fileID: -6419694500860222802, guid: 65280e51ccdef0245b90e4e24c7c0590, type: 3}

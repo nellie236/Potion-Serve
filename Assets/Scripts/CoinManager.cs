@@ -15,7 +15,6 @@ public class CoinManager : MonoBehaviour
     void Start()
     {
         coinDisplay.text = "" + coinCount;
-        coinCount = 40;
         
     }
 

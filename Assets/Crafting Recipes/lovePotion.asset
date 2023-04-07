@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63a2b492252c1bb4e8145f7627f4713a, type: 3}
-  m_Name: frozenPotion
+  m_Name: lovePotion
   m_EditorClassIdentifier: 
   Ingredients:
-  - {fileID: 11400000, guid: f85815b8c575a7e47a64ee46a3d78d83, type: 2}
-  - {fileID: 11400000, guid: 0d752763f3af5d74da7738eb30d18105, type: 2}
+  - {fileID: 11400000, guid: 6e818b74d396f0e45b06966611c77c20, type: 2}
+  - {fileID: 11400000, guid: 3527b627228ace14a81976087a75eb4e, type: 2}
   Results:
-  - {fileID: 11400000, guid: 82e74744aee023841a77b8dbd9ead694, type: 2}
+  - {fileID: 11400000, guid: 3073779a2d9fe344cb05f7694c8835b7, type: 2}
   thisRecipe: {fileID: 11400000}
   progressBarDone: 0
