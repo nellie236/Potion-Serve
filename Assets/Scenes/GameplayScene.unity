@@ -6906,7 +6906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140996657
 GameObject:
@@ -9831,7 +9831,7 @@ Transform:
   - {fileID: 1469207624}
   - {fileID: 248590892}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558255585
 GameObject:
@@ -11626,7 +11626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 982091160}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 11400000, guid: e082cdac6f74f1c4484185c0dd8f7733, type: 2}
+  currentItem: {fileID: 0}
   heldItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
@@ -12788,7 +12788,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3542766601355710868, guid: 339b6035d0015944bab53246dff34829, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3542766601355710868, guid: 339b6035d0015944bab53246dff34829, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19381,7 +19381,7 @@ RectTransform:
   - {fileID: 1179262043}
   - {fileID: 1561492956}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20982,7 +20982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1179262043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21240,7 +21240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214994191
 GameObject:
@@ -29622,6 +29622,7 @@ MonoBehaviour:
   recipeBookParent: {fileID: 511416548}
   canAccessBook: 0
   bookOpen: 0
+  canvas: {fileID: 0}
   nextPage: {fileID: 2087536873}
   previousPage: {fileID: 1382642329}
   pageHolder: {fileID: 268960986}
@@ -43890,7 +43891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805373383
 GameObject:
@@ -44673,7 +44674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8617e733080ed4f9c11a3eb229d67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 0
+  coinCount: 50
   coinDisplay: {fileID: 2144026019}
 --- !u!1 &1920032134
 GameObject:
@@ -47603,7 +47604,7 @@ PrefabInstance:
       objectReference: {fileID: 598621150}
     - target: {fileID: 8618093393619426029, guid: 2ecaf86369460204ea0836d40b5696df, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8618093393619426029, guid: 2ecaf86369460204ea0836d40b5696df, type: 3}
       propertyPath: m_LocalPosition.x

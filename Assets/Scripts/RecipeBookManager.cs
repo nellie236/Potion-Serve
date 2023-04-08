@@ -11,6 +11,7 @@ public class RecipeBookManager : MonoBehaviour
     public GameObject recipeBookParent;
     public bool canAccessBook;
     public bool bookOpen;
+    public Canvas canvas;
 
     public Button nextPage;
     public Button previousPage;
@@ -21,6 +22,7 @@ public class RecipeBookManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         canAccessBook = false;
         bookOpen = false;
         TurnOffAll();
@@ -125,9 +127,22 @@ public class RecipeBookManager : MonoBehaviour
 
     public void AddPage(GameObject page)
     {
-        recipePages.Add(page);
+        
         //should also instantiate image under the page holder at the number it is in in the array. 
-        Instantiate(page);
-        page.transform.SetParent(pageHolder.transform);
+        GameObject rp = page;
+        GameObject recipePage = Instantiate(rp, canvas.transform) as GameObject;
+        recipePages.Add(recipePage);
+        recipePage.transform.SetParent(pageHolder.transform);
+        recipePage.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
+        recipePage.SetActive(false);
+        /*foreach (GameObject obj in recipePages)
+        {
+            if (obj != recipePages[currentPage])
+            {
+                obj.SetActive(false);
+            }
+        }*/
+        //recipePage.SetActive(false);
+        //recipePage.transform.position = pageHolder.transform.position;
     }
 }

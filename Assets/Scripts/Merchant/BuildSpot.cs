@@ -22,6 +22,7 @@ public class BuildSpot : MonoBehaviour
         {
             onClick();
         }
+        merchantManager.placed = 0;
 
     }
 
@@ -47,6 +48,11 @@ public class BuildSpot : MonoBehaviour
 
             if (heldItem != null)
             {
+                merchantManager.selectedItem = heldItem;
+                Destroy(spawnedDispenser);
+                heldItem = null;
+                merchantManager.placed = 0;
+                currentImage.sprite = originalImage;
                 //if hand is empty, PICK UP what is in the spot. if hand has an item in it, instantiate and occupied = true; 
             }
             else if (heldItem == null)
