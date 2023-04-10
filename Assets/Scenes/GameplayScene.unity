@@ -6671,7 +6671,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 125685697}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6695,8 +6695,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 968265521}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &126435349
@@ -7253,7 +7253,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 188750044}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7277,8 +7277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 1798868024}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 11400000, guid: 66c40ec96a986594d9858a3e6cf236b4, type: 2}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!224 &189007400 stripped
@@ -8739,7 +8739,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 428080837}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8763,8 +8763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 732275742}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &428585479
@@ -9329,6 +9329,7 @@ MonoBehaviour:
   itemPrice: {fileID: 1558483602}
   playerCoins: {fileID: 115524536}
   selectedItem: {fileID: 0}
+  buildItem: {fileID: 0}
   buildMapParent: {fileID: 1140626337}
   building: 0
   placed: 0
@@ -10809,7 +10810,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 639196512}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10833,8 +10834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 1343541077}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &639382225
@@ -11602,7 +11603,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 735173116}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11626,8 +11627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 982091160}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 11400000, guid: 66c40ec96a986594d9858a3e6cf236b4, type: 2}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &737415065
@@ -11927,7 +11928,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 778693057}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11951,8 +11952,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 796186352}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &781813928
@@ -12622,7 +12623,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 848745281}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12646,8 +12647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 399035005}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &850715985
@@ -13606,7 +13607,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 929264338}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13630,8 +13631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 1201927409}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &958091401
@@ -19722,7 +19723,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008557370}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19746,8 +19747,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 925511790}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &1009922002
@@ -22088,7 +22089,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1302788110}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22112,8 +22113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 897812353}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &1314115770
@@ -29479,7 +29480,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1427508442}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29503,8 +29504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 841805122}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!224 &1458024790 stripped
@@ -30031,9 +30032,9 @@ RectTransform:
   m_Father: {fileID: 2030638124}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -39.1, y: 16}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 56.9, y: -38}
   m_SizeDelta: {x: 14, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1519960294
@@ -35057,7 +35058,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1525898780}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35081,8 +35082,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 345444274}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &1558483600
@@ -36614,7 +36615,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1690349646}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36638,8 +36639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 1752493408}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &1694993909
@@ -36899,7 +36900,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1699100512}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36923,8 +36924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 811588527}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &1706377318
@@ -37363,7 +37364,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1758311424}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37387,8 +37388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 336552675}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &1759057441 stripped
@@ -45017,7 +45018,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1957269537}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45041,8 +45042,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 1056382105}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 11400000, guid: e082cdac6f74f1c4484185c0dd8f7733, type: 2}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 11400000, guid: e082cdac6f74f1c4484185c0dd8f7733, type: 2}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1001 &1976336132
@@ -45817,7 +45818,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2047754251}
         m_TargetAssemblyTypeName: BuildSpot, Assembly-CSharp
-        m_MethodName: onClick
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45841,8 +45842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpot: {fileID: 1595733295}
   spawnedDispenser: {fileID: 0}
-  currentItem: {fileID: 0}
-  heldItem: {fileID: 0}
+  setItem: {fileID: 0}
+  containedItem: {fileID: 0}
   currentImage: {fileID: 0}
   originalImage: {fileID: -8016900841280918477, guid: 1640718e0dcfa3b4f99af4e36af09396, type: 3}
 --- !u!1 &2047996416

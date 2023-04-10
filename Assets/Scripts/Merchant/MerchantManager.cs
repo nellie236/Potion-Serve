@@ -29,6 +29,7 @@ public class MerchantManager : MonoBehaviour
     public Text itemPrice;
     public Text playerCoins;
     public MerchantItem selectedItem;
+    public MerchantItem buildItem;
 
     public GameObject buildMapParent;
     public bool building;
@@ -45,7 +46,7 @@ public class MerchantManager : MonoBehaviour
         Player = GameObject.Find("Player").GetComponent<CharacterController2D>();
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
         //building = false;
-        buildMapParent.SetActive(false);
+        //buildMapParent.SetActive(false);
         displayIcon.sprite = null;
     }
 
@@ -140,6 +141,7 @@ public class MerchantManager : MonoBehaviour
             marketCanvas.gameObject.SetActive(true);
             mainCamera.gameObject.SetActive(false);
             mainCanvas.gameObject.SetActive(false);
+            buildMapParent.SetActive(false);
         }
         
     }
@@ -212,6 +214,7 @@ public class MerchantManager : MonoBehaviour
             else if (item.itemDispenser)
             {
                 //open build map pass down (item.dispenser)
+                buildItem = selectedItem;
                 placed = 0; 
                 ToggleBuildMap();
             }
