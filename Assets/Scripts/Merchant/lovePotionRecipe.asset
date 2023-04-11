@@ -19,6 +19,7 @@ MonoBehaviour:
   item: {fileID: 0}
   recipePage: 1
   page: {fileID: 6591972234654290391, guid: a626ffedd9592924e95faf66e98643ad, type: 3}
+  bought: 0
   itemDispenser: 0
   dispenser: {fileID: 0}
   dispenserBuildIcon: {fileID: 0}

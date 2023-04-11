@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: Love Potion
   itemIcon: {fileID: 21300000, guid: d797321f5ac65894a8bba41ebc616409, type: 3}
   isStackable: 0
-  throwablePrefab: {fileID: 0}
+  throwablePrefab: {fileID: 1129085746926212879, guid: ac359afbae9ae3141a5b8462e425813d, type: 3}
   healthAdded: 0

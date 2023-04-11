@@ -73,7 +73,7 @@ public class MerchantManager : MonoBehaviour
                 remainingOpen--;
                 yield return new WaitForSeconds(1f);
             }
-            closeStore();
+            CloseStore();
         }
     }
 
@@ -89,10 +89,10 @@ public class MerchantManager : MonoBehaviour
         merchantAnim.SetBool("closeShop", false);
         merchantAnim.SetBool("shopInactive", false);
         yield return new WaitForSeconds(1f);
-        openStore();
+        OpenStore();
     }
 
-    public void openStore()
+    public void OpenStore()
     {
         merchantAnim.SetBool("shopActive", true);
         
@@ -101,7 +101,7 @@ public class MerchantManager : MonoBehaviour
         ItemsToSell();
     }
 
-    public void closeStore()
+    public void CloseStore()
     {
         //this one is called by timer of how long the shop will be open OnEnd() in enumerator 
         remainingOpen = openTime;
@@ -111,7 +111,7 @@ public class MerchantManager : MonoBehaviour
         canAccessMerchant = false;
     }
 
-    public void storeIdle()
+    public void StoreIdle()
     {
         merchantAnim.SetBool("shopInactive", true);
         StartCoroutine(WaitToOpen());
@@ -142,6 +142,7 @@ public class MerchantManager : MonoBehaviour
             mainCamera.gameObject.SetActive(false);
             mainCanvas.gameObject.SetActive(false);
             buildMapParent.SetActive(false);
+            PassItem(null);
         }
         
     }
@@ -152,21 +153,28 @@ public class MerchantManager : MonoBehaviour
         for (int i = 0; i < amountOfItemsSold; i++)
         {
             int randomSell = Random.Range(0, sellables.Count);
-            //Button[i].set equal to sellable. 
-            //forSale[i].GetComponent<Sprite>() = sellables[randomSell].GetComponent<Sprite>();
             forSale[i].GetComponent<MerchantItemHolder>().myItem = sellables[randomSell];
             forSale[i].image.sprite = sellables[randomSell].icon;
-            //sellables[randomSell].transform.parent 
         }
     }
 
     public void PassItem(MerchantItem item)
     {
-        //pass item to the display one. display the item description and price. 
-        itemDescript.text = item.itemDescription;
-        displayIcon.sprite = item.icon;
-        itemPrice.text = item.price + " Coins";
-        selectedItem = item;
+        if (item != null)
+        {
+            //pass item to the display one. display the item description and price. 
+            itemDescript.text = item.itemDescription;
+            displayIcon.sprite = item.icon;
+            itemPrice.text = item.price + " Coins";
+            selectedItem = item;
+        }
+        else if (item == null)
+        {
+            displayIcon.sprite = null;
+            itemDescript.text = null;
+            itemPrice.text = null;
+            selectedItem = null;
+        }
 
     }
 
@@ -209,7 +217,19 @@ public class MerchantManager : MonoBehaviour
             {
                 RecipeBookManager recipeBookManager = GameObject.Find("RecipeBookManager").GetComponent<RecipeBookManager>();
                 recipeBookManager.AddPage(item.page);
-                
+                sellables.Remove(item);
+
+                foreach (Button button in forSale)
+                {
+                    if (button.GetComponent<MerchantItemHolder>().myItem == item)
+                    {
+                        button.GetComponent<MerchantItemHolder>().myItem = null;
+                        button.GetComponent<Image>().sprite = button.GetComponent<MerchantItemHolder>().empty;
+                    }
+                }
+
+                PassItem(null);
+                //item.bought = true;
             }
             else if (item.itemDispenser)
             {
@@ -217,6 +237,10 @@ public class MerchantManager : MonoBehaviour
                 buildItem = selectedItem;
                 placed = 0; 
                 ToggleBuildMap();
+            }
+            else if (item.refreshStock)
+            {
+                ItemsToSell();
             }
         }
     }
