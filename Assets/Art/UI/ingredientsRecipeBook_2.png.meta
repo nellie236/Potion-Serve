@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: b88aac4b764e48544ab476842ccc536f
+guid: b445f50193e91c04489510599510bcf5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1818320467476331327
-    second: shopExtras_02_0
+      213: -161766301255127493
+    second: ingredientsRecipeBook_2_0
   - first:
-      213: 2680042271250075558
-    second: shopExtras_02_1
+      213: -5790210455733594609
+    second: ingredientsRecipeBook_2_1
   - first:
-      213: -4531926963820020193
-    second: shopExtras_02_2
+      213: -881653746009727403
+    second: ingredientsRecipeBook_2_2
   - first:
-      213: -8484328830954946570
-    second: shopExtras_02_3
+      213: -841456638308810093
+    second: ingredientsRecipeBook_2_3
   - first:
-      213: 6763320004883843649
-    second: shopExtras_02_4
+      213: -1956501977123575753
+    second: ingredientsRecipeBook_2_4
   - first:
-      213: -3664425351991886414
-    second: shopExtras_02_5
-  - first:
-      213: 8197248255351670879
-    second: shopExtras_02_6
-  - first:
-      213: 6344716112392658533
-    second: shopExtras_02_7
+      213: 1864673901889647497
+    second: ingredientsRecipeBook_2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,160 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shopExtras_02_0
+      name: ingredientsRecipeBook_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3bbfbfc4d8fb3910800000000000000
-      internalID: 1818320467476331327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6af44e80f3c613520800000000000000
-      internalID: 2680042271250075558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1e3e75007c5b11c0800000000000000
-      internalID: -4531926963820020193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ff335151eb914a80800000000000000
-      internalID: -8484328830954946570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14a0569f5b32cdd50800000000000000
-      internalID: 6763320004883843649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bd769cae88552dc0800000000000000
-      internalID: -3664425351991886414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f584deb7bd972c170800000000000000
-      internalID: 8197248255351670879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shopExtras_02_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
-        width: 48
-        height: 32
+        x: 350
+        y: 450
+        width: 290
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,8 +159,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56e9cdf30b5fc0850800000000000000
-      internalID: 6344716112392658533
+      spriteID: b3e2f05f76a41cdf0800000000000000
+      internalID: -161766301255127493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingredientsRecipeBook_2_1
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 400
+        width: 150
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f061f33b44a05afa0800000000000000
+      internalID: -5790210455733594609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingredientsRecipeBook_2_2
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 510
+        width: 250
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e9236d69cb3c3f0800000000000000
+      internalID: -881653746009727403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingredientsRecipeBook_2_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 200
+        width: 230
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39285bb45ab8254f0800000000000000
+      internalID: -841456638308810093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingredientsRecipeBook_2_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 150
+        width: 310
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738233b51db19d4e0800000000000000
+      internalID: -1956501977123575753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingredientsRecipeBook_2_5
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 220
+        width: 250
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983f218c807a0e910800000000000000
+      internalID: 1864673901889647497
       vertices: []
       indices: 
       edges: []
