@@ -125,16 +125,6 @@ public class CharacterController2D : MonoBehaviour
             toolTips.transform.GetChild(1).gameObject.GetComponent<TextMeshPro>().text = collision.GetComponent<ToolTips>().currentKey;
         }
 
-        if (toolTipsEnabled && collision.CompareTag("ToolTipsCustomer"))
-        {
-            if (currentCustomer != null)
-            {
-                toolTips.SetActive(true);
-                toolTips.transform.GetChild(1).gameObject.GetComponent<TextMeshPro>().text = collision.GetComponent<ToolTips>().currentKey;
-            }
-        }
-
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -147,6 +137,15 @@ public class CharacterController2D : MonoBehaviour
         if (collision.CompareTag("Merchant"))
         {
             atMerchant = true;
+        }
+
+        if (toolTipsEnabled && collision.CompareTag("ToolTipsCustomer"))
+        {
+            if (currentCustomer != null)
+            {
+                toolTips.SetActive(true);
+                toolTips.transform.GetChild(1).gameObject.GetComponent<TextMeshPro>().text = collision.GetComponent<ToolTips>().currentKey;
+            }
         }
     }
 

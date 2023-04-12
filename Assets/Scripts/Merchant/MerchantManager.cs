@@ -131,6 +131,11 @@ public class MerchantManager : MonoBehaviour
             mainCanvas.gameObject.SetActive(true);
             marketCamera.gameObject.SetActive(false);
             marketCanvas.gameObject.SetActive(false);
+
+            if (GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().active)
+            {
+                GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ContinueTimer();
+            }
         }
 
         if (marketActive)

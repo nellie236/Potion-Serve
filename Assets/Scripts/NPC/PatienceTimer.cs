@@ -18,7 +18,7 @@ public class PatienceTimer : MonoBehaviour
     void Start()
     {
         //Being(Duration);
-        active = true;
+        //active = true;
         uiFill.fillAmount = 0;
     }
 
@@ -26,6 +26,12 @@ public class PatienceTimer : MonoBehaviour
     {
         Being(Duration);
         uiFill.fillAmount = 1;
+        active = true;
+    }
+
+    public void ContinueTimer()
+    {
+        StartCoroutine(UpdateTimer());
         active = true;
     }
     
