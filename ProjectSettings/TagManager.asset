@@ -19,6 +19,7 @@ TagManager:
   - ItemDispenser
   - OutBounds
   - Merchant
+  - ToolTips
   layers:
   - Default
   - TransparentFX
