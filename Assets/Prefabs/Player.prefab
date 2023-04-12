@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2943935d7b758e04fac1eeaef523eca1, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.45490196, a: 1}
+  m_Color: {r: 0.47547168, g: 1, b: 0.71408063, a: 0.38431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,8 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ead6d66575475f4eba0b7f5390ac7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTips: 0
-  currentKey: {fileID: 0}
+  currentKey: 
 --- !u!1 &2347651735742128506
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,8 +308,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 3120562175
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7254902}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -651,6 +650,8 @@ MonoBehaviour:
   currentCustomer: {fileID: 0}
   merchant: {fileID: 0}
   atMerchant: 0
+  toolTipsEnabled: 0
+  toolTips: {fileID: 0}
   ToggleShop: 323
   ThrowGiveItem: 0
   TriggerDialogue: 0

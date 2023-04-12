@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -42,7 +43,8 @@ public class CharacterController2D : MonoBehaviour
     public MerchantManager merchant;
     public bool atMerchant;
 
-
+    public bool toolTipsEnabled;
+    public GameObject toolTips;
     public KeyCode ToggleShop;
     public KeyCode ThrowGiveItem;
     public KeyCode TriggerDialogue;
@@ -70,14 +72,17 @@ public class CharacterController2D : MonoBehaviour
         dialogueManager = dialogueBox.GetComponent<DialogueManager>();
         inventoryManager = GameObject.Find("InventoryManagerObject").GetComponent<InventoryManager>();
         anim = GetComponent<Animator>();
+        toolTips = transform.GetChild(3).gameObject;
+        toolTips.SetActive(false);
         //Debug.Log(dialogueManager);
-        
+
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
         facingRight = false;
         canGiveItem = false;
+        toolTipsEnabled = true;
 
         if (mainCamera)
         {
@@ -113,7 +118,23 @@ public class CharacterController2D : MonoBehaviour
             atMerchant = true;
         }
 
-        
+        if (toolTipsEnabled && collision.CompareTag("ToolTips"))
+        {
+            //currentKey = collision.GetComponent<Key>
+            toolTips.SetActive(true);
+            toolTips.transform.GetChild(1).gameObject.GetComponent<TextMeshPro>().text = collision.GetComponent<ToolTips>().currentKey;
+        }
+
+        if (toolTipsEnabled && collision.CompareTag("ToolTipsCustomer"))
+        {
+            if (currentCustomer != null)
+            {
+                toolTips.SetActive(true);
+                toolTips.transform.GetChild(1).gameObject.GetComponent<TextMeshPro>().text = collision.GetComponent<ToolTips>().currentKey;
+            }
+        }
+
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -145,6 +166,18 @@ public class CharacterController2D : MonoBehaviour
         if (collision.CompareTag("Merchant"))
         {
             atMerchant = false;
+        }
+
+        if (toolTipsEnabled && collision.CompareTag("ToolTips"))
+        {
+            //currentKey = collision.GetComponent<Key>
+            toolTips.SetActive(false);
+            //collision.GetComponent<ToolTips>().currentKey = toolTips.transform.GetChild(2).gameObject.GetComponent<TextMesh>();
+        }
+
+        if (toolTipsEnabled && collision.CompareTag("ToolTipsCustomer"))
+        {
+            toolTips.SetActive(false);
         }
 
 
@@ -265,11 +298,13 @@ public class CharacterController2D : MonoBehaviour
             {
                 facingRight = true;
                 t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                toolTips.transform.localScale = new Vector3(-Mathf.Abs(toolTips.transform.localScale.x), toolTips.transform.localScale.y, transform.localScale.z);
             }
             if (moveDirection < 0 && facingRight)
             {
                 facingRight = false;
                 t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                toolTips.transform.localScale = new Vector3(Mathf.Abs(toolTips.transform.localScale.x), toolTips.transform.localScale.y, transform.localScale.z);
             }
         }
         else if (moveDirection == 0)

@@ -1,32 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolTips : MonoBehaviour
 {
-    public bool toolTips;
-    public TextMesh currentKey;
-    public GameObject me;
+    public string currentKey;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        toolTips = true;
-        me = this.gameObject;
-        me.SetActive(false);
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (toolTips && collision.CompareTag("ToolTips"))
+        if (this.tag == "ToolTipsCustomer")
         {
-            //currentKey = collision.GetComponent<Key>
-            me.SetActive(true);
+            if (player.GetComponent<CharacterController2D>().currentCustomer != null)
+            {
+                if (player.GetComponent<CharacterController2D>().currentCustomer.GetComponent<CustomerAgent>().inProgState == CustomerStateId.OrderInProgress)
+                {
+                    currentKey = "Q";
+                }
+                else
+                {
+                    currentKey = "R";
+                }
+            }
         }
     }
 
