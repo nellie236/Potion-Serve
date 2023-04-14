@@ -38,6 +38,9 @@ TextureImporter:
   - first:
       213: -108195556067809967
     second: recipeBook_Pageanim_01-Sheet_11
+  - first:
+      213: -8120177592099824971
+    second: recipeBook_Pageanim_01-Sheet_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -171,7 +174,7 @@ TextureImporter:
         width: 105
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,10 +192,10 @@ TextureImporter:
         serializedVersion: 2
         x: 147
         y: 262
-        width: 53
+        width: 105
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,12 +211,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_2
       rect:
         serializedVersion: 2
-        x: 285
+        x: 280
         y: 262
-        width: 48
+        width: 105
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,12 +232,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_3
       rect:
         serializedVersion: 2
-        x: 432
+        x: 413
         y: 262
-        width: 34
+        width: 105
         height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,12 +253,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_4
       rect:
         serializedVersion: 2
-        x: 54
+        x: 14
         y: 177
-        width: 13
+        width: 105
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -271,12 +274,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_5
       rect:
         serializedVersion: 2
-        x: 195
+        x: 147
         y: 177
-        width: 5
+        width: 105
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -292,12 +295,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_6
       rect:
         serializedVersion: 2
-        x: 330
-        y: 92
-        width: 44
-        height: 159
+        x: 280
+        y: 177
+        width: 105
+        height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,12 +316,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_7
       rect:
         serializedVersion: 2
-        x: 465
+        x: 413
         y: 177
-        width: 5
+        width: 105
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,12 +337,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_8
       rect:
         serializedVersion: 2
-        x: 66
+        x: 14
         y: 92
-        width: 13
+        width: 105
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -355,12 +358,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_9
       rect:
         serializedVersion: 2
-        x: 199
+        x: 147
         y: 92
-        width: 24
+        width: 105
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -376,12 +379,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_10
       rect:
         serializedVersion: 2
-        x: 465
+        x: 413
         y: 92
-        width: 48
+        width: 105
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,12 +400,12 @@ TextureImporter:
       name: recipeBook_Pageanim_01-Sheet_11
       rect:
         serializedVersion: 2
-        x: 66
+        x: 14
         y: 7
-        width: 53
+        width: 105
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,6 +413,27 @@ TextureImporter:
       bones: []
       spriteID: 1556d4a07bc9f7ef0800000000000000
       internalID: -108195556067809967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recipeBook_Pageanim_01-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 92
+        width: 105
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba9dc5a0855f4f80800000000000000
+      internalID: -8120177592099824971
       vertices: []
       indices: 
       edges: []

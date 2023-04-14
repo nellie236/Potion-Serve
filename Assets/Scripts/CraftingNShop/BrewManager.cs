@@ -14,7 +14,8 @@ public class BrewManager : MonoBehaviour
     public List<GameObject> potGameObjects;
     public GameObject progressBar;
     Animator progBarAnim;
-    
+
+    public GameObject burstParticle;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class BrewManager : MonoBehaviour
         progressBar = GameObject.Find("progressBar");
         progBarAnim = progressBar.GetComponent<Animator>();
         progBarAnim.gameObject.SetActive(false);
+        burstParticle = GameObject.Find("BurstParticle");
         
     }
 
@@ -62,6 +64,7 @@ public class BrewManager : MonoBehaviour
         progBarAnim.gameObject.SetActive(false);
         recipe.progressBarDone = true;
         recipe.Craft(brewManager);
+        burstParticle.GetComponent<ParticleSystem>().Play();
         
     }
 
