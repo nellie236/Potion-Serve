@@ -33,7 +33,11 @@ public class MerchantManager : MonoBehaviour
 
     public GameObject buildMapParent;
     public bool building;
-    public int placed; 
+    public int placed;
+
+    public List<string> dialogueSnippets;
+    public Text dialogueText;
+    public List<string> refreshDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,7 @@ public class MerchantManager : MonoBehaviour
         merchantAnim.SetBool("shopActive", false);
         Player = GameObject.Find("Player").GetComponent<CharacterController2D>();
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
+        dialogueText = GameObject.Find("DialogueSnippet").GetComponent<Text>();
         //building = false;
         //buildMapParent.SetActive(false);
         displayIcon.sprite = null;
@@ -148,8 +153,22 @@ public class MerchantManager : MonoBehaviour
             mainCanvas.gameObject.SetActive(false);
             buildMapParent.SetActive(false);
             PassItem(null);
+            Dialogue();
         }
         
+    }
+
+    public void Dialogue()
+    {
+        int dialogue = Random.Range(0, dialogueSnippets.Count);
+        dialogueText.text = dialogueSnippets[dialogue];
+    }
+
+    public void RefreshDialogue()
+    {
+        int dialogue = Random.Range(0, refreshDialogue.Count);
+        dialogueText.text = refreshDialogue[dialogue];
+        //Debug.Log("changing dialogue text");
     }
 
     public void ItemsToSell()
@@ -260,6 +279,7 @@ public class MerchantManager : MonoBehaviour
             else if (item.refreshStock)
             {
                 ItemsToSell();
+                RefreshDialogue();
             }
         }
     }

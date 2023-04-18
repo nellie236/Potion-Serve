@@ -58,8 +58,7 @@ public class CharacterController2D : MonoBehaviour
 
     //how quickly the shake effect should evaporate
     private float dampingSpeed = 5.0f;
-
-
+    
 
     // Use this for initialization
     void Start()
@@ -186,6 +185,23 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (recipeBookManager.bookOpen)
+            {
+                recipeBookManager.OpenCloseBook();
+            }
+            else if (merchant.marketActive)
+            {
+                merchant.ToggleMarket();
+            }
+            else
+            {
+                GameObject.Find("PauseManager").GetComponent<PauseGame>().TogglePause();
+            }
+        }
+
+
         if (dialogueManager.isActive == true || recipeBookManager.bookOpen || merchant.marketActive)
         {
             if (inventoryManager.inventoryOn == true)
@@ -262,12 +278,13 @@ public class CharacterController2D : MonoBehaviour
         
 
 
-
+        
 
         // Movement controls
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            //moveDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
             //anim.SetBool("moving", true);
         }
         else
@@ -284,8 +301,9 @@ public class CharacterController2D : MonoBehaviour
                 anim.SetBool("moving", false);
             }
 
-            
         }
+
+        
 
         anim.SetBool("grounded", isGrounded);
 
@@ -321,7 +339,7 @@ public class CharacterController2D : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             jumpBufferCounter = jumpBufferTime;
         }
@@ -337,7 +355,7 @@ public class CharacterController2D : MonoBehaviour
             jumpBufferCounter = 0f;
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && r2d.velocity.y > 0f)
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && r2d.velocity.y > 0f)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y * 0.5f);
 

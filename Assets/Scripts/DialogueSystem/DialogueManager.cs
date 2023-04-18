@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isActive == true)
         {
             NextMessage();
         }
