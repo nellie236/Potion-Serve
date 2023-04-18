@@ -155,11 +155,32 @@ public class MerchantManager : MonoBehaviour
     public void ItemsToSell()
     {
         int amountOfItemsSold = 4;
+        
         for (int i = 0; i < amountOfItemsSold; i++)
         {
             int randomSell = Random.Range(0, sellables.Count);
             forSale[i].GetComponent<MerchantItemHolder>().myItem = sellables[randomSell];
             forSale[i].image.sprite = sellables[randomSell].icon;
+
+            
+            //i really dont like this solution VVV
+            int repeat = 0;
+
+            foreach (Button button in forSale)
+            {
+                if (forSale[i].GetComponent<MerchantItemHolder>().myItem == button.GetComponent<MerchantItemHolder>().myItem)
+                {
+                    repeat++;
+                }
+                
+                if (repeat >= 2)
+                {
+                    int newRandom = Random.Range(0, sellables.Count);
+                    forSale[i].GetComponent<MerchantItemHolder>().myItem = sellables[newRandom];
+                    forSale[i].image.sprite = sellables[newRandom].icon;
+                }
+            }
+
         }
     }
 
@@ -215,6 +236,7 @@ public class MerchantManager : MonoBehaviour
                 else if (!invManager.inventoryFull)
                 {
                     invManager.Add(item.item, 1);
+                    ClearBuySlot(item);
                 }
                 
             }
@@ -224,28 +246,33 @@ public class MerchantManager : MonoBehaviour
                 recipeBookManager.AddPage(item.page);
                 sellables.Remove(item);
 
-                foreach (Button button in forSale)
-                {
-                    if (button.GetComponent<MerchantItemHolder>().myItem == item)
-                    {
-                        button.GetComponent<MerchantItemHolder>().myItem = null;
-                        button.GetComponent<Image>().sprite = button.GetComponent<MerchantItemHolder>().empty;
-                    }
-                }
-
-                PassItem(null);
+                ClearBuySlot(item);
                 //item.bought = true;
             }
             else if (item.itemDispenser)
             {
                 //open build map pass down (item.dispenser)
                 buildItem = selectedItem;
-                placed = 0; 
+                placed = 0;
+                ClearBuySlot(item);
                 ToggleBuildMap();
             }
             else if (item.refreshStock)
             {
                 ItemsToSell();
+            }
+        }
+    }
+
+    private void ClearBuySlot(MerchantItem item)
+    {
+        foreach (Button button in forSale)
+        {
+            if (button.GetComponent<MerchantItemHolder>().myItem == item)
+            {
+                button.GetComponent<MerchantItemHolder>().myItem = null;
+                button.GetComponent<Image>().sprite = button.GetComponent<MerchantItemHolder>().empty;
+                PassItem(null);
             }
         }
     }

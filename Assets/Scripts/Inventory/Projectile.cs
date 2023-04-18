@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
     {
         outBoundsTimer = 1f;
         remainingOutBounds = outBoundsTimer;
-        expireTimer = 30f;
+        expireTimer = 10f;
         player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("Throw");
         target = player.transform.GetChild(0).gameObject;
@@ -124,6 +124,11 @@ public class Projectile : MonoBehaviour
             canExpire = false;
         }
 
+        if (collision.tag == "Cauldron")
+        {
+            canExpire = false;
+        }
+
         if (collision.tag == "OutBounds")
         {
             StartCoroutine(OutOfBounds());
@@ -133,6 +138,12 @@ public class Projectile : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "ItemDispenser")
+        {
+            canExpire = true;
+            StartCoroutine(ExpireTimer());
+        }
+
+        if (collision.tag == "Cauldron")
         {
             canExpire = true;
             StartCoroutine(ExpireTimer());

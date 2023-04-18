@@ -11,6 +11,7 @@ public class ItemDispenser : MonoBehaviour
     //public Transform spawnPosition;
     public GameObject spawner;
     public List<GameObject> currentObjects;
+    public ParticleSystem myParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class ItemDispenser : MonoBehaviour
         itemPresent = false;
         remainingDelay = dispenseDelay;
         currentObjects = new List<GameObject>();
+        myParticles = this.transform.GetChild(1).GetComponent<ParticleSystem>();
         StartCoroutine(DispenseItemTimer());
     }
 
@@ -84,5 +86,6 @@ public class ItemDispenser : MonoBehaviour
         GameObject dispensed = Instantiate(itemToDispense, new Vector2(spawner.transform.position.x, spawner.transform.position.y), Quaternion.identity) as GameObject;
         dispensed.transform.localPosition = spawner.transform.position;
         remainingDelay = dispenseDelay;
+        myParticles.Play();
     }
 }

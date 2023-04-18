@@ -21,6 +21,7 @@ TagManager:
   - Merchant
   - ToolTips
   - ToolTipsCustomer
+  - Cauldron
   layers:
   - Default
   - TransparentFX

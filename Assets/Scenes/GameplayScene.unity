@@ -30656,7 +30656,7 @@ GameObject:
   - component: {fileID: 1139358371}
   m_Layer: 0
   m_Name: Cauldron
-  m_TagString: Untagged
+  m_TagString: Cauldron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30737,6 +30737,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e5a30dedb4b8be47a4c6083f0b4fd8a, type: 2}
   - {fileID: 11400000, guid: e479fc1e999d9f540a02a4e70256c170, type: 2}
   - {fileID: 11400000, guid: a8ca05fa4ad4506408cb616e7f58322d, type: 2}
+  - {fileID: 11400000, guid: c713d7c14561ff44ca943b08e3da20af, type: 2}
   brewManager: {fileID: 0}
   potGameObjects: []
   progressBar: {fileID: 0}
@@ -55265,7 +55266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8617e733080ed4f9c11a3eb229d67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 0
+  coinCount: 1000
   coinDisplay: {fileID: 2144026019}
 --- !u!1 &1916664269 stripped
 GameObject:
