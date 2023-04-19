@@ -19,6 +19,9 @@ public class RecipeBookManager : MonoBehaviour
     public GameObject pageHolder;
 
     public KeyCode ToggleRecipeBook;
+
+    //public Animator myAnim;
+    //public GameObject pageFlipGameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,19 +31,14 @@ public class RecipeBookManager : MonoBehaviour
         TurnOffAll();
         recipeBookParent.SetActive(false);
         currentPage = 0;
+        //myAnim = pageFlipGameObject.GetComponent<Animator>();
+        //pageFlipGameObject = GameObject.Find("PageFlipAnim");
+        //pageFlipGameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (canAccessBook)
-        {
-            if (Input.GetKeyUp(ToggleRecipeBook))
-            {
-                OpenCloseBook();
-            }
-        }*/
-
         if (bookOpen)
         {
             if (currentPage == 0)
@@ -113,16 +111,19 @@ public class RecipeBookManager : MonoBehaviour
             currentPage++;
             recipePages[currentPage].SetActive(true);
         }
+        //pageFlipGameObject.SetActive(false);
     }
 
     public void PreviousPage()
     {
         if (currentPage != 0)
         {
+            
             recipePages[currentPage].SetActive(false);
             currentPage--;
             recipePages[currentPage].SetActive(true);
         }
+        //pageFlipGameObject.SetActive(false);
     }
 
     public void AddPage(GameObject page)
@@ -145,4 +146,7 @@ public class RecipeBookManager : MonoBehaviour
         //recipePage.SetActive(false);
         //recipePage.transform.position = pageHolder.transform.position;
     }
+
+
+    
 }

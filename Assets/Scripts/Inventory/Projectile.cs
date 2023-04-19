@@ -92,12 +92,30 @@ public class Projectile : MonoBehaviour
                 break;
             }
             //Debug.Log(remainingDelay);
+            if (remainingExpire <= expireTimer / 2)
+            {
+                //blink stuff
+                StartCoroutine(Blink());
+            }
+
             remainingExpire--;
             yield return new WaitForSeconds(1f);
+            //GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
         }
         if (canExpire)
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private IEnumerator Blink()
+    {
+        while (remainingExpire <= expireTimer / 2)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(0, 0, 0);
+            yield return new WaitForSeconds(.5f);
+            GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+            yield return new WaitForSeconds(.5f);
         }
     }
 

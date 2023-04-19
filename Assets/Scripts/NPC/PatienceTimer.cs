@@ -11,6 +11,7 @@ public class PatienceTimer : MonoBehaviour
     private int remainingDuration;
     private bool Pause;
     public bool active;
+    Animator myAnim;
 
     public GameObject currentCustomer;
 
@@ -20,6 +21,7 @@ public class PatienceTimer : MonoBehaviour
         //Being(Duration);
         //active = true;
         uiFill.fillAmount = 0;
+        myAnim = this.gameObject.GetComponent<Animator>();
     }
 
     public void StartTimer()
@@ -27,6 +29,7 @@ public class PatienceTimer : MonoBehaviour
         Being(Duration);
         uiFill.fillAmount = 1;
         active = true;
+        TimerEnter();
     }
 
     public void ContinueTimer()
@@ -68,6 +71,7 @@ public class PatienceTimer : MonoBehaviour
         currentCustomer.GetComponent<CustomerAgent>().orderFulfilled = false;
         GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ourCustomer(null);
         ResetTimer();
+        TimerExit();
     }
 
     private void ResetTimer()
@@ -78,6 +82,31 @@ public class PatienceTimer : MonoBehaviour
     public void ourCustomer(GameObject ourCustomer)
     {
         currentCustomer = ourCustomer;
+    }
+
+    public void TimerEnter()
+    {
+        myAnim.SetBool("away", false);
+        myAnim.SetBool("enter", true);
+    }
+
+    public void TimerIdle()
+    {
+        myAnim.SetBool("idle", true);
+        myAnim.SetBool("enter", false);
+    }
+
+
+    public void TimerExit()
+    {
+        myAnim.SetBool("exit", true);
+        myAnim.SetBool("idle", false);
+    }
+
+    public void TimerHide()
+    {
+        myAnim.SetBool("away", true);
+        myAnim.SetBool("exit", false);
     }
         
         
