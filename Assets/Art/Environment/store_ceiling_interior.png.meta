@@ -1,0 +1,2472 @@
+fileFormatVersion: 2
+guid: 79420a208e9518a40a0d3a83174264f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 804585256454471201
+    second: store_ceiling_interior_0
+  - first:
+      213: 5674017141981509961
+    second: store_ceiling_interior_1
+  - first:
+      213: -2936782363284959787
+    second: store_ceiling_interior_2
+  - first:
+      213: 7102231073846367145
+    second: store_ceiling_interior_3
+  - first:
+      213: 6635054821780756519
+    second: store_ceiling_interior_4
+  - first:
+      213: -9202801745479279112
+    second: store_ceiling_interior_5
+  - first:
+      213: 5029730399586518536
+    second: store_ceiling_interior_6
+  - first:
+      213: 4435987691146717624
+    second: store_ceiling_interior_7
+  - first:
+      213: -9020517295218766241
+    second: store_ceiling_interior_8
+  - first:
+      213: 6245655185213460533
+    second: store_ceiling_interior_9
+  - first:
+      213: 3853572852216653883
+    second: store_ceiling_interior_10
+  - first:
+      213: -3715257018872506576
+    second: store_ceiling_interior_11
+  - first:
+      213: 4642957567939840
+    second: store_ceiling_interior_12
+  - first:
+      213: 5105403115069912101
+    second: store_ceiling_interior_13
+  - first:
+      213: -2882921469364135405
+    second: store_ceiling_interior_14
+  - first:
+      213: -6810200183739923217
+    second: store_ceiling_interior_15
+  - first:
+      213: -1874607810471645546
+    second: store_ceiling_interior_16
+  - first:
+      213: 4821482250977065962
+    second: store_ceiling_interior_17
+  - first:
+      213: 7835096847700337289
+    second: store_ceiling_interior_18
+  - first:
+      213: 307058078320278522
+    second: store_ceiling_interior_19
+  - first:
+      213: 5259262278969280495
+    second: store_ceiling_interior_20
+  - first:
+      213: 2720308933380474721
+    second: store_ceiling_interior_21
+  - first:
+      213: 2806142768501204341
+    second: store_ceiling_interior_22
+  - first:
+      213: -8206955972982765671
+    second: store_ceiling_interior_23
+  - first:
+      213: -240056425312330448
+    second: store_ceiling_interior_24
+  - first:
+      213: -8446395301966635724
+    second: store_ceiling_interior_25
+  - first:
+      213: 540747595086234668
+    second: store_ceiling_interior_26
+  - first:
+      213: 3016476722119791720
+    second: store_ceiling_interior_27
+  - first:
+      213: -7051059341866711090
+    second: store_ceiling_interior_28
+  - first:
+      213: -7173912799205912947
+    second: store_ceiling_interior_29
+  - first:
+      213: -5850651600063851174
+    second: store_ceiling_interior_30
+  - first:
+      213: 4287905743607652891
+    second: store_ceiling_interior_31
+  - first:
+      213: -1325638583916861623
+    second: store_ceiling_interior_32
+  - first:
+      213: 7116697049268345334
+    second: store_ceiling_interior_33
+  - first:
+      213: 7920408661694302422
+    second: store_ceiling_interior_34
+  - first:
+      213: -48466574036233805
+    second: store_ceiling_interior_35
+  - first:
+      213: -134770453388915097
+    second: store_ceiling_interior_36
+  - first:
+      213: -7710953590167032135
+    second: store_ceiling_interior_37
+  - first:
+      213: 4726848987056369947
+    second: store_ceiling_interior_38
+  - first:
+      213: -9010866637579963184
+    second: store_ceiling_interior_39
+  - first:
+      213: -5175629022764024146
+    second: store_ceiling_interior_40
+  - first:
+      213: 2022022240230700504
+    second: store_ceiling_interior_41
+  - first:
+      213: 8869150924691776108
+    second: store_ceiling_interior_42
+  - first:
+      213: -6257949708429771094
+    second: store_ceiling_interior_43
+  - first:
+      213: -3067435627562137583
+    second: store_ceiling_interior_44
+  - first:
+      213: -842781597442464197
+    second: store_ceiling_interior_45
+  - first:
+      213: -7316488906568069112
+    second: store_ceiling_interior_46
+  - first:
+      213: -282236228130732417
+    second: store_ceiling_interior_47
+  - first:
+      213: 9074195439853683432
+    second: store_ceiling_interior_48
+  - first:
+      213: -5603635371189349325
+    second: store_ceiling_interior_49
+  - first:
+      213: 379592446268098281
+    second: store_ceiling_interior_50
+  - first:
+      213: -3801823303598273875
+    second: store_ceiling_interior_51
+  - first:
+      213: 7718884623825356839
+    second: store_ceiling_interior_52
+  - first:
+      213: 8192582244571182324
+    second: store_ceiling_interior_53
+  - first:
+      213: 5214161353313962999
+    second: store_ceiling_interior_54
+  - first:
+      213: -4019241435974422598
+    second: store_ceiling_interior_55
+  - first:
+      213: -8796658590675036527
+    second: store_ceiling_interior_56
+  - first:
+      213: -8456036155729422996
+    second: store_ceiling_interior_57
+  - first:
+      213: -1454417680960256841
+    second: store_ceiling_interior_58
+  - first:
+      213: -9098369623962239914
+    second: store_ceiling_interior_59
+  - first:
+      213: 6457511066872998728
+    second: store_ceiling_interior_60
+  - first:
+      213: 8233494340106992912
+    second: store_ceiling_interior_61
+  - first:
+      213: 8271461139829023386
+    second: store_ceiling_interior_62
+  - first:
+      213: -3671327476995714465
+    second: store_ceiling_interior_63
+  - first:
+      213: 244331819154764958
+    second: store_ceiling_interior_64
+  - first:
+      213: -3814189807774935691
+    second: store_ceiling_interior_65
+  - first:
+      213: 6366746706764194194
+    second: store_ceiling_interior_66
+  - first:
+      213: 1751116134983138918
+    second: store_ceiling_interior_67
+  - first:
+      213: -7323883360640909084
+    second: store_ceiling_interior_68
+  - first:
+      213: 3221136771757623122
+    second: store_ceiling_interior_69
+  - first:
+      213: -1276959877351615436
+    second: store_ceiling_interior_70
+  - first:
+      213: -5223275356026306644
+    second: store_ceiling_interior_71
+  - first:
+      213: -7871865009487138104
+    second: store_ceiling_interior_72
+  - first:
+      213: -7870629357655871722
+    second: store_ceiling_interior_73
+  - first:
+      213: 8985333725283384117
+    second: store_ceiling_interior_74
+  - first:
+      213: 1487206063353292590
+    second: store_ceiling_interior_76
+  - first:
+      213: -1765278537288600826
+    second: store_ceiling_interior_77
+  - first:
+      213: -7266303062857781908
+    second: store_ceiling_interior_78
+  - first:
+      213: -3135139456846177491
+    second: store_ceiling_interior_79
+  - first:
+      213: 6077191693421571354
+    second: store_ceiling_interior_80
+  - first:
+      213: 6745772830774086947
+    second: store_ceiling_interior_81
+  - first:
+      213: 623239141471351605
+    second: store_ceiling_interior_82
+  - first:
+      213: 8748442128973805963
+    second: store_ceiling_interior_83
+  - first:
+      213: 8155090013468988232
+    second: store_ceiling_interior_84
+  - first:
+      213: -6455641740205183550
+    second: store_ceiling_interior_85
+  - first:
+      213: -2090057197630548455
+    second: store_ceiling_interior_86
+  - first:
+      213: 7177842986734075854
+    second: store_ceiling_interior_88
+  - first:
+      213: -2063977183102928459
+    second: store_ceiling_interior_89
+  - first:
+      213: 2701041555338783639
+    second: store_ceiling_interior_90
+  - first:
+      213: -1460064344377233599
+    second: store_ceiling_interior_91
+  - first:
+      213: -5116587064327909348
+    second: store_ceiling_interior_92
+  - first:
+      213: -2799384934993847336
+    second: store_ceiling_interior_93
+  - first:
+      213: -4261280744442843302
+    second: store_ceiling_interior_94
+  - first:
+      213: -348862612391394786
+    second: store_ceiling_interior_95
+  - first:
+      213: -5864991706179288304
+    second: store_ceiling_interior_96
+  - first:
+      213: 7705954214719087036
+    second: store_ceiling_interior_97
+  - first:
+      213: 6439008008625704529
+    second: store_ceiling_interior_98
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: store_ceiling_interior_0
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 405
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e3c7227067a2b00800000000000000
+      internalID: 804585256454471201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 405
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949f84547882ebe40800000000000000
+      internalID: 5674017141981509961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 405
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd84c510047e37d0800000000000000
+      internalID: -2936782363284959787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 405
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a39a5d4881309260800000000000000
+      internalID: 7102231073846367145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 405
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7281c75d433741c50800000000000000
+      internalID: 6635054821780756519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fddc5e2294194080800000000000000
+      internalID: -9202801745479279112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806865756213dc540800000000000000
+      internalID: 5029730399586518536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b92ece5d4bcf8d30800000000000000
+      internalID: 4435987691146717624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ec730105fa0d280800000000000000
+      internalID: -9020517295218766241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5309930dc460da650800000000000000
+      internalID: 6245655185213460533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38667c8714aa7530800000000000000
+      internalID: 3853572852216653883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_11
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037d3d4fc61c07cc0800000000000000
+      internalID: -3715257018872506576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0055b8ccebe701000800000000000000
+      internalID: 4642957567939840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_13
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 389
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5243ae465190ad640800000000000000
+      internalID: 5105403115069912101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a143fa23ecdf7d0800000000000000
+      internalID: -2882921469364135405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4c1eec30f4d71a0800000000000000
+      internalID: -6810200183739923217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e2aa3e02e0cf5e0800000000000000
+      internalID: -1874607810471645546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebb65cdf8859e240800000000000000
+      internalID: 4821482250977065962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98226f3221bdbbc60800000000000000
+      internalID: 7835096847700337289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbb1b302b3e24400800000000000000
+      internalID: 307058078320278522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7439e8d27acf840800000000000000
+      internalID: 5259262278969280495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_21
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1670775ef8a70c520800000000000000
+      internalID: 2720308933380474721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575ab89fafb61f620800000000000000
+      internalID: 2806142768501204341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_23
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997871f56090b1e80800000000000000
+      internalID: -8206955972982765671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d553bf3f52bacf0800000000000000
+      internalID: -240056425312330448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d10c9493068ca80800000000000000
+      internalID: -8446395301966635724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24034e921f118700800000000000000
+      internalID: 540747595086234668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_27
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8645f27c89dacd920800000000000000
+      internalID: 3016476722119791720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7c5ddf2ea952e90800000000000000
+      internalID: -7051059341866711090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_29
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e04b17154217c90800000000000000
+      internalID: -7173912799205912947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a559f992e5f4ecea0800000000000000
+      internalID: -5850651600063851174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1267163e83b18b30800000000000000
+      internalID: 4287905743607652891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94765114bb26a9de0800000000000000
+      internalID: -1325638583916861623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_33
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9d5bba24693c260800000000000000
+      internalID: 7116697049268345334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_34
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d84734b6b1faed60800000000000000
+      internalID: 7920408661694302422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_35
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1171f58efc35ff0800000000000000
+      internalID: -48466574036233805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e09879cf2312ef0800000000000000
+      internalID: -134770453388915097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be229a60903df490800000000000000
+      internalID: -7710953590167032135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11f86c1c14299140800000000000000
+      internalID: 4726848987056369947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_39
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4b0a4e888f2f280800000000000000
+      internalID: -9010866637579963184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_40
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaeb2f053d87c28b0800000000000000
+      internalID: -5175629022764024146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_41
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5f3eca38aaf0c10800000000000000
+      internalID: 2022022240230700504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_42
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62a49576cd851b70800000000000000
+      internalID: 8869150924691776108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaeb8ce65eb4729a0800000000000000
+      internalID: -6257949708429771094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_44
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11808c77c874e65d0800000000000000
+      internalID: -3067435627562137583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_45
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36a4353a96dd44f0800000000000000
+      internalID: -842781597442464197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_46
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8009ce89a1c967a90800000000000000
+      internalID: -7316488906568069112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_47
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76858755ab451cf0800000000000000
+      internalID: -282236228130732417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_48
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2c2f6eca40eed70800000000000000
+      internalID: 9074195439853683432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_49
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334d179b153eb32b0800000000000000
+      internalID: -5603635371189349325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_50
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 341
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e64b379155944500800000000000000
+      internalID: 379592446268098281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_51
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa093a29d53d3bc0800000000000000
+      internalID: -3801823303598273875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_52
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728c5514bacfe1b60800000000000000
+      internalID: 7718884623825356839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_53
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f476d03526e1b170800000000000000
+      internalID: 8192582244571182324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb49d1002c6c5840800000000000000
+      internalID: 5214161353313962999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_55
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfa6367539c838c0800000000000000
+      internalID: -4019241435974422598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_56
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1961d645e9dfbe580800000000000000
+      internalID: -8796658590675036527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_57
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6553e91bef16aa80800000000000000
+      internalID: -8456036155729422996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4015333ded0dbe0800000000000000
+      internalID: -1454417680960256841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_59
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cb68048091cb180800000000000000
+      internalID: -9098369623962239914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_60
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b6e1a1a10bd9950800000000000000
+      internalID: 6457511066872998728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_61
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d344aba7f334270800000000000000
+      internalID: 8233494340106992912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_62
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92e4f425122ac270800000000000000
+      internalID: 8271461139829023386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_63
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 325
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f521a877c13dc0dc0800000000000000
+      internalID: -3671327476995714465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_64
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e947b08be7a046300800000000000000
+      internalID: 244331819154764958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_65
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575d8a90496411bc0800000000000000
+      internalID: -3814189807774935691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_66
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2916197b56a3b5850800000000000000
+      internalID: 6366746706764194194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_67
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66eff12d8d63d4810800000000000000
+      internalID: 1751116134983138918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_68
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0ca9813e65c5a90800000000000000
+      internalID: -7323883360640909084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_69
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257cf8dd3d6c3bc20800000000000000
+      internalID: 3221136771757623122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_70
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434d706d1c3574ee0800000000000000
+      internalID: -1276959877351615436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_71
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cafffffdcb23387b0800000000000000
+      internalID: -5223275356026306644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_72
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c231b51b7481c290800000000000000
+      internalID: -7871865009487138104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_73
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f2922bc48e5c290800000000000000
+      internalID: -7870629357655871722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_74
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 309
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b7ad3ba6152bc70800000000000000
+      internalID: 8985333725283384117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_76
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27eaf9f80e93a410800000000000000
+      internalID: 1487206063353292590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_77
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603ba4fe5887087e0800000000000000
+      internalID: -1765278537288600826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_78
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d6704ecd7e82b90800000000000000
+      internalID: -7266303062857781908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_79
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b5f51564fbd74d0800000000000000
+      internalID: -3135139456846177491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_80
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1de85695a5865450800000000000000
+      internalID: 6077191693421571354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_81
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d45c126accd9d50800000000000000
+      internalID: 6745772830774086947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_82
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533f48572b036a800800000000000000
+      internalID: 623239141471351605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_83
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89bb8bd3c5b86970800000000000000
+      internalID: 8748442128973805963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8439724e823bc2170800000000000000
+      internalID: 8155090013468988232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_85
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cda2ed6a04f866a0800000000000000
+      internalID: -6455641740205183550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_86
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 293
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9169bf66d00aef2e0800000000000000
+      internalID: -2090057197630548455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_88
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf30d5aa22dc9360800000000000000
+      internalID: 7177842986734075854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_89
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b973a8ffa74b53e0800000000000000
+      internalID: -2063977183102928459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b698ddbf60c7520800000000000000
+      internalID: 2701041555338783639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_91
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f6e2ce63fccbbe0800000000000000
+      internalID: -1460064344377233599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_92
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1050608c2b3ef8b0800000000000000
+      internalID: -5116587064327909348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_93
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db9c10cb369629d0800000000000000
+      internalID: -2799384934993847336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_94
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fa54b7db3ecd4c0800000000000000
+      internalID: -4261280744442843302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_95
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e120ff86d47982bf0800000000000000
+      internalID: -348862612391394786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_96
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01342960e1d5b9ea0800000000000000
+      internalID: -5864991706179288304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_97
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb161c7c78c01fa60800000000000000
+      internalID: 7705954214719087036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: store_ceiling_interior_98
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 277
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ec7042ba3fb5950800000000000000
+      internalID: 6439008008625704529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
