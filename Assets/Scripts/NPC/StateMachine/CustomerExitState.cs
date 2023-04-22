@@ -7,6 +7,7 @@ public class CustomerExitState : CustomerState
     public void Enter(CustomerAgent agent)
     {
         agent.atShop = false;
+        agent.patienceTimer.TimerExit();
     }
 
     public void Exit(CustomerAgent agent)
