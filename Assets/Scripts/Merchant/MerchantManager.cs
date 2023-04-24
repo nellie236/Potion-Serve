@@ -39,6 +39,8 @@ public class MerchantManager : MonoBehaviour
     public Text dialogueText;
     public List<string> refreshDialogue;
 
+ 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,9 @@ public class MerchantManager : MonoBehaviour
         //building = false;
         //buildMapParent.SetActive(false);
         displayIcon.sprite = null;
+        //plusOneItemText.gameObject.SetActive(false);
+
+       
     }
 
     // Update is called once per frame
@@ -260,6 +265,7 @@ public class MerchantManager : MonoBehaviour
                 else if (!invManager.inventoryFull)
                 {
                     invManager.Add(item.item, 1);
+                    //StartCoroutine(FadePlusOneItem());
                     ClearBuySlot(item);
                 }
                 
@@ -316,4 +322,6 @@ public class MerchantManager : MonoBehaviour
             buildMapParent.SetActive(true);
         }
     }
+
+    
 }
