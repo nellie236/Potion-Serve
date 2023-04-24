@@ -35,6 +35,7 @@ public class PatienceTimer : MonoBehaviour
     public void ContinueTimer()
     {
         StartCoroutine(UpdateTimer());
+        TimerEnter();
         active = true;
     }
     

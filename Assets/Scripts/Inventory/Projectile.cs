@@ -177,6 +177,7 @@ public class Projectile : MonoBehaviour
                 if (!collision.gameObject.GetComponent<CharacterController2D>().inventoryManager.inventoryFull)
                 {
                     collision.gameObject.GetComponent<CharacterController2D>().inventoryManager.Add(myItem, 1);
+                    collision.transform.GetChild(6).gameObject.GetComponent<AudioSource>().Play();
                     Destroy(gameObject);
                 }
             }

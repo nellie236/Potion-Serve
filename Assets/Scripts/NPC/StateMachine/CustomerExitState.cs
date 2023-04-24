@@ -8,6 +8,7 @@ public class CustomerExitState : CustomerState
     {
         agent.atShop = false;
         agent.patienceTimer.TimerExit();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().ReturnToDefault();
     }
 
     public void Exit(CustomerAgent agent)

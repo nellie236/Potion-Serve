@@ -65,7 +65,7 @@ public class BrewManager : MonoBehaviour
         recipe.progressBarDone = true;
         recipe.Craft(brewManager);
         burstParticle.GetComponent<ParticleSystem>().Play();
-        
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     //private int numOfItems;

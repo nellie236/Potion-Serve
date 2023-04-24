@@ -271,6 +271,8 @@ public class CharacterController2D : MonoBehaviour
                     {
                         //thrownItem.GetComponent<Projectile>().thrown = false;
                         inventoryManager.ThrowItem();
+                        transform.GetChild(5).gameObject.GetComponent<AudioSource>().Play();
+
                     }
                 }
             }
@@ -351,6 +353,7 @@ public class CharacterController2D : MonoBehaviour
         if (coyoteTimeCounter > 0 && jumpBufferCounter > 0f)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            transform.GetChild(4).gameObject.GetComponent<AudioSource>().Play();
 
             jumpBufferCounter = 0f;
         }
@@ -358,6 +361,7 @@ public class CharacterController2D : MonoBehaviour
         if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && r2d.velocity.y > 0f)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y * 0.5f);
+            //transform.GetChild(4).gameObject.GetComponent<AudioSource>().Play();
 
             coyoteTimeCounter = 0f;
         }

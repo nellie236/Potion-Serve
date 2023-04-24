@@ -10,6 +10,7 @@ public class CustomerOrderInProgressState : CustomerState
         agent.orderFulfilled = false;
         agent.patienceTimer.ourCustomer(agent.gameObject);
         agent.patienceTimer.StartTimer();
+        GameObject.Find("CustomerManager").GetComponent<AudioSwap>().ChangeAudio();
     }
 
     public void Exit(CustomerAgent agent)

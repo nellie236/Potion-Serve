@@ -136,6 +136,8 @@ public class MerchantManager : MonoBehaviour
             mainCanvas.gameObject.SetActive(true);
             marketCamera.gameObject.SetActive(false);
             marketCanvas.gameObject.SetActive(false);
+            AudioListener audio = marketCamera.GetComponent<AudioListener>();
+            Destroy(audio);
 
             if (GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().active)
             {
@@ -152,6 +154,9 @@ public class MerchantManager : MonoBehaviour
             mainCamera.gameObject.SetActive(false);
             mainCanvas.gameObject.SetActive(false);
             buildMapParent.SetActive(false);
+            marketCamera.gameObject.AddComponent<AudioListener>();
+            
+            
             PassItem(null);
             Dialogue();
         }
