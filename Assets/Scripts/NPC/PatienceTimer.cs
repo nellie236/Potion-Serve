@@ -88,6 +88,7 @@ public class PatienceTimer : MonoBehaviour
     public void TimerEnter()
     {
         myAnim.SetBool("away", false);
+        myAnim.SetBool("exit", false);
         myAnim.SetBool("enter", true);
     }
 

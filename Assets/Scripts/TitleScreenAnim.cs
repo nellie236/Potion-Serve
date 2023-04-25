@@ -16,6 +16,7 @@ public class TitleScreenAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         animationPlayed = false;
         MainCamera = GameObject.Find("Main Camera");
         Color start = text.color;

@@ -63526,7 +63526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8617e733080ed4f9c11a3eb229d67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 100
+  coinCount: 0
   coinDisplay: {fileID: 2144026019}
 --- !u!1 &1916664269 stripped
 GameObject:

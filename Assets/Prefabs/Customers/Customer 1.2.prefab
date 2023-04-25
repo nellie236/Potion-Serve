@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: -7676765673974218585}
   - component: {fileID: 8543616313368955695}
   m_Layer: 0
-  m_Name: Customer 1
+  m_Name: Customer 1.2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   voided: 0
   patienceTimer: {fileID: 0}
   waitTimer: {fileID: 0}
-  myNextCustomer: {fileID: 3597879380395273933, guid: a8bb7c57ce1cb2444b21654d9b3053dd, type: 3}
+  myNextCustomer: {fileID: 0}
 --- !u!114 &8543616313368955695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,19 +489,21 @@ MonoBehaviour:
   whichMessages: 0
   firstMessages:
   - actorId: 1
-    message: Hi. I require a fire potion.
+    message: Hello again!
+  - actorId: 1
+    message: I need another fire potion...
   - actorId: 1
     message: ...
   acceptedMessages:
   - actorId: 2
-    message: I don't have much time, thank you!
+    message: Take your time.
   deniedMessages:
   - actorId: 1
     message: I'll be back another time...
   correctItemMessages:
   - actorId: 2
-    message: Perfect service!
+    message: A product of quality.
   wrongItemMessages:
   - actorId: 3
-    message: '...I''m out of time! '
+    message: ...I must go.
   canTalkToPlayer: 0
