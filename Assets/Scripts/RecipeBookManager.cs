@@ -110,6 +110,7 @@ public class RecipeBookManager : MonoBehaviour
             recipePages[currentPage].SetActive(false);
             currentPage++;
             recipePages[currentPage].SetActive(true);
+            //gameObject.GetComponent<AudioSource>().Play();
         }
         //pageFlipGameObject.SetActive(false);
     }
@@ -122,6 +123,7 @@ public class RecipeBookManager : MonoBehaviour
             recipePages[currentPage].SetActive(false);
             currentPage--;
             recipePages[currentPage].SetActive(true);
+            
         }
         //pageFlipGameObject.SetActive(false);
     }

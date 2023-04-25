@@ -23,12 +23,14 @@ public class RecipeBookAnim : MonoBehaviour
 
     public void PlayLeftAnim()
     {
+        GameObject.Find("RecipeBookManager").GetComponent<AudioSource>().Play();
         this.gameObject.SetActive(true);
         myAnim.Play("leftPageFlip");
     }
 
     public void PlayRightAnim()
     {
+        GameObject.Find("RecipeBookManager").GetComponent<AudioSource>().Play();
         this.gameObject.SetActive(true);
         myAnim.Play("rightPageFlip");
     }

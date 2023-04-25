@@ -241,6 +241,7 @@ public class CharacterController2D : MonoBehaviour
             else if (leverTrigger)
             {
                 GameObject.Find("LeverAnimator").GetComponent<ShopManager>().SwitchOpenClose();
+                transform.GetChild(5).gameObject.GetComponent<AudioSource>().Play();
             }
         }
 

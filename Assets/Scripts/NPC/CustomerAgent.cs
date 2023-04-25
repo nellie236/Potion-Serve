@@ -79,6 +79,7 @@ public class CustomerAgent : MonoBehaviour
             if (!orderFulfilled)
             {
                 atShop = true;
+                StartCoroutine(AlertPlayer());
             }
         }
 
@@ -87,5 +88,12 @@ public class CustomerAgent : MonoBehaviour
             stateMachine.ChangeState(CustomerStateId.Idle);
             voided = true;
         }
+    }
+
+    private IEnumerator AlertPlayer()
+    {
+        GameObject.Find("Player").transform.GetChild(7).gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(2f);
+        GameObject.Find("Player").transform.GetChild(7).gameObject.SetActive(false);
     }
 }
