@@ -258,8 +258,21 @@ public class InventoryManager : MonoBehaviour
 
         //Debug.Log(filledSlots);
 
-
+        RefreshSlotSprites();
         RefreshHotbar();
+    }
+
+    public void RefreshSlotSprites()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.GetChild(0).GetComponent<Image>().sprite == null)
+            {
+                Color slotColor = slots[i].transform.GetChild(0).GetComponent<Image>().color;
+                slotColor.a = 0f;
+                slots[i].transform.GetChild(0).GetComponent<Image>().color = slotColor;
+            }
+        }
     }
 
     public void RefreshHotbar()

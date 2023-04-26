@@ -73,6 +73,7 @@ public class PatienceTimer : MonoBehaviour
         GameObject.Find("PatienceTimer").GetComponent<PatienceTimer>().ourCustomer(null);
         ResetTimer();
         TimerExit();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().ReturnToDefault();
     }
 
     private void ResetTimer()
