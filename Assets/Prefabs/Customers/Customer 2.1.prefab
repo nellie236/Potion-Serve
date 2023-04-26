@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: -7676765673974218585}
   - component: {fileID: 8543616313368955695}
   m_Layer: 0
-  m_Name: Customer 2
+  m_Name: Customer 2.1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   dialogueTrigger: {fileID: 0}
   dialogueManager: {fileID: 0}
   coinManager: {fileID: 0}
-  desiredItem: {fileID: 1129085746926212879, guid: 43f09dae04bc5a546afb387ec530d75b, type: 3}
+  desiredItem: {fileID: 1129085746926212879, guid: a612c6d8ec84a9c438ab3c15f383ff61, type: 3}
   displayOrder: {fileID: 6033679084212637487}
   myObject: {fileID: 0}
   atShop: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   voided: 0
   patienceTimer: {fileID: 0}
   waitTimer: {fileID: 0}
-  myNextCustomer: {fileID: 3597879380395273933, guid: f1493fb6e069fdf4cb4bed436582588d, type: 3}
+  myNextCustomer: {fileID: 3597879380395273933, guid: 33e00a90d6861584d8d2ccfecdaf59da, type: 3}
 --- !u!114 &8543616313368955695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,11 +489,9 @@ MonoBehaviour:
   whichMessages: 0
   firstMessages:
   - actorId: 2
-    message: 'Hi! '
+    message: Hello!
   - actorId: 1
-    message: I am in need of a fire potion...
-  - actorId: 1
-    message: I have some things to deal with...
+    message: I need a frost potion.
   - actorId: 1
     message: ...
   acceptedMessages:

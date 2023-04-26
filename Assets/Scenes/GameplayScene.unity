@@ -16015,7 +16015,7 @@ RectTransform:
   m_GameObject: {fileID: 572968572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5039425, y: 0.5039425, z: 0.5039425}
   m_Children:
   - {fileID: 1033500335}
   m_Father: {fileID: 1179262043}
@@ -16023,7 +16023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 21.7}
+  m_AnchoredPosition: {x: 0, y: -22}
   m_SizeDelta: {x: 60, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572968574
@@ -16148,7 +16148,7 @@ RectTransform:
   m_GameObject: {fileID: 595507388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5039425, y: 0.5039425, z: 0.5039425}
   m_Children:
   - {fileID: 1128433534}
   m_Father: {fileID: 1179262043}
@@ -16156,7 +16156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15.7}
+  m_AnchoredPosition: {x: 0, y: -40.847}
   m_SizeDelta: {x: 60, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595507390
@@ -23808,7 +23808,7 @@ RectTransform:
   m_GameObject: {fileID: 885071453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.50279, y: 0.50279, z: 0.50279}
   m_Children:
   - {fileID: 1848486604}
   - {fileID: 1126374386}
@@ -23818,7 +23818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 21.200012}
+  m_AnchoredPosition: {x: 0, y: -3.5}
   m_SizeDelta: {x: 60, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885071455
@@ -54299,7 +54299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1706377319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63526,7 +63526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8617e733080ed4f9c11a3eb229d67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 0
+  coinCount: 1000
   coinDisplay: {fileID: 2144026019}
 --- !u!1 &1916664269 stripped
 GameObject:
@@ -64241,6 +64241,8 @@ MonoBehaviour:
   - {fileID: 3597879380395273933, guid: 4a5247284dd0e6f47a2a7b10edb495b5, type: 3}
   - {fileID: 3597879380395273933, guid: 1b05ce8b6852a5d479f57b4ffd9eebd0, type: 3}
   - {fileID: 3597879380395273933, guid: 04c74f09807103c42aa7bfd4e50940ee, type: 3}
+  - {fileID: 3597879380395273933, guid: 790b0a0d4fb876d4bb6cdb92adcba594, type: 3}
+  - {fileID: 3597879380395273933, guid: b621364489de4014cbfb0a7c8f0426f9, type: 3}
   currentCustomer: {fileID: 0}
   shopOpen: 0
   spawnPoint: {fileID: 1641062434}

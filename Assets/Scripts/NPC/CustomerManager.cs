@@ -50,7 +50,7 @@ public class CustomerManager : MonoBehaviour
 
                 if (currentCustomer.GetComponent<CustomerAgent>().voided == true)
                 {
-                    if (currentCustomer.GetComponent<CustomerAgent>().myNextCustomer != null)
+                    if (currentCustomer.GetComponent<CustomerAgent>().myNextCustomer != null && currentCustomer.GetComponent<CustomerAgent>().orderFulfilled)
                     {
                         allCustomers.Add(currentCustomer.GetComponent<CustomerAgent>().myNextCustomer);
                     }

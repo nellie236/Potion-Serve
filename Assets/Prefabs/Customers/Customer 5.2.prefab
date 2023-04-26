@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359463624479239796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3597879380395273932}
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6bb99094e0c07a54bbae1d880a4e3e4e, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,12 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9052098170191810959, guid: 84fa76f80fab8074da4b2ec7137f1878, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9a73cf71814a5c489e440d5d38e925a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.875, y: 1.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 1359463624479239796}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc72f2dff7d3710409d8a57e700b90f9, type: 2}
+  m_Controller: {fileID: 9100000, guid: f3d75099fec457b4c9a0aacccac31f5e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: -7676765673974218585}
   - component: {fileID: 8543616313368955695}
   m_Layer: 0
-  m_Name: Customer 2
+  m_Name: Customer 5.2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,8 +174,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.9}
+  m_Size: {x: 1, y: 3.2}
   m_Direction: 0
 --- !u!114 &-7676765673974218585
 MonoBehaviour:
@@ -191,12 +191,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialState: 0
   inProgState: 0
-  config: {fileID: 11400000, guid: 9d75f1bc432c0b44bb15052a29b6c777, type: 2}
+  config: {fileID: 11400000, guid: a6b16d4c8cf391045989dd396df941a1, type: 2}
   myRB: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueManager: {fileID: 0}
   coinManager: {fileID: 0}
-  desiredItem: {fileID: 1129085746926212879, guid: 43f09dae04bc5a546afb387ec530d75b, type: 3}
+  desiredItem: {fileID: 1129085746926212879, guid: ac359afbae9ae3141a5b8462e425813d, type: 3}
   displayOrder: {fileID: 6033679084212637487}
   myObject: {fileID: 0}
   atShop: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   voided: 0
   patienceTimer: {fileID: 0}
   waitTimer: {fileID: 0}
-  myNextCustomer: {fileID: 3597879380395273933, guid: f1493fb6e069fdf4cb4bed436582588d, type: 3}
+  myNextCustomer: {fileID: 3597879380395273933, guid: 4bb88d0dec39f9f4c92ed4f22a2fab8b, type: 3}
 --- !u!114 &8543616313368955695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4254159773764903493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.731, y: 0.018, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 3597879380395273932}
@@ -328,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6033679084212637487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.69, z: 0}
+  m_LocalPosition: {x: 0, y: 2.84, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 3597879380395273932}
@@ -449,7 +449,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0857055, y: -0.040013015}
+  m_Offset: {x: 1, y: 0.7247724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -460,7 +460,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 3, y: 2.750455}
   m_EdgeRadius: 0
 --- !u!114 &6046330398652999315
 MonoBehaviour:
@@ -480,32 +480,30 @@ MonoBehaviour:
   actors:
   - name: Player
     sprite: {fileID: 21300000, guid: a1d8f6c81bdd5844abc1557ff37cbcd5, type: 3}
-  - name: Pick
-    sprite: {fileID: 4315968439862903554, guid: 4cc53a5ff73ca6142a437eb4b7f398fc, type: 3}
-  - name: Pick
-    sprite: {fileID: 6037493179773788598, guid: 4cc53a5ff73ca6142a437eb4b7f398fc, type: 3}
-  - name: Pick
-    sprite: {fileID: 4838658156560501962, guid: 4cc53a5ff73ca6142a437eb4b7f398fc, type: 3}
+  - name: 002
+    sprite: {fileID: 21300000, guid: f513deb95bb25724f97b4ce08286a395, type: 3}
+  - name: 002
+    sprite: {fileID: 21300000, guid: f513deb95bb25724f97b4ce08286a395, type: 3}
+  - name: 002
+    sprite: {fileID: 21300000, guid: f513deb95bb25724f97b4ce08286a395, type: 3}
   whichMessages: 0
   firstMessages:
   - actorId: 2
-    message: 'Hi! '
+    message: Greetings
   - actorId: 1
-    message: I am in need of a fire potion...
-  - actorId: 1
-    message: I have some things to deal with...
+    message: I require a love potion.
   - actorId: 1
     message: ...
   acceptedMessages:
   - actorId: 2
-    message: I don't have much time, thank you!
+    message: I will wait here.
   deniedMessages:
   - actorId: 1
     message: ...
   correctItemMessages:
   - actorId: 2
-    message: This'll do greatly.
+    message: This will do
   wrongItemMessages:
   - actorId: 3
-    message: I MUST GO
+    message: ...
   canTalkToPlayer: 0

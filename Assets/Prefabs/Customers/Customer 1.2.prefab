@@ -204,7 +204,7 @@ MonoBehaviour:
   voided: 0
   patienceTimer: {fileID: 0}
   waitTimer: {fileID: 0}
-  myNextCustomer: {fileID: 0}
+  myNextCustomer: {fileID: 3597879380395273933, guid: ffffb2237023fb448ac0f08e624aebde, type: 3}
 --- !u!114 &8543616313368955695
 MonoBehaviour:
   m_ObjectHideFlags: 0
