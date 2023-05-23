@@ -205,6 +205,7 @@ MonoBehaviour:
   patienceTimer: {fileID: 0}
   waitTimer: {fileID: 0}
   myNextCustomer: {fileID: 3597879380395273933, guid: c271b5bc9197fcf499a70c28c6e40a3e, type: 3}
+  myPrefab: {fileID: 3597879380395273933}
 --- !u!114 &8543616313368955695
 MonoBehaviour:
   m_ObjectHideFlags: 0

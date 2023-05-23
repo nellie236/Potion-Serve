@@ -22,6 +22,8 @@ public class CustomerAgent : MonoBehaviour
     public PatienceTimer patienceTimer;
     public InitialWaitTimer waitTimer;
     public GameObject myNextCustomer;
+    public GameObject myPrefab;
+    public bool addedNext;
     
 
     // Start is called before the first frame update
@@ -39,6 +41,7 @@ public class CustomerAgent : MonoBehaviour
         waitTimer.Duration = config.waitTime;
         displayOrder = transform.GetChild(2).gameObject;
         //dialogueManager.coinPaymentAmount.text = config.coinAmount.ToString();
+        //addedNext = false;
 
 
         stateMachine = new CustomerStateMachine(this);

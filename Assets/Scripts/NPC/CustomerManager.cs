@@ -48,13 +48,28 @@ public class CustomerManager : MonoBehaviour
                     currentCustomer.GetComponent<CustomerAgent>().stateMachine.ChangeState(CustomerStateId.Enter);
                 }
 
-                if (currentCustomer.GetComponent<CustomerAgent>().voided == true)
+                /*if (currentCustomer.GetComponent<CustomerAgent>().voided == true)
                 {
                     if (currentCustomer.GetComponent<CustomerAgent>().myNextCustomer != null && currentCustomer.GetComponent<CustomerAgent>().orderFulfilled)
                     {
                         allCustomers.Add(currentCustomer.GetComponent<CustomerAgent>().myNextCustomer);
                     }
                     //destroy current customer.
+                    Destroy(currentCustomer.gameObject);
+                }*/
+
+                if (currentCustomer.GetComponent<CustomerAgent>().stateMachine.currentState == CustomerStateId.Exit && currentCustomer.GetComponent<CustomerAgent>().orderFulfilled)
+                {
+                    if (!currentCustomer.GetComponent<CustomerAgent>().addedNext)
+                    {
+                        allCustomers.Add(currentCustomer.GetComponent<CustomerAgent>().myNextCustomer);
+                        allCustomers.Remove(currentCustomer.GetComponent<CustomerAgent>().myPrefab);
+                        currentCustomer.GetComponent<CustomerAgent>().addedNext = true;
+                    }
+                }
+
+                if (currentCustomer.GetComponent<CustomerAgent>().voided == true)
+                {
                     Destroy(currentCustomer.gameObject);
                 }
             }
