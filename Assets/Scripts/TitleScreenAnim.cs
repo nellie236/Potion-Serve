@@ -13,7 +13,6 @@ public class TitleScreenAnim : MonoBehaviour
     private float targetAlpha;
     public float fadeRate;
     public Text text;
-    // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
@@ -24,20 +23,26 @@ public class TitleScreenAnim : MonoBehaviour
         text.color = start;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (animationPlayed && Input.anyKey)
         {
-            MainCamera.GetComponent<LoadSceneTrigger>().LoadScene();
+            TitleExitAnim();
+            //MainCamera.GetComponent<LoadSceneTrigger>().LoadScene();
+            StartCoroutine(FadeOut());
         }
     }
 
     public void IdleAnim()
     {
-        myAnim.SetBool("Idle", true);
         animationPlayed = true;
         StartCoroutine(FadeIn());
+    }
+
+    public void TitleExitAnim()
+    {
+        myAnim.SetBool("Exit", true);
+        animationPlayed = false;
     }
 
     IEnumerator FadeIn()
@@ -50,7 +55,18 @@ public class TitleScreenAnim : MonoBehaviour
             text.color = curColor;
             yield return null;
         }
-        
+    }
+
+    IEnumerator FadeOut()
+    {
+        targetAlpha = 0.0f;
+        Color curColor = text.color;
+        while (Mathf.Abs(curColor.a + targetAlpha) < 0.0001f)
+        {
+            curColor.a = Mathf.Lerp(curColor.a, targetAlpha, fadeRate * Time.deltaTime);
+            text.color = curColor;
+            yield return null;
+        }
     }
     
 }
